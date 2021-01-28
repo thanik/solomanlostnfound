@@ -30,4 +30,6 @@ public class ObjectDefinition
 public class ObjectDatabase : ScriptableObject
 {
     public List<ObjectDefinition> objects;
+    public Dictionary<string, List<string>> propertiesValues;
+    public Dictionary<string, Color> colorMappings;
 }

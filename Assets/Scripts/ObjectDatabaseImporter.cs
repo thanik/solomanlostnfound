@@ -19,6 +19,13 @@ public class ObjectDatabaseImporter
             {
                 ObjectDatabase asset = ScriptableObject.CreateInstance<ObjectDatabase>();
 
+                // parsing file
+                foreach (var line in fileContent.Split('\n'))
+                {
+                    
+                }
+
+
                 AssetDatabase.CreateAsset(asset, "Assets/ScriptableObjects/ObjectDatabase.asset");
                 AssetDatabase.SaveAssets();
 
