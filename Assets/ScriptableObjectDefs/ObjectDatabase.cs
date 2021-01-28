@@ -9,6 +9,18 @@ public enum PropertyType
     RANDOM_STRING
 }
 
+public enum ObjectProperty
+{
+    COLOR,
+    WEIGHT,
+    HEIGHT,
+    SEX,
+    SPECIES,
+    EDIBLE,
+    AGE,
+    ORIGIN
+}
+
 [Serializable]
 public struct PropertyDetail
 {
@@ -23,13 +35,13 @@ public class ObjectDefinition
     public Sprite leftSpriteImage;
     public Sprite rightSpriteImage;
     public string name;
-    public Dictionary<string, PropertyDetail> properties;
+    public Dictionary<ObjectProperty, PropertyDetail> properties;
 }
 
 [CreateAssetMenu]
 public class ObjectDatabase : ScriptableObject
 {
     public List<ObjectDefinition> objects;
-    public Dictionary<string, List<string>> propertiesValues;
+    public Dictionary<ObjectProperty, List<string>> propertiesValues;
     public Dictionary<string, Color> colorMappings;
 }
