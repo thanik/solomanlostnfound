@@ -39,8 +39,6 @@ public struct PropertyDetail
 public class ObjectDefinition
 {
     public Sprite spriteImage;
-    public Sprite leftSpriteImage;
-    public Sprite rightSpriteImage;
     public string name;
     public PropertiesDict properties;
 }
@@ -50,7 +48,6 @@ public class ObjectDatabase : ScriptableObject
 {
     public List<ObjectDefinition> objects;
     public PropertiesValuesPoolDict propertiesValues;
-    public ColorMappingDict colorMappings;
 }
 
 [Serializable]
@@ -58,6 +55,3 @@ public class PropertiesDict : SerializableDictionary<ObjectProperty, PropertyDet
 
 [Serializable]
 public class PropertiesValuesPoolDict : SerializableDictionary<ObjectProperty, PropertyDetail> { }
-
-[Serializable]
-public class ColorMappingDict : SerializableDictionary<string, Color> { }

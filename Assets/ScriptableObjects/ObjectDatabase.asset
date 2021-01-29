@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Baby
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -51,8 +49,6 @@ MonoBehaviour:
         - new york
         - mexico
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Watch
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -62,7 +58,7 @@ MonoBehaviour:
         - silver
         - bronze
         - black
-        - golden
+        - gold
         - pink
       - type: 0
         values:
@@ -90,8 +86,6 @@ MonoBehaviour:
         - switzerland
         - germany
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Giraffe
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -125,8 +119,6 @@ MonoBehaviour:
         values:
         - africa
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Radio
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -134,7 +126,7 @@ MonoBehaviour:
       - type: 1
         values:
         - white
-        - wooden
+        - brown
         - black
       - type: 0
         values:
@@ -161,8 +153,6 @@ MonoBehaviour:
         values:
         - tokyo
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Video game
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -201,8 +191,6 @@ MonoBehaviour:
         - usa
         - japan
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Smartphone
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -242,8 +230,6 @@ MonoBehaviour:
         - korea
         - china
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: TV
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -279,8 +265,6 @@ MonoBehaviour:
         - uk
         - japan
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Snake
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -316,8 +300,6 @@ MonoBehaviour:
         - india
         - usa
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Hat
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -354,8 +336,6 @@ MonoBehaviour:
         - france
         - spain
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Shirt
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -395,8 +375,6 @@ MonoBehaviour:
         - japan
         - china
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Teapot
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -432,8 +410,6 @@ MonoBehaviour:
         - china
         - japan
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Cube
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -468,8 +444,6 @@ MonoBehaviour:
         values:
         - mesopotamia
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Pyramid
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -503,8 +477,6 @@ MonoBehaviour:
         values:
         - egypt
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Ball
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -543,8 +515,6 @@ MonoBehaviour:
         - china
         - nigeria
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Pencil
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -583,8 +553,6 @@ MonoBehaviour:
         - italy
         - china
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Cat
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -624,8 +592,6 @@ MonoBehaviour:
         - france
         - spain
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Dog
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -666,8 +632,6 @@ MonoBehaviour:
         - usa
         - japan
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Elephant
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -703,8 +667,6 @@ MonoBehaviour:
         - india
         - thailand
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Laptop
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -741,8 +703,6 @@ MonoBehaviour:
         - japan
         - korea
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Bottle
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -777,8 +737,6 @@ MonoBehaviour:
         - caraibes
         - hawaii
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Book
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -813,8 +771,6 @@ MonoBehaviour:
         values:
         - N/A
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Mushroom
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -850,8 +806,6 @@ MonoBehaviour:
         values:
         - N/A
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Suitcase
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -893,8 +847,6 @@ MonoBehaviour:
         - greece
         - italy
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Dumb rock
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -927,8 +879,6 @@ MonoBehaviour:
         values:
         - kazakhstan
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Underwear
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -964,8 +914,6 @@ MonoBehaviour:
         - china
         - india
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Wallet
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1001,8 +949,6 @@ MonoBehaviour:
         - uk
         - china
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Panda
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1037,8 +983,6 @@ MonoBehaviour:
         values:
         - china
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Crocodile
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1060,7 +1004,7 @@ MonoBehaviour:
         - female
       - type: 1
         values:
-        - crocodile
+        - amphibian
       - type: 1
         values:
         - maybe
@@ -1072,9 +1016,7 @@ MonoBehaviour:
         values:
         - florida
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
-    name: Ocean
+    name: Stegosaurus
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
       values:
@@ -1085,31 +1027,30 @@ MonoBehaviour:
         - red
       - type: 0
         values:
-        - 10000000
-        - 99999999
+        - 5000
+        - 9000
       - type: 0
         values:
-        - 10000000
-        - 99999999
+        - 500
+        - 900
       - type: 1
         values:
-        - N/A
+        - male
+        - female
       - type: 1
         values:
-        - N/A
+        - dinosaur
       - type: 1
         values:
-        - maybe
+        - yes if you are a dinosaur
       - type: 0
         values:
-        - 10000000
-        - 99999999
+        - 1
+        - 29
       - type: 1
         values:
-        - planet
+        - earth
   - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
     name: Moon
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1152,14 +1093,12 @@ MonoBehaviour:
       - silver
       - bronze
       - black
-      - golden
+      - gold
       - yellow
       - white
-      - wooden
       - red
       - blue
       - green
-      - gold
       - grey
       - beige
     - type: 1
@@ -1179,12 +1118,14 @@ MonoBehaviour:
       - dog
       - elephant
       - bear
-      - crocodile
+      - amphibian
+      - dinosaur
     - type: 1
       values:
       - maybe
       - no
       - yes
+      - yes if you are a dinosaur
     - type: 1
       values: []
     - type: 1
@@ -1213,8 +1154,5 @@ MonoBehaviour:
       - hawaii
       - kazakhstan
       - florida
-      - planet
+      - earth
       - solar system
-  colorMappings:
-    keys: []
-    values: []

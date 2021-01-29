@@ -20,7 +20,6 @@ public class ObjectDatabaseImporter
                 ObjectDatabase asset = ScriptableObject.CreateInstance<ObjectDatabase>();
 
                 asset.objects = new List<ObjectDefinition>();
-                asset.colorMappings = new ColorMappingDict();
                 asset.propertiesValues = new PropertiesValuesPoolDict();
                 foreach (ObjectProperty property in Enum.GetValues(typeof(ObjectProperty)))
                 {
