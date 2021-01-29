@@ -14,10 +14,10 @@ public struct LevelDefinition
 {
     public int levelTimeSeconds;
     public string levelName;
-    public int satisfactionLevelRequirement;
+    public int satisfactionValueRequirement;
     public int[] scoreStars;
-    public int satisfactionLevelIncreaseAmountOnGivingSuccess;
-    public int satisfactionLevelDecreaseAmountOnGivingFail;
-    public int satisfactionLevelDecreaseAmountOnInterval;
-    public int satisfactionLevelDecreaseAmountInterval;
+    public int satisfactionValueIncreaseAmountOnGivingSuccess;
+    public int satisfactionValueDecreaseAmountOnGivingFail;
+    public int satisfactionValueDecreaseAmountOnInterval;
+    public int satisfactionValueDecreaseAmountInterval;
 }
