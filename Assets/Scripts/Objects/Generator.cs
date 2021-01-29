@@ -147,6 +147,7 @@ public class Generator : MonoBehaviour
         lostObjects.Add(lObj);
     }
 
+    // TO DO - Shuffle the list of people
     void AddPeople(LostObject lostObject, int num = 2)
     {
         if (num < 2) num = 2;

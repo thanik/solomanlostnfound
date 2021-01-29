@@ -8,8 +8,10 @@ public enum GameState { Paused, Playing }
 
 public class GameManager : Singleton<GameManager>
 {
-    public enum Days { Monday, Tuesday, Wednesday, Thursday, Friday }
-    Days dayLevel;
+    //public enum Days { Monday, Tuesday, Wednesday, Thursday, Friday }
+    //Days dayLevel;
+
+    GameState gState;
 
     // defines function and parameters if required
     public delegate void OnSatisfactionUpdateHandler(int point);
@@ -24,8 +26,9 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        dayLevel = Days.Monday;
-        levelTime = dayTime;
+        gState = GameState.Playing;
+        //dayLevel = Days.Monday;
+        //levelTime = dayTime;
     }
 
     // Update is called once per frame
@@ -40,9 +43,21 @@ public class GameManager : Singleton<GameManager>
             OnSatisfactionUpdated?.Invoke(-1);
     }
 
+    /*
     public Days GetDay()
     {
         return dayLevel;
+    }
+    */
+
+    public void QuestionClicked(int qIndex)
+    {
+        Debug.Log("Question " + qIndex + " clicked!");
+    }
+
+    public GameState GetGameState()
+    {
+        return gState;
     }
 
     void RandomizeQuestions()
