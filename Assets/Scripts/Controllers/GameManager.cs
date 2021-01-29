@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -13,6 +15,20 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void RandomizeQuestions()
+    {
+        List<ObjectProperty> propertyQuestions = new List<ObjectProperty>();
+        do
+        {
+            ObjectProperty property = (ObjectProperty)Random.Range(0, 8);
+            if (!propertyQuestions.Contains(property))
+            {
+                propertyQuestions.Add(property);
+            }
+        } while (propertyQuestions.Count == 6);
         
     }
 }
