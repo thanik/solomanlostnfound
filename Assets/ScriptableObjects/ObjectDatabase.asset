@@ -1170,11 +1170,9 @@ MonoBehaviour:
       values:
       - male
       - female
-      - N/A
     - type: 1
       values:
       - human
-      - N/A
       - giraffe
       - snake
       - feline
@@ -1213,7 +1211,6 @@ MonoBehaviour:
       - thailand
       - caraibes
       - hawaii
-      - N/A
       - kazakhstan
       - florida
       - planet

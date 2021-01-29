@@ -74,7 +74,7 @@ public class ObjectDatabaseImporter
                             for (var i = 0; i < elements.Length; i++)
                             {
                                 elements[i] = elements[i].Trim();
-                                if (!asset.propertiesValues[ObjectProperty.SEX].values.Contains(elements[i]))
+                                if (elements[i] != "N/A" && !asset.propertiesValues[ObjectProperty.SEX].values.Contains(elements[i]))
                                     asset.propertiesValues[ObjectProperty.SEX].values.Add(elements[i]);
                             }
                             newObjDef.properties[ObjectProperty.SEX] = new PropertyDetail(PropertyType.RANDOM_STRING, elements.ToList());
@@ -84,7 +84,7 @@ public class ObjectDatabaseImporter
                             for (var i = 0; i < elements.Length; i++)
                             {
                                 elements[i] = elements[i].Trim();
-                                if (!asset.propertiesValues[ObjectProperty.SPECIES].values.Contains(elements[i]))
+                                if (elements[i] != "N/A" && !asset.propertiesValues[ObjectProperty.SPECIES].values.Contains(elements[i]))
                                     asset.propertiesValues[ObjectProperty.SPECIES].values.Add(elements[i]);
                             }
                             newObjDef.properties[ObjectProperty.SPECIES] = new PropertyDetail(PropertyType.RANDOM_STRING, elements.ToList());
@@ -94,7 +94,7 @@ public class ObjectDatabaseImporter
                             for (var i = 0; i < elements.Length; i++)
                             {
                                 elements[i] = elements[i].Trim();
-                                if (!asset.propertiesValues[ObjectProperty.EDIBLE].values.Contains(elements[i]))
+                                if (elements[i] != "N/A" && !asset.propertiesValues[ObjectProperty.EDIBLE].values.Contains(elements[i]))
                                     asset.propertiesValues[ObjectProperty.EDIBLE].values.Add(elements[i]);
                             }
                             newObjDef.properties[ObjectProperty.EDIBLE] = new PropertyDetail(PropertyType.RANDOM_STRING, elements.ToList());
@@ -112,7 +112,7 @@ public class ObjectDatabaseImporter
                             for (var i = 0; i < elements.Length; i++)
                             {
                                 elements[i] = elements[i].Trim();
-                                if (!asset.propertiesValues[ObjectProperty.ORIGIN].values.Contains(elements[i]))
+                                if (elements[i] != "N/A" && !asset.propertiesValues[ObjectProperty.ORIGIN].values.Contains(elements[i]))
                                     asset.propertiesValues[ObjectProperty.ORIGIN].values.Add(elements[i]);
                             }
                             newObjDef.properties[ObjectProperty.ORIGIN] = new PropertyDetail(PropertyType.RANDOM_STRING, elements.ToList());
