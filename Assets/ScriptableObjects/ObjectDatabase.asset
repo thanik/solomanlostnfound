@@ -1,0 +1,1201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4741f03c97929147bc0b7cdfad29179, type: 3}
+  m_Name: ObjectDatabase
+  m_EditorClassIdentifier: 
+  objects:
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Baby
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - pink
+        - brown
+      - type: 0
+        values:
+        - 5
+        - 10
+      - type: 0
+        values:
+        - 40
+        - 60
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - human
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 1
+        - 2
+      - type: 1
+        values:
+        - new york
+        - mexico
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Watch
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - silver
+        - bronze
+        - black
+        - golden
+        - pink
+      - type: 0
+        values:
+        - 0
+        - 15
+        - 0
+        - 16
+      - type: 0
+        values:
+        - 10
+        - 12
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 50
+      - type: 1
+        values:
+        - switzerland
+        - germany
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Giraffe
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - yellow
+      - type: 0
+        values:
+        - 700
+        - 800
+      - type: 0
+        values:
+        - 400
+        - 600
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - giraffe
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 5
+        - 26
+      - type: 1
+        values:
+        - africa
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Radio
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - wooden
+        - black
+      - type: 0
+        values:
+        - 1
+        - 2
+      - type: 0
+        values:
+        - 10
+        - 15
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 10
+      - type: 1
+        values:
+        - tokyo
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Video game
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - red
+        - blue
+        - green
+        - white
+        - black
+      - type: 0
+        values:
+        - 0
+        - 05
+      - type: 0
+        values:
+        - 10
+        - 12
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 5
+      - type: 1
+        values:
+        - uk
+        - usa
+        - japan
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Smartphone
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - black
+        - red
+        - blue
+        - green
+        - gold
+      - type: 0
+        values:
+        - 0
+        - 01
+        - 0
+        - 02
+      - type: 0
+        values:
+        - 5
+        - 8
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 5
+      - type: 1
+        values:
+        - usa
+        - korea
+        - china
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: TV
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - black
+        - silver
+      - type: 0
+        values:
+        - 11
+        - 15
+      - type: 0
+        values:
+        - 70
+        - 80
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 7
+      - type: 1
+        values:
+        - usa
+        - uk
+        - japan
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Snake
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - green
+        - white
+      - type: 0
+        values:
+        - 10
+        - 20
+      - type: 0
+        values:
+        - 70
+        - 100
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - snake
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 2
+        - 9
+      - type: 1
+        values:
+        - india
+        - usa
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Hat
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - brown
+        - yellow
+      - type: 0
+        values:
+        - 0
+        - 01
+        - 0
+        - 02
+      - type: 0
+        values:
+        - 5
+        - 7
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 1
+        - 20
+      - type: 1
+        values:
+        - italy
+        - france
+        - spain
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Shirt
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - green
+        - red
+        - yellow
+        - blue
+      - type: 0
+        values:
+        - 0
+        - 01
+        - 0
+        - 02
+      - type: 0
+        values:
+        - 50
+        - 60
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 20
+      - type: 1
+        values:
+        - uk
+        - usa
+        - japan
+        - china
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Teapot
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - grey
+      - type: 0
+        values:
+        - 0
+        - 02
+        - 0
+        - 05
+      - type: 0
+        values:
+        - 10
+        - 15
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 5
+        - 20
+      - type: 1
+        values:
+        - uk
+        - china
+        - japan
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Cube
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - black
+        - yellow
+      - type: 0
+        values:
+        - 10
+        - 20
+      - type: 0
+        values:
+        - 100
+        - 200
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1000
+        - 2000
+      - type: 1
+        values:
+        - mesopotamia
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Pyramid
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - yellow
+      - type: 0
+        values:
+        - 500
+        - 800
+      - type: 0
+        values:
+        - 300
+        - 500
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 3000
+        - 4000
+      - type: 1
+        values:
+        - egypt
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Ball
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - red
+        - green
+        - blue
+        - yellow
+      - type: 0
+        values:
+        - 1
+        - 5
+      - type: 0
+        values:
+        - 30
+        - 40
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 30
+      - type: 1
+        values:
+        - uk
+        - china
+        - nigeria
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Pencil
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - yellow
+        - blue
+        - red
+        - green
+        - pink
+      - type: 0
+        values:
+        - N/A
+      - type: 0
+        values:
+        - 7
+        - 10
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 7
+      - type: 1
+        values:
+        - greece
+        - italy
+        - china
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Cat
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - black
+        - white
+        - brown
+        - beige
+      - type: 0
+        values:
+        - 10
+        - 15
+      - type: 0
+        values:
+        - 30
+        - 40
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - feline
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 2
+        - 12
+      - type: 1
+        values:
+        - uk
+        - germany
+        - france
+        - spain
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Dog
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - black
+        - white
+        - brown
+        - beige
+      - type: 0
+        values:
+        - 10
+        - 30
+      - type: 0
+        values:
+        - 30
+        - 60
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - dog
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 2
+        - 12
+      - type: 1
+        values:
+        - italy
+        - france
+        - spain
+        - usa
+        - japan
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Elephant
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - grey
+      - type: 0
+        values:
+        - 6000
+        - 6500
+      - type: 0
+        values:
+        - 250
+        - 400
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - elephant
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 2
+        - 20
+      - type: 1
+        values:
+        - africa
+        - india
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Laptop
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - black
+        - silver
+      - type: 0
+        values:
+        - 10
+        - 20
+      - type: 0
+        values:
+        - 30
+        - 50
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 10
+      - type: 1
+        values:
+        - usa
+        - china
+        - japan
+        - korea
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Bottle
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - green
+        - white
+      - type: 0
+        values:
+        - 0
+        - 5
+        - 1
+      - type: 0
+        values:
+        - 10
+        - 20
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 50
+      - type: 1
+        values:
+        - caraibes
+        - hawaii
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Book
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - brown
+        - black
+        - green
+      - type: 0
+        values:
+        - 0
+        - 1
+        - 1
+      - type: 0
+        values:
+        - 10
+        - 12
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Cake
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - red
+        - pink
+        - orange
+      - type: 0
+        values:
+        - 1
+        - 2
+      - type: 0
+        values:
+        - 15
+        - 20
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - yes
+      - type: 0
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Mushroom
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - red
+        - yellow
+        - green
+        - blue
+      - type: 0
+        values:
+        - 0
+        - 1
+        - 0
+        - 2
+      - type: 0
+        values:
+        - 5
+        - 15
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - yes
+      - type: 0
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Suitcase
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - black
+        - brown
+      - type: 0
+        values:
+        - 10
+        - 25
+      - type: 0
+        values:
+        - 40
+        - 50
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 15
+      - type: 1
+        values:
+        - uk
+        - usa
+        - china
+        - japan
+        - korea
+        - india
+        - france
+        - greece
+        - italy
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Dumb rock
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - grey
+      - type: 0
+        values:
+        - 0
+        - 2
+        - 1
+      - type: 0
+        values:
+        - 5
+        - 20
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 2000
+      - type: 1
+        values:
+        - kazakhstan
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Underwear
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - pink
+        - black
+      - type: 0
+        values:
+        - 0
+        - 1
+        - 0
+        - 2
+      - type: 0
+        values:
+        - 8
+        - 12
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 1
+        - 10
+      - type: 1
+        values:
+        - china
+        - india
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Wallet
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - brown
+        - black
+      - type: 0
+        values:
+        - 0
+        - 1
+        - 0
+        - 2
+      - type: 0
+        values:
+        - 7
+        - 12
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - no
+      - type: 0
+        values:
+        - 1
+        - 20
+      - type: 1
+        values:
+        - usa
+        - uk
+        - china
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Panda
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - black
+        - white
+      - type: 0
+        values:
+        - 70
+        - 100
+      - type: 0
+        values:
+        - 60
+        - 90
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - bear
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 5
+        - 20
+      - type: 1
+        values:
+        - china
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Crocodile
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - green
+      - type: 0
+        values:
+        - 200
+        - 1000
+      - type: 0
+        values:
+        - 350
+        - 600
+      - type: 1
+        values:
+        - male
+        - female
+      - type: 1
+        values:
+        - crocodile
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 5
+        - 20
+      - type: 1
+        values:
+        - florida
+  propertiesValues:
+    keys: 0000000001000000020000000300000004000000050000000600000007000000
+    values:
+    - type: 1
+      values:
+      - pink
+      - brown
+      - silver
+      - bronze
+      - black
+      - golden
+      - yellow
+      - white
+      - wooden
+      - red
+      - blue
+      - green
+      - gold
+      - grey
+      - beige
+      - orange
+    - type: 1
+      values: []
+    - type: 1
+      values: []
+    - type: 1
+      values:
+      - male
+      - female
+      - N/A
+    - type: 1
+      values:
+      - human
+      - N/A
+      - giraffe
+      - snake
+      - feline
+      - dog
+      - elephant
+      - bear
+      - crocodile
+    - type: 1
+      values:
+      - maybe
+      - no
+      - yes
+    - type: 1
+      values: []
+    - type: 1
+      values:
+      - new york
+      - mexico
+      - switzerland
+      - germany
+      - africa
+      - tokyo
+      - uk
+      - usa
+      - japan
+      - korea
+      - china
+      - india
+      - italy
+      - france
+      - spain
+      - mesopotamia
+      - egypt
+      - nigeria
+      - greece
+      - caraibes
+      - hawaii
+      - N/A
+      - kazakhstan
+      - florida
+  colorMappings:
+    keys: []
+    values: []
