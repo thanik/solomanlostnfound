@@ -138,7 +138,7 @@ MonoBehaviour:
         - black
       - type: 0
         values:
-        - 1
+        - 0.5
         - 2
       - type: 0
         values:
@@ -558,7 +558,8 @@ MonoBehaviour:
         - pink
       - type: 0
         values:
-        - N/A
+        - 0.01
+        - 0.03
       - type: 0
         values:
         - 7
@@ -700,6 +701,7 @@ MonoBehaviour:
         values:
         - africa
         - india
+        - thailand
   - spriteImage: {fileID: 0}
     leftSpriteImage: {fileID: 0}
     rightSpriteImage: {fileID: 0}
@@ -805,43 +807,8 @@ MonoBehaviour:
         - no
       - type: 0
         values:
-        - N/A
-      - type: 1
-        values:
-        - N/A
-  - spriteImage: {fileID: 0}
-    leftSpriteImage: {fileID: 0}
-    rightSpriteImage: {fileID: 0}
-    name: Cake
-    properties:
-      keys: 0000000001000000020000000300000004000000050000000600000007000000
-      values:
-      - type: 1
-        values:
-        - white
-        - red
-        - pink
-        - orange
-      - type: 0
-        values:
         - 1
-        - 2
-      - type: 0
-        values:
-        - 15
-        - 20
-      - type: 1
-        values:
-        - N/A
-      - type: 1
-        values:
-        - N/A
-      - type: 1
-        values:
-        - yes
-      - type: 0
-        values:
-        - N/A
+        - 10
       - type: 1
         values:
         - N/A
@@ -877,7 +844,8 @@ MonoBehaviour:
         - yes
       - type: 0
         values:
-        - N/A
+        - 1
+        - 1000
       - type: 1
         values:
         - N/A
@@ -1103,6 +1071,77 @@ MonoBehaviour:
       - type: 1
         values:
         - florida
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Ocean
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - blue
+        - grey
+        - red
+      - type: 0
+        values:
+        - 10000000
+        - 99999999
+      - type: 0
+        values:
+        - 10000000
+        - 99999999
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 10000000
+        - 99999999
+      - type: 1
+        values:
+        - planet
+  - spriteImage: {fileID: 0}
+    leftSpriteImage: {fileID: 0}
+    rightSpriteImage: {fileID: 0}
+    name: Moon
+    properties:
+      keys: 0000000001000000020000000300000004000000050000000600000007000000
+      values:
+      - type: 1
+        values:
+        - white
+        - grey
+      - type: 0
+        values:
+        - 10000000
+        - 99999999
+      - type: 0
+        values:
+        - 10000000
+        - 99999999
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - N/A
+      - type: 1
+        values:
+        - maybe
+      - type: 0
+        values:
+        - 10000000
+        - 99999999
+      - type: 1
+        values:
+        - solar system
   propertiesValues:
     keys: 0000000001000000020000000300000004000000050000000600000007000000
     values:
@@ -1123,7 +1162,6 @@ MonoBehaviour:
       - gold
       - grey
       - beige
-      - orange
     - type: 1
       values: []
     - type: 1
@@ -1172,11 +1210,14 @@ MonoBehaviour:
       - egypt
       - nigeria
       - greece
+      - thailand
       - caraibes
       - hawaii
       - N/A
       - kazakhstan
       - florida
+      - planet
+      - solar system
   colorMappings:
     keys: []
     values: []

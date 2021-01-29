@@ -297,15 +297,19 @@ public class Generator : MonoBehaviour
     string GenerateThiefAnswer(ObjectProperty op, string s, bool isLyingForSure=false)
     {
         string answer = "";
-        string ans;
+        string ans = "";
         int rand = Random.Range(0, 3);
         if (rand == 0 || isLyingForSure)
         {
-            ans = db.propertiesValues[op].values[Random.Range(0, db.propertiesValues[op].values.Count)];
-            while (ans == s) 
+            if (db.propertiesValues[op].values.Count > 0) // number property won't have propertiesValues so we have to check if the property is number or string
             {
                 ans = db.propertiesValues[op].values[Random.Range(0, db.propertiesValues[op].values.Count)];
+                while (ans == s)
+                {
+                    ans = db.propertiesValues[op].values[Random.Range(0, db.propertiesValues[op].values.Count)];
+                }
             }
+
             switch (op) 
             {
                 case ObjectProperty.COLOR:
