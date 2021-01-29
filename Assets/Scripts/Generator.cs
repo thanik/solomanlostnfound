@@ -177,6 +177,37 @@ public class Generator : MonoBehaviour
             }
         }
         people.Add(p);
+
+        for (int i = 0; i < num-1; i++) 
+        {
+            Person ap = new Person();
+            ap.isLegitOwner = false;
+            ap.answers = new LostObjectPropertiesDict();
+            ObjectProperty lie = lostObject.properties.Keys.ToArray()[Random.Range(0, lostObject.properties.Count)];
+            while (lostObject.properties[lie] == nA)
+            {
+                lie = lostObject.properties.Keys.ToArray()[Random.Range(0, lostObject.properties.Count)];
+            }
+            foreach (KeyValuePair<ObjectProperty, string> entry in lostObject.properties)
+            {
+                if (entry.Key == lie)
+                {
+                    ap.answers[entry.Key] = GenerateThiefAnswer(entry.Key, entry.Value, true);
+                }
+                else
+                {
+                    if (entry.Value != nA)
+                    {
+                        ap.answers[entry.Key] = GenerateThiefAnswer(entry.Key, entry.Value);
+                    }
+                    else
+                    {
+                        ap.answers[entry.Key] = notAvailable[Random.Range(0, notAvailable.Count)];
+                    }
+                }
+            }
+            people.Add(ap);
+        }
     }
 
     string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false) 
@@ -184,12 +215,8 @@ public class Generator : MonoBehaviour
 
         string answer = "";
         int rand = Random.Range(0, 2);
-        if (!rightAnswer && rand == 0) 
-        {
-            rightAnswer = true;
-        }
         
-        if (rightAnswer) 
+        if (rightAnswer || rand == 0) 
         { 
             if (op == ObjectProperty.COLOR) 
             {
@@ -200,11 +227,11 @@ public class Generator : MonoBehaviour
                 rand = Random.Range(0, 3);
                 if (rand == 0)
                 {
-                    answer = "It weights less than " + (float.Parse(s) + Random.Range(1, 10)) + " kg";
+                    answer = "It weights less than " + Mathf.Clamp((float.Parse(s) + Random.Range(1, 10)), 1, 9000) + " kg";
                 }
                 if (rand == 1)
                 {
-                    answer = "It weights more than " + (float.Parse(s) - Random.Range(1, 10)) + " kg";
+                    answer = "It weights more than " + Mathf.Clamp((float.Parse(s) - Random.Range(1, 10)), 1, 9000) + " kg";
                 }
                 if (rand == 2)
                 {
@@ -216,11 +243,11 @@ public class Generator : MonoBehaviour
                 rand = Random.Range(0, 3);
                 if (rand == 0)
                 {
-                    answer = "It is shorter than " + (float.Parse(s) + Random.Range(5, 10)) + " cm";
+                    answer = "It is shorter than " + Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " cm";
                 }
                 if (rand == 1)
                 {
-                    answer = "It is taller than " + (float.Parse(s) - Random.Range(5, 10)) + " cm";
+                    answer = "It is taller than " + Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " cm";
                 }
                 if (rand == 2)
                 {
@@ -244,11 +271,11 @@ public class Generator : MonoBehaviour
                 rand = Random.Range(0, 3);
                 if (rand == 0)
                 {
-                    answer = "It is less old than " + (float.Parse(s) + Random.Range(5, 10)) + " years";
+                    answer = "It is less old than " + Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years";
                 }
                 if (rand == 1)
                 {
-                    answer = "It's been around for more than " + (float.Parse(s) - Random.Range(5, 10)) + " years";
+                    answer = "It's been around for more than " + Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years";
                 }
                 if (rand == 2)
                 {
@@ -267,49 +294,77 @@ public class Generator : MonoBehaviour
         return answer;
     }
 
-    string GenerateThiefAnswer(ObjectProperty op, string s)
+    string GenerateThiefAnswer(ObjectProperty op, string s, bool isLyingForSure=false)
     {
-
         string answer = "";
-        int rand = Random.Range(0, 2);
-        if (rand == 0)
+        string ans;
+        int rand = Random.Range(0, 3);
+        if (rand == 0 || isLyingForSure)
         {
-            if (op == ObjectProperty.COLOR)
+            ans = db.propertiesValues[op].values[Random.Range(0, db.propertiesValues[op].values.Count)];
+            while (ans == s) 
             {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
+                ans = db.propertiesValues[op].values[Random.Range(0, db.propertiesValues[op].values.Count)];
             }
-            if (op == ObjectProperty.WEIGHT)
+            switch (op) 
             {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
-            }
-            if (op == ObjectProperty.HEIGHT)
-            {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
-            }
-            if (op == ObjectProperty.SEX)
-            {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
-            }
-            if (op == ObjectProperty.SPECIES)
-            {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
-            }
-            if (op == ObjectProperty.EDIBLE)
-            {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
-            }
-            if (op == ObjectProperty.AGE)
-            {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
-            }
-            if (op == ObjectProperty.ORIGIN)
-            {
-                answer = preColor[Random.Range(0, preColor.Count)] + s;
+                case ObjectProperty.COLOR:
+                    answer = preColor[Random.Range(0, preColor.Count)] + ans;
+                    break;
+                case ObjectProperty.WEIGHT:
+                    {
+                        rand = Random.Range(0, 2);
+                        if (rand == 0)
+                        {
+                            answer = "It weights more than " + Mathf.Clamp((float.Parse(s) + Random.Range(1, 10)), 1, 9000) + " kg";
+                        }
+                        if (rand == 1)
+                        {
+                            answer = "It weights less than " + Mathf.Clamp((float.Parse(s) - Random.Range(1, 10)), 1, 9000) + " kg";
+                        }
+                    }
+                    break;
+                case ObjectProperty.HEIGHT:
+                    if (rand == 0)
+                    {
+                        answer = "It is taller than " + Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " cm";
+                    }
+                    if (rand == 1)
+                    {
+                        answer = "It is shorter than " + Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " cm";
+                    }
+                    break;
+                case ObjectProperty.SEX:
+                    answer = preSex[Random.Range(0, preSex.Count)] + ans;
+                    break;
+                case ObjectProperty.SPECIES:
+                    answer = preSpecies[Random.Range(0, preSpecies.Count)] + ans;
+                    break;
+                case ObjectProperty.EDIBLE:
+                    answer = preEdible[Random.Range(0, preEdible.Count)] + ans;
+                    break;
+                case ObjectProperty.AGE:
+                    if (rand == 0)
+                    {
+                        answer = "It's been around for more than " + Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years";
+                    }
+                    if (rand == 1)
+                    {
+                        answer = "It is less old than " + Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years";
+                    }
+                    break;
+                case ObjectProperty.ORIGIN:
+                    answer = preOrigin[Random.Range(0, preOrigin.Count)] + ans;
+                    break;
             }
         }
-        else
+        else if (rand == 1)
         {
             answer = dunno[Random.Range(0, dunno.Count)];
+        }
+        else if (rand == 2)
+        {
+            answer = GenerateOwnerAnswer(op, s, true);
         }
         return answer;
     }
