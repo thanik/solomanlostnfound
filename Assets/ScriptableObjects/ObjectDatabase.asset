@@ -66,10 +66,8 @@ MonoBehaviour:
         - pink
       - type: 0
         values:
-        - 0
-        - 15
-        - 0
-        - 16
+        - 0.15
+        - 0.16
       - type: 0
         values:
         - 10
@@ -178,8 +176,8 @@ MonoBehaviour:
         - black
       - type: 0
         values:
-        - 0
-        - 05
+        - 0.05
+        - 0.06
       - type: 0
         values:
         - 10
@@ -219,10 +217,8 @@ MonoBehaviour:
         - gold
       - type: 0
         values:
-        - 0
-        - 01
-        - 0
-        - 02
+        - 0.01
+        - 0.02
       - type: 0
         values:
         - 5
@@ -333,10 +329,8 @@ MonoBehaviour:
         - yellow
       - type: 0
         values:
-        - 0
-        - 01
-        - 0
-        - 02
+        - 0.01
+        - 0.02
       - type: 0
         values:
         - 5
@@ -375,10 +369,8 @@ MonoBehaviour:
         - blue
       - type: 0
         values:
-        - 0
-        - 01
-        - 0
-        - 02
+        - 0.01
+        - 0.02
       - type: 0
         values:
         - 50
@@ -415,10 +407,8 @@ MonoBehaviour:
         - grey
       - type: 0
         values:
-        - 0
-        - 02
-        - 0
-        - 05
+        - 0.02
+        - 0.05
       - type: 0
         values:
         - 10
@@ -761,8 +751,7 @@ MonoBehaviour:
         - white
       - type: 0
         values:
-        - 0
-        - 5
+        - 0.5
         - 1
       - type: 0
         values:
@@ -799,8 +788,7 @@ MonoBehaviour:
         - green
       - type: 0
         values:
-        - 0
-        - 1
+        - 0.1
         - 1
       - type: 0
         values:
@@ -872,10 +860,8 @@ MonoBehaviour:
         - blue
       - type: 0
         values:
-        - 0
-        - 1
-        - 0
-        - 2
+        - 0.1
+        - 0.2
       - type: 0
         values:
         - 5
@@ -950,8 +936,7 @@ MonoBehaviour:
         - grey
       - type: 0
         values:
-        - 0
-        - 2
+        - 0.2
         - 1
       - type: 0
         values:
@@ -987,10 +972,8 @@ MonoBehaviour:
         - black
       - type: 0
         values:
-        - 0
-        - 1
-        - 0
-        - 2
+        - 0.1
+        - 0.2
       - type: 0
         values:
         - 8
@@ -1025,10 +1008,8 @@ MonoBehaviour:
         - black
       - type: 0
         values:
-        - 0
-        - 1
-        - 0
-        - 2
+        - 0.1
+        - 0.2
       - type: 0
         values:
         - 7
