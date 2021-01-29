@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+public enum GameState { Paused, Playing }
+
 public class GameManager : Singleton<GameManager>
 {
     public enum Days { Monday, Tuesday, Wednesday, Thursday, Friday }
@@ -18,7 +20,6 @@ public class GameManager : Singleton<GameManager>
     public int dayTime = 3;
     
     private float levelTime = 0;
-
     
     // Start is called before the first frame update
     void Start()
