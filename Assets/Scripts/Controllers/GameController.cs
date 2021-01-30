@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public enum GameState { Paused, Playing }
 
-public class GameManager : Singleton<GameManager>
+public class GameController : Singleton<GameController>
 {
     public LevelDatabase levelsDB;
     public ObjectDatabase objDB;
@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
 
     private int levelIndex = 0;
     private float levelTime = 0;
+    private bool isLevelTimerRunning = false;
     GameState gState;
 
     public GameObject itemPrefab;
@@ -40,6 +41,7 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        UpdateLevelTime();
         // do timer stuff.. decrease satisfaction every x seconds trickle effect kind of
         // update satisfaction by a point if item is returned +/-
         // point based on action so can invoke whenever needed  -- can also be called when collider goes over wrong or right person
@@ -47,14 +49,6 @@ public class GameManager : Singleton<GameManager>
             OnSatisfactionUpdated?.Invoke(1);
         if (Input.GetKeyDown(KeyCode.S))
             OnSatisfactionUpdated?.Invoke(-1);
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            OnDateUpdated?.Invoke(levelsDB.levels[levelIndex].levelName); 
-            if(levelIndex < levelsDB.levels.Count) // there is a BUG here
-            levelIndex++;
-        }
-
-        // if esc, call show pause menu in ui
     }
 
     public void QuestionClicked(int qIndex)
@@ -68,9 +62,14 @@ public class GameManager : Singleton<GameManager>
 
     void StartLevel()
     {
+        // Set game state
         gState = GameState.Playing;
+
+        // Initialise Lost Object
         generator.InitializeObject(levelsDB.levels[levelIndex].numberOfPeople);
         ItemController item = Instantiate(itemPrefab, itemSpawnPoint).GetComponent<ItemController>();
+
+        // Generate Persons
         foreach (Person person in generator.people)
         {
             GameObject p = Instantiate(personPrefab, personSpawnPoint);
@@ -83,15 +82,51 @@ public class GameManager : Singleton<GameManager>
             pCtrl.outfitRenderer.sprite = sprColorDB.shirtSprites[Random.Range(0, sprColorDB.shirtSprites.Count)];
             PersonControllers.Add(pCtrl);
         }
+
+        // Level Name
+        OnDateUpdated?.Invoke(levelsDB.levels[levelIndex].levelName);
+
+        // Level Time
+        levelTime = levelsDB.levels[levelIndex].levelTimeSeconds;
+        isLevelTimerRunning = true;
     }
 
     //TO DO
-    void CleanLevel()
+    void ClearLevel()
     {
         // play state is false paused
         // call when time left is less than 0
         // level failed \ player does not meet threshold
         // next level
+    }
+
+    void UpdateLevelTime()
+    {
+        if (isLevelTimerRunning)
+        {
+            if (levelTime > 0)
+            {
+                levelTime -= Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("Time has run out!");
+                levelTime = 0;
+                isLevelTimerRunning = false;
+                StartCoroutine(LoadLevel(2f));
+            }
+        }
+        UIController.Instance.UpdateLevelTime(levelTime);
+    }
+
+    private IEnumerator LoadLevel(float loadDelay)
+    {
+        yield return new WaitForSeconds(loadDelay);
+        if (levelIndex < levelsDB.levels.Count) // there is a BUG here
+        {
+            levelIndex++;
+            StartLevel();
+        }
     }
 
     public GameState GetGameState()

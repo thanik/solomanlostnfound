@@ -46,8 +46,8 @@ MonoBehaviour:
         - 2
       - type: 1
         values:
-        - new york
-        - mexico
+        - New York
+        - Mexico
   - spriteImage: {fileID: 0}
     name: Watch
     properties:
@@ -83,8 +83,8 @@ MonoBehaviour:
         - 50
       - type: 1
         values:
-        - switzerland
-        - germany
+        - Switzerland
+        - Germany
   - spriteImage: {fileID: 0}
     name: Giraffe
     properties:
@@ -117,7 +117,8 @@ MonoBehaviour:
         - 26
       - type: 1
         values:
-        - africa
+        - Africa
+        - the Good Place
   - spriteImage: {fileID: 0}
     name: Radio
     properties:
@@ -151,7 +152,7 @@ MonoBehaviour:
         - 10
       - type: 1
         values:
-        - tokyo
+        - Tokyo
   - spriteImage: {fileID: 0}
     name: Video game
     properties:
@@ -187,9 +188,9 @@ MonoBehaviour:
         - 5
       - type: 1
         values:
-        - uk
-        - usa
-        - japan
+        - the UK
+        - USA
+        - Japan
   - spriteImage: {fileID: 0}
     name: Smartphone
     properties:
@@ -226,9 +227,9 @@ MonoBehaviour:
         - 5
       - type: 1
         values:
-        - usa
-        - korea
-        - china
+        - the USA
+        - Korea
+        - China
   - spriteImage: {fileID: 0}
     name: TV
     properties:
@@ -261,9 +262,9 @@ MonoBehaviour:
         - 7
       - type: 1
         values:
-        - usa
-        - uk
-        - japan
+        - the USA
+        - the UK
+        - Japan
   - spriteImage: {fileID: 0}
     name: Snake
     properties:
@@ -297,8 +298,8 @@ MonoBehaviour:
         - 9
       - type: 1
         values:
-        - india
-        - usa
+        - India
+        - the USA
   - spriteImage: {fileID: 0}
     name: Hat
     properties:
@@ -332,9 +333,9 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - italy
-        - france
-        - spain
+        - Italy
+        - France
+        - Spain
   - spriteImage: {fileID: 0}
     name: Shirt
     properties:
@@ -370,10 +371,10 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - uk
-        - usa
-        - japan
-        - china
+        - the UK
+        - the USA
+        - Japan
+        - China
   - spriteImage: {fileID: 0}
     name: Teapot
     properties:
@@ -406,9 +407,9 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - uk
-        - china
-        - japan
+        - the UK
+        - China
+        - Japan
   - spriteImage: {fileID: 0}
     name: Cube
     properties:
@@ -442,7 +443,7 @@ MonoBehaviour:
         - 2000
       - type: 1
         values:
-        - mesopotamia
+        - Mesopotamia
   - spriteImage: {fileID: 0}
     name: Pyramid
     properties:
@@ -475,7 +476,7 @@ MonoBehaviour:
         - 4000
       - type: 1
         values:
-        - egypt
+        - Egypt
   - spriteImage: {fileID: 0}
     name: Ball
     properties:
@@ -511,9 +512,9 @@ MonoBehaviour:
         - 30
       - type: 1
         values:
-        - uk
-        - china
-        - nigeria
+        - the UK
+        - China
+        - Nigeria
   - spriteImage: {fileID: 0}
     name: Pencil
     properties:
@@ -549,9 +550,9 @@ MonoBehaviour:
         - 7
       - type: 1
         values:
-        - greece
-        - italy
-        - china
+        - Greece
+        - Italy
+        - China
   - spriteImage: {fileID: 0}
     name: Cat
     properties:
@@ -587,10 +588,10 @@ MonoBehaviour:
         - 12
       - type: 1
         values:
-        - uk
-        - germany
-        - france
-        - spain
+        - the UK
+        - Germany
+        - France
+        - Spain
   - spriteImage: {fileID: 0}
     name: Dog
     properties:
@@ -626,11 +627,11 @@ MonoBehaviour:
         - 12
       - type: 1
         values:
-        - italy
-        - france
-        - spain
-        - usa
-        - japan
+        - Italy
+        - France
+        - Spain
+        - the USA
+        - Japan
   - spriteImage: {fileID: 0}
     name: Elephant
     properties:
@@ -663,9 +664,9 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - africa
-        - india
-        - thailand
+        - Africa
+        - India
+        - Thailand
   - spriteImage: {fileID: 0}
     name: Laptop
     properties:
@@ -698,10 +699,10 @@ MonoBehaviour:
         - 10
       - type: 1
         values:
-        - usa
-        - china
-        - japan
-        - korea
+        - the USA
+        - China
+        - Japan
+        - Korea
   - spriteImage: {fileID: 0}
     name: Bottle
     properties:
@@ -734,8 +735,8 @@ MonoBehaviour:
         - 50
       - type: 1
         values:
-        - caraibes
-        - hawaii
+        - the Caraibes
+        - Hawaii
   - spriteImage: {fileID: 0}
     name: Book
     properties:
@@ -837,15 +838,15 @@ MonoBehaviour:
         - 15
       - type: 1
         values:
-        - uk
-        - usa
-        - china
-        - japan
-        - korea
-        - india
-        - france
-        - greece
-        - italy
+        - the UK
+        - the USA
+        - China
+        - Japan
+        - Korea
+        - India
+        - France
+        - Greece
+        - Italy
   - spriteImage: {fileID: 0}
     name: Dumb rock
     properties:
@@ -877,7 +878,7 @@ MonoBehaviour:
         - 2000
       - type: 1
         values:
-        - kazakhstan
+        - Kazakhstan
   - spriteImage: {fileID: 0}
     name: Underwear
     properties:
@@ -911,8 +912,8 @@ MonoBehaviour:
         - 10
       - type: 1
         values:
-        - china
-        - india
+        - China
+        - India
   - spriteImage: {fileID: 0}
     name: Wallet
     properties:
@@ -945,9 +946,9 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - usa
-        - uk
-        - china
+        - the USA
+        - the UK
+        - China
   - spriteImage: {fileID: 0}
     name: Panda
     properties:
@@ -981,7 +982,7 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - china
+        - China
   - spriteImage: {fileID: 0}
     name: Crocodile
     properties:
@@ -1014,7 +1015,7 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - florida
+        - Florida
   - spriteImage: {fileID: 0}
     name: Stegosaurus
     properties:
@@ -1049,7 +1050,7 @@ MonoBehaviour:
         - 29
       - type: 1
         values:
-        - earth
+        - Earth
   - spriteImage: {fileID: 0}
     name: Moon
     properties:
@@ -1082,7 +1083,7 @@ MonoBehaviour:
         - 99999999
       - type: 1
         values:
-        - solar system
+        - the Solar System
   propertiesValues:
     keys: 0000000001000000020000000300000004000000050000000600000007000000
     values:
@@ -1130,29 +1131,31 @@ MonoBehaviour:
       values: []
     - type: 1
       values:
-      - new york
-      - mexico
-      - switzerland
-      - germany
-      - africa
-      - tokyo
-      - uk
-      - usa
-      - japan
-      - korea
-      - china
-      - india
-      - italy
-      - france
-      - spain
-      - mesopotamia
-      - egypt
-      - nigeria
-      - greece
-      - thailand
-      - caraibes
-      - hawaii
-      - kazakhstan
-      - florida
-      - earth
-      - solar system
+      - New York
+      - Mexico
+      - Switzerland
+      - Germany
+      - Africa
+      - the Good Place
+      - Tokyo
+      - the UK
+      - USA
+      - Japan
+      - the USA
+      - Korea
+      - China
+      - India
+      - Italy
+      - France
+      - Spain
+      - Mesopotamia
+      - Egypt
+      - Nigeria
+      - Greece
+      - Thailand
+      - the Caraibes
+      - Hawaii
+      - Kazakhstan
+      - Florida
+      - Earth
+      - the Solar System

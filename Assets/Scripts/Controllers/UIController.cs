@@ -23,7 +23,9 @@ public class UIController : Singleton<UIController>
     [SerializeField]
     private Image satisfactionSprite;
     [SerializeField]
-    private TextMeshProUGUI levelDate;
+    private TextMeshProUGUI levelDateText;
+    [SerializeField]
+    private TextMeshProUGUI levelTimeText;
     private Satisfaction satisfactionState;
     private int satisfactionScale = 0;
 
@@ -44,14 +46,14 @@ public class UIController : Singleton<UIController>
 
     private void OnEnable()
     {
-        GameManager.Instance.OnSatisfactionUpdated += UpdateSatisfaction;
-        GameManager.Instance.OnDateUpdated += UpdateDate;
+        GameController.Instance.OnSatisfactionUpdated += UpdateSatisfaction;
+        GameController.Instance.OnDateUpdated += UpdateDate;
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnSatisfactionUpdated -= UpdateSatisfaction;
-        GameManager.Instance.OnDateUpdated -= UpdateDate;
+        GameController.Instance.OnSatisfactionUpdated -= UpdateSatisfaction;
+        GameController.Instance.OnDateUpdated -= UpdateDate;
     }
 
     // Event to Update Satisfaction
@@ -95,11 +97,6 @@ public class UIController : Singleton<UIController>
         UpdateSatisfactionSprite();
     }
 
-    void UpdateDate(string date)
-    {
-        levelDate.text = date;
-    }
-
     // Function to update sprite
     void UpdateSatisfactionSprite()
     {
@@ -129,6 +126,19 @@ public class UIController : Singleton<UIController>
             default:
                 break;
         }
+    }
+
+    void UpdateDate(string date)
+    {
+        levelDateText.text = date;
+    }
+
+    public void UpdateLevelTime(float levelTime)
+    {
+        float minutes = Mathf.FloorToInt(levelTime / 60);
+        float seconds = Mathf.FloorToInt(levelTime % 60);
+        
+        levelTimeText.text = "TIME:  " + string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     //TODO
