@@ -8,6 +8,7 @@ using DG.Tweening;
 public class PersonController : MonoBehaviour
 {
     public Person personData;
+    public RectTransform PersonSpritesRectTransform;
     public Image headBaseRenderer;
     public Image eyesRenderer;
     public Image noseRenderer;
@@ -16,11 +17,21 @@ public class PersonController : MonoBehaviour
     public GameObject bubble;
     public TMP_Text answerText;
 
+    private bool answerShowed = false;
     public void ShowAnswer(ObjectProperty property)
     {
-        bubble.SetActive(true);
-        bubble.transform.DOPunchScale(Vector3.one * 0.25f, 0.25f, 2);
+        Sequence mySequence = DOTween.Sequence();
+        if (!answerShowed)
+        {
+            bubble.SetActive(true);
+
+            mySequence.Append(PersonSpritesRectTransform.DOAnchorPos(new Vector2(-90f, 0), 0.25f));
+            mySequence.Join(bubble.GetComponent<RectTransform>().DOAnchorPos(new Vector2(115f, 0), 0.25f));
+            answerShowed = true;
+        }
+        mySequence.Append(bubble.transform.DOPunchScale(Vector3.one * 0.25f, 0.25f, 2));
         answerText.text = personData.answers[property];
+
     }
 
     public void Select()
