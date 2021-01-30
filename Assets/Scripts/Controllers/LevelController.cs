@@ -36,15 +36,17 @@ public class LevelController : MonoBehaviour
     // defines function and parameters if required
     public delegate void OnSatisfactionUpdateHandler(Satisfaction sState);
     public delegate void OnDateUpdateHandler(string date);
-    public delegate void OnShowSummaryHandler();
-    public delegate void OnPauseCalledHandler(GameState state);
+    public delegate void OnPauseCallHandler(GameState state);
     public delegate void OnScoreUpdatedHandler(int score);
+    public delegate void OnShowItemCreateHandler(LostObject lostObject);
+    public delegate void OnShowSummaryHandler();
     // event to subsbribe to
     public event OnSatisfactionUpdateHandler OnSatisfactionUpdated;
     public event OnDateUpdateHandler OnDateUpdated;
-    public event OnShowSummaryHandler OnShowSummary;
-    public event OnPauseCalledHandler OnPauseCalled;
+    public event OnPauseCallHandler OnPauseCalled;
     public event OnScoreUpdatedHandler OnScoreUpdated;
+    public event OnShowItemCreateHandler OnShowItemCreated;
+    public event OnShowSummaryHandler OnShowSummary;
 
 
     private void OnEnable()
@@ -53,6 +55,7 @@ public class LevelController : MonoBehaviour
         OnDateUpdated += uiController.UpdateDate;
         OnScoreUpdated += uiController.UpdateScore;
         OnShowSummary += uiController.ShowSummary;
+        OnShowItemCreated += uiController.ShowItemData;
         OnPauseCalled += uiController.ShowPauseMenu;
     }
 
@@ -62,6 +65,7 @@ public class LevelController : MonoBehaviour
         OnDateUpdated -= uiController.UpdateDate;
         OnScoreUpdated -= uiController.UpdateScore;
         OnShowSummary -= uiController.ShowSummary;
+        OnShowItemCreated -= uiController.ShowItemData;
         OnPauseCalled -= uiController.ShowPauseMenu;
     }
 
@@ -153,6 +157,7 @@ public class LevelController : MonoBehaviour
             pCtrl.levelController = this;
             PersonControllers.Add(pCtrl);
         }
+        OnShowItemCreated?.Invoke(generator.lostObjects[0]);
     }
 
     //TO DO

@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI levelScore;
     private Satisfaction satisfactionState;
-    
+    public ComputerScreenController computerScreenController;
 
     private void OnValidate()
     {
@@ -94,6 +94,11 @@ public class UIController : MonoBehaviour
         float seconds = Mathf.FloorToInt(levelTime % 60);
         
         levelTimeText.text = "TIME:  " + string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void ShowItemData(LostObject lostObject)
+    {
+        computerScreenController.UpdateText(lostObject);
     }
 
     //TODO
