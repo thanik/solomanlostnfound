@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edb189d9bb3eab4bbefd7dfe819745a, type: 3}
   m_Name: Level Database
   m_EditorClassIdentifier: 
-  levels: []
+  levels:
+  - levelTimeSeconds: 180
+    levelName: Monday
+    satisfactionValueRequirement: 0
+    scoreStars: 2c010000f401000020030000
+    satisfactionValueIncreaseAmountOnGivingSuccess: 10
+    satisfactionValueDecreaseAmountOnGivingFail: 5
+    satisfactionValueDecreaseAmountOnInterval: 1
+    satisfactionValueDecreaseAmountInterval: 30
