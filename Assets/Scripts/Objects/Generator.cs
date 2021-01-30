@@ -20,6 +20,16 @@ public class Generator : MonoBehaviour
             "I don't remember that detail",
             "Mmm... It's hard to remember that.",
             "Argh! I know this! It's... Ehm... It's on the tip of my tongue...",
+            "I don’t have enough information to answer your question",
+            "Good question. I’ll find out.",
+            "I don’t have the data at hand, but I’ll get it to you later today.",
+            "I’m not sure I’m the best person to answer that.",
+            "That’s exactly what I'm seeking to answer.",
+            "I don’t have the foggiest idea.",
+            "I haven’t a clue.",
+            "Who knows?",
+            "Don’t ask me.",
+            "Your guess is as good as mine."
         };
 
     List<string> notAvailable = new List<string>()
@@ -35,8 +45,8 @@ public class Generator : MonoBehaviour
             "lol",
             "lmao",
             "Why are you asking me that?",
-            "Yes. But also no."
-
+            "Yes. But also no.",
+            "I would say your question is dumb, but you also have an axe"
         };
 
     List<string> preColor = new List<string>()
@@ -68,15 +78,15 @@ public class Generator : MonoBehaviour
 
     List<string> preSpecies = new List<string>()
         {
-            "I think it belongs to the ",
-            "I believe it is part of the ",
-            "Some scientists would say it should be grouped with the ",
-            "Uhh, I think it's part of the ",
-            "I remember it's definitely in the ",
-            "Mmm... It's part of the ",
-            "I know this! It belongs to the ",
-            "I can say it should be considered part of the ",
-            "Well, I... admit it is part of the ",
+            "I think it is a ",
+            "I believe it is a ",
+            "Some scientists would say it is a ",
+            "Uhh, I think it's a ",
+            "I remember it's definitely a ",
+            "Mmm... It's a ",
+            "I know this! It should be a ",
+            "I can say it should be a ",
+            "Well, I... admit it is a ",
         };
 
     List<string> preEdible = new List<string>()
@@ -104,19 +114,6 @@ public class Generator : MonoBehaviour
             "Oh, I recall it is from ",
             "I'm not totally sure, but I'm going to say ",
         };
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        InitializeObject(3);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void InitializeObject(int numPeople)
     {
@@ -206,6 +203,8 @@ public class Generator : MonoBehaviour
             }
             people.Add(ap);
         }
+
+
     }
 
     string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false) 
@@ -269,15 +268,15 @@ public class Generator : MonoBehaviour
                 rand = Random.Range(0, 3);
                 if (rand == 0)
                 {
-                    answer = "It is less old than " + Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years";
+                    answer = "It is less old than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years";
                 }
                 if (rand == 1)
                 {
-                    answer = "It's been around for more than " + Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years";
+                    answer = "It's been around for more than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years";
                 }
                 if (rand == 2)
                 {
-                    answer = "It is " + float.Parse(s) + " years old";
+                    answer = "It is " + (int)float.Parse(s) + " years old";
                 }
             }
             if (op == ObjectProperty.ORIGIN)
@@ -348,11 +347,11 @@ public class Generator : MonoBehaviour
                 case ObjectProperty.AGE:
                     if (rand == 0)
                     {
-                        answer = "It's been around for more than " + Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years";
+                        answer = "It's been around for more than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years";
                     }
                     if (rand == 1)
                     {
-                        answer = "It is less old than " + Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years";
+                        answer = "It is less old than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years";
                     }
                     break;
                 case ObjectProperty.ORIGIN:
