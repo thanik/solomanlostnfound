@@ -49,14 +49,6 @@ public class GameManager : Singleton<GameManager>
             OnSatisfactionUpdated?.Invoke(1);
         if (Input.GetKeyDown(KeyCode.S))
             OnSatisfactionUpdated?.Invoke(-1);
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            OnDateUpdated?.Invoke(levelsDB.levels[levelIndex].levelName); 
-            if(levelIndex < levelsDB.levels.Count) // there is a BUG here
-            levelIndex++;
-        }
-
-        // if esc, call show pause menu in ui
     }
 
     public void QuestionClicked(int qIndex)
@@ -91,6 +83,9 @@ public class GameManager : Singleton<GameManager>
             PersonControllers.Add(pCtrl);
         }
 
+        // Level Name
+        OnDateUpdated?.Invoke(levelsDB.levels[levelIndex].levelName);
+
         // Level Time
         levelTime = levelsDB.levels[levelIndex].levelTimeSeconds;
         isLevelTimerRunning = true;
@@ -118,9 +113,20 @@ public class GameManager : Singleton<GameManager>
                 Debug.Log("Time has run out!");
                 levelTime = 0;
                 isLevelTimerRunning = false;
+                StartCoroutine(LoadLevel(2f));
             }
         }
         UIController.Instance.UpdateLevelTime(levelTime);
+    }
+
+    private IEnumerator LoadLevel(float loadDelay)
+    {
+        yield return new WaitForSeconds(loadDelay);
+        if (levelIndex < levelsDB.levels.Count) // there is a BUG here
+        {
+            levelIndex++;
+            StartLevel();
+        }
     }
 
     public GameState GetGameState()
