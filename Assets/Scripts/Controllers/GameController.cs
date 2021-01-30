@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public enum GameState { Paused, Playing }
 
-public class GameManager : Singleton<GameManager>
+public class GameController : Singleton<GameController>
 {
     public LevelDatabase levelsDB;
     public ObjectDatabase objDB;

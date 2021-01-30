@@ -46,14 +46,14 @@ public class UIController : Singleton<UIController>
 
     private void OnEnable()
     {
-        GameManager.Instance.OnSatisfactionUpdated += UpdateSatisfaction;
-        GameManager.Instance.OnDateUpdated += UpdateDate;
+        GameController.Instance.OnSatisfactionUpdated += UpdateSatisfaction;
+        GameController.Instance.OnDateUpdated += UpdateDate;
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnSatisfactionUpdated -= UpdateSatisfaction;
-        GameManager.Instance.OnDateUpdated -= UpdateDate;
+        GameController.Instance.OnSatisfactionUpdated -= UpdateSatisfaction;
+        GameController.Instance.OnDateUpdated -= UpdateDate;
     }
 
     // Event to Update Satisfaction
