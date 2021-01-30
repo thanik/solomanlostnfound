@@ -114,9 +114,7 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AddObject();
-        AddPeople(lostObjects[0]);
-        Debug.Log(people[0]);
+        InitializeObject(3);
     }
 
     // Update is called once per frame
@@ -125,8 +123,10 @@ public class Generator : MonoBehaviour
 
     }
 
-    void AddObject()
+    void InitializeObject(int numPeople)
     {
+        lostObjects.Clear();
+        people.Clear();
         ObjectDefinition randomDef = db.objects[Random.Range(0, db.objects.Count)];
         LostObject lObj = new LostObject();
         lObj.name = randomDef.name;
@@ -145,6 +145,7 @@ public class Generator : MonoBehaviour
             }
         }
         lostObjects.Add(lObj);
+        AddPeople(lObj, numPeople);
     }
 
     // TO DO - Shuffle the list of people
@@ -237,7 +238,7 @@ public class Generator : MonoBehaviour
                 }
                 if (rand == 2)
                 {
-                    answer = "It weights around " + s + " kg";
+                    answer = "It weights around " + float.Parse(s) + " kg";
                 }
             }
             if (op == ObjectProperty.HEIGHT)
@@ -253,7 +254,7 @@ public class Generator : MonoBehaviour
                 }
                 if (rand == 2)
                 {
-                    answer = "It is " + s + " cm tall";
+                    answer = "It is " + float.Parse(s) + " cm tall";
                 }
             }
             if (op == ObjectProperty.SEX)
@@ -281,7 +282,7 @@ public class Generator : MonoBehaviour
                 }
                 if (rand == 2)
                 {
-                    answer = "It is " + s + " years old";
+                    answer = "It is " + float.Parse(s) + " years old";
                 }
             }
             if (op == ObjectProperty.ORIGIN)
