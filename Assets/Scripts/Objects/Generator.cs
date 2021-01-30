@@ -10,8 +10,6 @@ public class Generator : MonoBehaviour
     public List<LostObject> lostObjects;
     public List<Person> people;
     public ObjectDatabase db;
-    public SpriteColorDatabase SpriteColorDatabase;
-
 
     List<string> dunno = new List<string>()
         {

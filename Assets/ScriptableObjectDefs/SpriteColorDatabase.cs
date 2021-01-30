@@ -12,6 +12,7 @@ public class SpriteColorDatabase : ScriptableObject
     public List<Sprite> noseSprites;
     public List<Sprite> mouthSprites;
     public List<Sprite> shirtSprites;
+    public List<Sprite> outfitSprites;
 }
 
 [Serializable]

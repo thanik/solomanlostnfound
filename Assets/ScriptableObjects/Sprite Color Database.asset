@@ -41,8 +41,15 @@ MonoBehaviour:
     - {r: 0, g: 1, b: 0, a: 1}
     - {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
     - {r: 0.9607843, g: 0.9607843, b: 0.8627451, a: 1}
-  headBaseSprites: []
-  eyesSprites: []
-  noseSprites: []
-  mouthSprites: []
-  shirtSprites: []
+  headBaseSprites:
+  - {fileID: 21300000, guid: b79834adeb585104c84d30e7530c3d2b, type: 3}
+  eyesSprites:
+  - {fileID: 21300000, guid: b79834adeb585104c84d30e7530c3d2b, type: 3}
+  noseSprites:
+  - {fileID: 21300000, guid: b79834adeb585104c84d30e7530c3d2b, type: 3}
+  mouthSprites:
+  - {fileID: 21300000, guid: b79834adeb585104c84d30e7530c3d2b, type: 3}
+  shirtSprites:
+  - {fileID: 21300000, guid: b79834adeb585104c84d30e7530c3d2b, type: 3}
+  outfitSprites:
+  - {fileID: 21300000, guid: b79834adeb585104c84d30e7530c3d2b, type: 3}

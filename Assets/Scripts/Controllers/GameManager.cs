@@ -8,8 +8,13 @@ public enum GameState { Paused, Playing }
 
 public class GameManager : Singleton<GameManager>
 {
-    public LevelDatabase levels;
+    public LevelDatabase levelsDB;
+    public ObjectDatabase objDB;
+    public SpriteColorDatabase sprColorDB;
     public Generator generator;
+
+    public List<PersonController> PersonControllers = new List<PersonController>();
+
     private int levelIndex = 0;
     private float levelTime = 0;
     GameState gState;
@@ -44,8 +49,8 @@ public class GameManager : Singleton<GameManager>
             OnSatisfactionUpdated?.Invoke(-1);
         if (Input.GetKeyDown(KeyCode.D))
         {
-            OnDateUpdated?.Invoke(levels.levels[levelIndex].levelName); 
-            if(levelIndex < levels.levels.Count) // there is a BUG here
+            OnDateUpdated?.Invoke(levelsDB.levels[levelIndex].levelName); 
+            if(levelIndex < levelsDB.levels.Count) // there is a BUG here
             levelIndex++;
         }
 
@@ -54,17 +59,29 @@ public class GameManager : Singleton<GameManager>
 
     public void QuestionClicked(int qIndex)
     {
-        Debug.Log("Question " + qIndex + " clicked!");
+        Debug.Log("Question " + ((ObjectProperty)qIndex).ToString() + " clicked!");
+        foreach (var personController in PersonControllers)
+        {
+            personController.ShowAnswer((ObjectProperty) qIndex);
+        }
     }
 
     void StartLevel()
     {
         gState = GameState.Playing;
-        generator.InitializeObject(levels.levels[levelIndex].numberOfPeople);
-        GameObject item = Instantiate(itemPrefab, itemSpawnPoint);
+        generator.InitializeObject(levelsDB.levels[levelIndex].numberOfPeople);
+        ItemController item = Instantiate(itemPrefab, itemSpawnPoint).GetComponent<ItemController>();
         foreach (Person person in generator.people)
         {
             GameObject p = Instantiate(personPrefab, personSpawnPoint);
+            PersonController pCtrl = p.GetComponent<PersonController>();
+            pCtrl.personData = person;
+            pCtrl.headBaseRenderer.sprite = sprColorDB.headBaseSprites[Random.Range(0, sprColorDB.headBaseSprites.Count)];
+            pCtrl.eyesRenderer.sprite = sprColorDB.eyesSprites[Random.Range(0, sprColorDB.eyesSprites.Count)];
+            pCtrl.noseRenderer.sprite = sprColorDB.noseSprites[Random.Range(0, sprColorDB.noseSprites.Count)];
+            pCtrl.mouthRenderer.sprite = sprColorDB.mouthSprites[Random.Range(0, sprColorDB.mouthSprites.Count)];
+            pCtrl.outfitRenderer.sprite = sprColorDB.shirtSprites[Random.Range(0, sprColorDB.shirtSprites.Count)];
+            PersonControllers.Add(pCtrl);
         }
     }
 
