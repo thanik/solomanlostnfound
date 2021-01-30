@@ -20,9 +20,6 @@ public class Generator : MonoBehaviour
             "I don't remember that detail",
             "Mmm... It's hard to remember that.",
             "Argh! I know this! It's... Ehm... It's on the tip of my tongue...",
-            "I can assess it is ",
-            "Well, I recall it's ",
-
         };
 
     List<string> notAvailable = new List<string>()
