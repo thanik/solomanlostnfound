@@ -6,49 +6,63 @@ using Random = UnityEngine.Random;
 
 
 public enum GameState { Paused, Playing, End }
+public enum ClearEvent { Giving, TimeExpire }
+
 public class LevelController : MonoBehaviour
 {
-    public LevelDatabase levelsDB;
+
     public ObjectDatabase objDB;
     public SpriteColorDatabase sprColorDB;
     public Generator generator;
     public UIController uiController;
+    public ItemController item;
 
     public List<PersonController> PersonControllers = new List<PersonController>();
 
     private int levelIndex = 0;
     private float levelTime = 0;
-    private bool isLevelTimerRunning = false;
+    private bool isDestroyingItem = false;
+    private int levelScore = 0;
+    private int satisfactionValue = 50;
+
     GameState gState;
 
     public GameObject itemPrefab;
+    public float itemTime = 30.0f;
     public Transform itemSpawnPoint;
     public GameObject personPrefab;
     public Transform personSpawnPoint;
 
-
-
     // defines function and parameters if required
-    public delegate void OnSatisfactionUpdateHandler(int point);
+    public delegate void OnSatisfactionUpdateHandler(Satisfaction sState);
     public delegate void OnDateUpdateHandler(string date);
-    public delegate void OnShowSummaryHandler(bool state);
+    public delegate void OnShowSummaryHandler();
+    public delegate void OnPauseCalledHandler(GameState state);
+    public delegate void OnScoreUpdatedHandler(int score);
     // event to subsbribe to
     public event OnSatisfactionUpdateHandler OnSatisfactionUpdated;
     public event OnDateUpdateHandler OnDateUpdated;
     public event OnShowSummaryHandler OnShowSummary;
+    public event OnPauseCalledHandler OnPauseCalled;
+    public event OnScoreUpdatedHandler OnScoreUpdated;
+
 
     private void OnEnable()
     {
         OnSatisfactionUpdated += uiController.UpdateSatisfaction;
         OnDateUpdated += uiController.UpdateDate;
+        OnScoreUpdated += uiController.UpdateScore;
         OnShowSummary += uiController.ShowSummary;
+        OnPauseCalled += uiController.ShowPauseMenu;
     }
 
     private void OnDisable()
     {
         OnSatisfactionUpdated -= uiController.UpdateSatisfaction;
         OnDateUpdated -= uiController.UpdateDate;
+        OnScoreUpdated -= uiController.UpdateScore;
         OnShowSummary -= uiController.ShowSummary;
+        OnPauseCalled -= uiController.ShowPauseMenu;
     }
 
     // Start is called before the first frame update
@@ -61,15 +75,19 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateLevelTime();
-        UpdateItemPosition();
+        if (gState == GameState.Playing)
+        {
+            UpdateLevelTime();
+            UpdateItemTimeAndPosition();
+        }
+        CheckInput();
         // do timer stuff.. decrease satisfaction every x seconds trickle effect kind of
         // update satisfaction by a point if item is returned +/-
         // point based on action so can invoke whenever needed  -- can also be called when collider goes over wrong or right person
         if (Input.GetKeyDown(KeyCode.W))
-            OnSatisfactionUpdated?.Invoke(1);
+            OnSatisfactionUpdated?.Invoke((Satisfaction)1);
         if (Input.GetKeyDown(KeyCode.S))
-            OnSatisfactionUpdated?.Invoke(-1);
+            OnSatisfactionUpdated?.Invoke((Satisfaction)(-1));
     }
 
     public void QuestionClicked(int qIndex)
@@ -88,10 +106,39 @@ public class LevelController : MonoBehaviour
         // Set game state
         gState = GameState.Playing;
 
-        // Initialise Lost Object
-        generator.InitializeObject(levelsDB.levels[levelIndex].numberOfPeople);
-        ItemController item = Instantiate(itemPrefab, itemSpawnPoint).GetComponent<ItemController>();
+        GenerateItem();
 
+        // Level Name
+        OnDateUpdated?.Invoke(GameManager.Instance.levelsDB.levels[levelIndex].levelName);
+
+        // Level Time
+        levelTime = GameManager.Instance.levelsDB.levels[levelIndex].levelTimeSeconds;
+        
+
+        // Level Score
+        OnScoreUpdated?.Invoke(levelScore);
+    }
+
+    void CheckInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && gState == GameState.Playing)
+        {
+            OnPauseCalled?.Invoke(gState);
+            gState = GameState.Paused;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && gState == GameState.Paused)
+        {
+            OnPauseCalled?.Invoke(gState);
+            gState = GameState.Playing;
+        }
+    }
+
+    void GenerateItem()
+    {
+        // Initialise Lost Object
+        generator.InitializeObject(GameManager.Instance.levelsDB.levels[levelIndex].numberOfPeople);
+        item = Instantiate(itemPrefab, itemSpawnPoint).GetComponent<ItemController>();
+        itemTime = GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
         // Generate Persons
         foreach (Person person in generator.people)
         {
@@ -103,15 +150,9 @@ public class LevelController : MonoBehaviour
             pCtrl.noseRenderer.sprite = sprColorDB.noseSprites[Random.Range(0, sprColorDB.noseSprites.Count)];
             pCtrl.mouthRenderer.sprite = sprColorDB.mouthSprites[Random.Range(0, sprColorDB.mouthSprites.Count)];
             pCtrl.outfitRenderer.sprite = sprColorDB.shirtSprites[Random.Range(0, sprColorDB.shirtSprites.Count)];
+            pCtrl.levelController = this;
             PersonControllers.Add(pCtrl);
         }
-
-        // Level Name
-        OnDateUpdated?.Invoke(levelsDB.levels[levelIndex].levelName);
-
-        // Level Time
-        levelTime = levelsDB.levels[levelIndex].levelTimeSeconds;
-        isLevelTimerRunning = true;
     }
 
     //TO DO
@@ -128,41 +169,114 @@ public class LevelController : MonoBehaviour
 
     void UpdateLevelTime()
     {
-        if (isLevelTimerRunning)
+        if (levelTime > 0)
         {
-            if (levelTime > 0)
-            {
-                levelTime -= Time.deltaTime;
-            }
-            else
-            {
-                Debug.Log("Time has run out!");
-                levelTime = 0;
-                isLevelTimerRunning = false;
-                gState = GameState.End;
-                OnShowSummary?.Invoke(true);
-                //StartCoroutine(LoadLevel(2f));
-            }
+            levelTime -= Time.deltaTime;
+        }
+        else
+        {
+            Debug.Log("Time has run out!");
+            levelTime = 0;
+            gState = GameState.End;
+            uiController.ShowSummary();
         }
         uiController.UpdateLevelTime(levelTime);
     }
 
-    void UpdateItemPosition()
+    void UpdateItemTimeAndPosition()
     {
-        // itemtime
-    }
-
-    /*
-    private IEnumerator LoadLevel(float loadDelay)
-    {
-        yield return new WaitForSeconds(loadDelay);
-        if (levelIndex < levelsDB.levels.Count) // there is a BUG here
+        if (itemTime > 0 && levelTime > 0)
         {
-            levelIndex++;
-            StartLevel();
+            itemTime -= Time.deltaTime;
+            item.normalizedTime = itemTime / GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
+        }
+        else if (!isDestroyingItem)
+        {
+            StartCoroutine(ClearItem(ClearEvent.TimeExpire));
+            isDestroyingItem = true;
         }
     }
-    */
+
+    public void SelectPerson(bool isLegitOwner)
+    {
+        int satisfaction = GetSatisfactionValue();
+        int score = GetLevelScoreValue();
+        if (isLegitOwner)
+        {
+            SetLevelScoreValue(score + GameManager.Instance.levelsDB.goodPersonScoreValue);
+            SetSatisfactionValue(satisfaction + GameManager.Instance.levelsDB.levels[levelIndex].satisfactionValueIncreaseAmountOnGivingSuccess);
+        }
+        else
+        {
+            SetLevelScoreValue(score - GameManager.Instance.levelsDB.badPersonScoreValue);
+            SetSatisfactionValue(satisfaction - GameManager.Instance.levelsDB.levels[levelIndex].satisfactionValueDecreaseAmountOnGivingFailure);
+        }
+        OnScoreUpdated?.Invoke(levelScore);
+        StartCoroutine(ClearItem(ClearEvent.Giving));
+    }
+
+    public void SetLevelScoreValue(int value)
+    {
+        levelScore = value;
+        if (levelScore < 0)
+        {
+            levelScore = 0;
+        }
+    }
+
+    public int GetLevelScoreValue()
+    {
+        return levelScore;
+    }
+
+
+    public void SetSatisfactionValue(int value)
+    {
+        satisfactionValue = value;
+        if (satisfactionValue > 100)
+        {
+            satisfactionValue = 100;
+        }
+        else if (satisfactionValue < 0)
+        {
+            satisfactionValue = 0;
+        }
+    }
+
+    public int GetSatisfactionValue()
+    {
+        return satisfactionValue;
+    }
+
+    private IEnumerator ClearItem(ClearEvent ce)
+    {
+        if (ce == ClearEvent.Giving)
+        {
+            // do something
+            // play person animation / happy/sad
+        }
+        else
+        {
+            // play solomon animation
+            yield return new WaitForSeconds(2f);
+            itemTime = GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
+            levelScore -= GameManager.Instance.levelsDB.destroyedScoreValue;
+            isDestroyingItem = false;
+            item.Destroy();
+        }
+        OnScoreUpdated?.Invoke(levelScore);
+        foreach (PersonController p in PersonControllers)
+        {
+            p.Destroy();
+        }
+        PersonControllers.Clear();
+        GenerateItem();
+    }
+
+    public void LoadNextLevel()
+    {
+        GameManager.Instance.LoadNextLevel();
+    }
 
     public GameState GetGameState()
     {

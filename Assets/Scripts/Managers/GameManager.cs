@@ -9,9 +9,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-
+    public LevelDatabase levelsDB;
+    private int levelIndex = 0;
     public Image blackScreen;
-    public void Quit()
+
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Exit()
     {
         Application.Quit();
     }
@@ -19,6 +26,11 @@ public class GameManager : Singleton<GameManager>
     public void NewGame()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Main");
     }
 
     public void FadeToBlack()
@@ -32,15 +44,17 @@ public class GameManager : Singleton<GameManager>
         blackScreen.DOFade(0f, 1f);
         blackScreen.gameObject.SetActive(false);
     }
-    public LevelDatabase levelsDB;
-    private int levelIndex = 0;
-
+   
     public void LoadNextLevel()
     {
-        if (levelIndex <= levelsDB.levels.Count)
+        if (levelIndex < levelsDB.levels.Count - 1)
         {
             SceneManager.LoadScene("Main");
             levelIndex++;
+        }
+        else
+        {
+            SceneManager.LoadScene("Ending");
         }
     }
 
@@ -48,6 +62,8 @@ public class GameManager : Singleton<GameManager>
     {
         return levelIndex;
     }
+
+    
 
     // keep track of high score
 }

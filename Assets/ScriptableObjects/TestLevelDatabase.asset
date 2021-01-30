@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edb189d9bb3eab4bbefd7dfe819745a, type: 3}
+  m_Name: TestLevelDatabase
+  m_EditorClassIdentifier: 
+  levels:
+  - levelTimeSeconds: 30
+    levelName: Monday
+    satisfactionValueRequirement: 0
+    scoreStars: 
+    numberOfPeople: 2
+    timePerItem: 10
+    satisfactionValueIncreaseAmountOnGivingSuccess: 10
+    satisfactionValueDecreaseAmountOnGivingFailure: 5
+    satisfactionValueDecreaseAmountOnInterval: 0
+    satisfactionValueDecreaseInterval: 1
+  goodPersonScoreValue: 100
+  badPersonScoreValue: 50
+  destroyedScoreValue: 75

@@ -20,6 +20,11 @@ public class ItemController : MonoBehaviour
         transform.localPosition = Vector3.Lerp(startPos, endPos, 1 - normalizedTime);
     }
 
+    public void Destroy()
+    {
+
+    }
+
     public void Chop()
     {
         // cut the item

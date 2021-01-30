@@ -5,19 +5,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Satisfaction
+{
+    EXTREMELYDISAPPOINTED = -2,
+    VERYDISAPPOINTED,
+    NEUTRAL,
+    VERYSATISFIED,
+    EXTREMELYSATISFIED
+}
+
 public class UIController : MonoBehaviour
 {
-    public enum Satisfaction
-    {
-        EXTREMELYDISAPPOINTED = -3,
-        VERYDISAPPOINTED,
-        NOTSATISFIED,
-        NEUTRAL,
-        SLIGHTLYSATISFIED,
-        VERYSATISFIED,
-        EXTREMELYSATISFIED
-    }
-
     const int spriteArraySize = 7;
     public Image[] satisfactionSprites = new Image[spriteArraySize];
     [SerializeField]
@@ -26,8 +24,10 @@ public class UIController : MonoBehaviour
     private TextMeshProUGUI levelDateText;
     [SerializeField]
     private TextMeshProUGUI levelTimeText;
+    [SerializeField]
+    private TextMeshProUGUI levelScore;
     private Satisfaction satisfactionState;
-    private int satisfactionScale = 0;
+    
 
     private void OnValidate()
     {
@@ -44,44 +44,10 @@ public class UIController : MonoBehaviour
         satisfactionState = Satisfaction.NEUTRAL;
     }
 
-   
-
     // Event to Update Satisfaction
-    public void UpdateSatisfaction(int point)
+    public void UpdateSatisfaction(Satisfaction sState)
     {
-        satisfactionScale += point;
-
-        if (satisfactionScale >= 3)
-        {
-            satisfactionScale = 3;
-            satisfactionState = Satisfaction.EXTREMELYSATISFIED;
-        }
-        else if (satisfactionScale <= -3)
-        {
-            satisfactionScale = -3;
-            satisfactionState = Satisfaction.EXTREMELYDISAPPOINTED;
-        }
-
-        if (satisfactionScale < -1 && satisfactionScale >= -2)
-        {
-            satisfactionState = Satisfaction.VERYDISAPPOINTED;
-        }
-        else if (satisfactionScale < 0 && satisfactionScale >= -1)
-        {
-            satisfactionState = Satisfaction.NOTSATISFIED;
-        }
-        else if (satisfactionScale < 1 && satisfactionScale >= 0)
-        {
-            satisfactionState = Satisfaction.NEUTRAL;
-        }
-        else if (satisfactionScale < 2 && satisfactionScale >= 1)
-        {
-            satisfactionState = Satisfaction.SLIGHTLYSATISFIED;
-        }
-        else if (satisfactionScale < 3 && satisfactionScale >= 2)
-        {
-            satisfactionState = Satisfaction.VERYSATISFIED;
-        }
+        satisfactionState = sState;
 
         // Update UI
         UpdateSatisfactionSprite();
@@ -98,14 +64,8 @@ public class UIController : MonoBehaviour
             case Satisfaction.VERYDISAPPOINTED:
                 Debug.Log("Very Disappointed");
                 break;
-            case Satisfaction.NOTSATISFIED:
-                Debug.Log("Not Satisfied");
-                break;
             case Satisfaction.NEUTRAL:
                 Debug.Log("Neutral");
-                break;
-            case Satisfaction.SLIGHTLYSATISFIED:
-                Debug.Log("Slightly Satisfied");
                 break;
             case Satisfaction.VERYSATISFIED:
                 Debug.Log("Very Satisfied");
@@ -123,6 +83,11 @@ public class UIController : MonoBehaviour
         levelDateText.text = date;
     }
 
+    public void UpdateScore(int score)
+    {
+        levelScore.text = "Score: " + score;
+    }
+
     public void UpdateLevelTime(float levelTime)
     {
         float minutes = Mathf.FloorToInt(levelTime / 60);
@@ -132,17 +97,26 @@ public class UIController : MonoBehaviour
     }
 
     //TODO
-    public void ShowSummary(bool state)
+    public void ShowSummary()
     {
-        if (state)
-            Debug.Log("Show Summary!");
+        Debug.Log("Show Summary!");
         // event if level lost, change content of summary
     }
 
     //TODO
-    public void ShowPauseMenu()
+    public void ShowPauseMenu(GameState state)
     {
-
+        switch (state)
+        {
+            case GameState.Playing:
+                Debug.Log("Game Paused");
+                break;
+            case GameState.Paused:
+                Debug.Log("Playing!");
+                break;
+            default:
+                break;
+        }
     }
 
 }

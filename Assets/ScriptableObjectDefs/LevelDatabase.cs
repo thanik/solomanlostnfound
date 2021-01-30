@@ -7,6 +7,9 @@ using UnityEngine;
 public class LevelDatabase : ScriptableObject
 {
     public List<LevelDefinition> levels;
+    public int goodPersonScoreValue;
+    public int badPersonScoreValue;
+    public int destroyedScoreValue;
 }
 
 [Serializable]

@@ -16,6 +16,9 @@ public class PersonController : MonoBehaviour
     public Image outfitRenderer;
     public GameObject bubble;
     public TMP_Text answerText;
+    public LevelController levelController;
+
+    private bool clicked = false;
 
     private bool answerShowed = false;
     public void ShowAnswer(ObjectProperty property)
@@ -36,7 +39,13 @@ public class PersonController : MonoBehaviour
 
     public void Select()
     {
-        //GameManager.Instance.SelectPerson(personData.isLegitOwner);
+        clicked = true;
+        levelController.SelectPerson(personData.isLegitOwner);
+    }
+
+    public void Destroy()
+    {
+        
     }
 
     public void FadeIn()

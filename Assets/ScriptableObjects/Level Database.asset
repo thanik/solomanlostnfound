@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level Database
   m_EditorClassIdentifier: 
   levels:
-  - levelTimeSeconds: 15
+  - levelTimeSeconds: 180
     levelName: Monday
     satisfactionValueRequirement: 50
     scoreStars: 2c010000f401000020030000
@@ -23,7 +23,7 @@ MonoBehaviour:
     satisfactionValueDecreaseAmountOnGivingFailure: 5
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
-  - levelTimeSeconds: 15
+  - levelTimeSeconds: 180
     levelName: Tuesday
     satisfactionValueRequirement: 50
     scoreStars: 2c010000f401000020030000
@@ -33,3 +33,6 @@ MonoBehaviour:
     satisfactionValueDecreaseAmountOnGivingFailure: 5
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
+  goodPersonScoreValue: 100
+  badPersonScoreValue: 0
+  destroyedScoreValue: 0
