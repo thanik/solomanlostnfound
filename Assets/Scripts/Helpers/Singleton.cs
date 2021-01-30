@@ -2,17 +2,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+public abstract class Singleton<T> : MonoBehaviour where T : Component
 {
-    private static readonly System.Lazy<T> LazyInstance = new System.Lazy<T>(CreateSingleton);
 
-    public static T Instance => LazyInstance.Value;
+    #region Fields
 
-    private static T CreateSingleton()
+    /// <summary>
+    /// The instance.
+    /// </summary>
+    private static T instance;
+
+    #endregion
+
+    #region Properties
+
+    /// <summary>
+    /// Gets the instance.
+    /// </summary>
+    /// <value>The instance.</value>
+    public static T Instance
     {
-        var ownerObject = new GameObject($"{typeof(T).Name} (singleton)");
-        var instance = ownerObject.AddComponent<T>();
-        DontDestroyOnLoad(ownerObject);
-        return instance;
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<T>();
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(T).Name;
+                    instance = obj.AddComponent<T>();
+                }
+            }
+            return instance;
+        }
     }
+
+    #endregion
+
+    #region Methods
+
+    /// <summary>
+    /// Use this for initialization.
+    /// </summary>
+    protected virtual void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this as T;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    #endregion
+
 }
