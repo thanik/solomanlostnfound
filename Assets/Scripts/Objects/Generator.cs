@@ -123,7 +123,7 @@ public class Generator : MonoBehaviour
 
     }
 
-    void InitializeObject(int numPeople)
+    public void InitializeObject(int numPeople)
     {
         lostObjects.Clear();
         people.Clear();

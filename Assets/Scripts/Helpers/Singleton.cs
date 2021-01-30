@@ -24,10 +24,10 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
         get
         {
-            if (instance == null)
+            if ((object)instance == null)
             {
                 instance = FindObjectOfType<T>();
-                if (instance == null)
+                if ((object)instance == null)
                 {
                     GameObject obj = new GameObject();
                     obj.name = typeof(T).Name;
@@ -47,7 +47,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
     /// </summary>
     protected virtual void Awake()
     {
-        if (instance == null)
+        if ((object)instance == null)
         {
             instance = this as T;
             DontDestroyOnLoad(gameObject);

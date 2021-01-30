@@ -9,9 +9,15 @@ public enum GameState { Paused, Playing }
 public class GameManager : Singleton<GameManager>
 {
     public LevelDatabase levels;
+    public Generator generator;
     private int levelIndex = 0;
     private float levelTime = 0;
     GameState gState;
+
+    public GameObject itemPrefab;
+    public Transform itemSpawnPoint;
+    public GameObject personPrefab;
+    public Transform personSpawnPoint;
 
     // defines function and parameters if required
     public delegate void OnSatisfactionUpdateHandler(int point);
@@ -19,12 +25,11 @@ public class GameManager : Singleton<GameManager>
     // event to subsbribe to
     public event OnSatisfactionUpdateHandler OnSatisfactionUpdated;
     public event OnDateUpdateHandler OnDateUpdated;
-    string temp = "Hello!";
+    
     // Start is called before the first frame update
     void Start()
     {
-        gState = GameState.Playing;
-        temp = levels.levels[levelIndex].levelName;
+        StartLevel();
     }
 
     // Update is called once per frame
@@ -39,41 +44,41 @@ public class GameManager : Singleton<GameManager>
             OnSatisfactionUpdated?.Invoke(-1);
         if (Input.GetKeyDown(KeyCode.D))
         {
-
-            OnDateUpdated?.Invoke(temp); // levels.levels[levelIndex].levelName
+            OnDateUpdated?.Invoke(levels.levels[levelIndex].levelName); 
+            if(levelIndex < levels.levels.Count) // there is a BUG here
             levelIndex++;
         }
-            
-    }
 
-    /*
-    public Days GetDay()
-    {
-        return dayLevel;
+        // if esc, call show pause menu in ui
     }
-    */
 
     public void QuestionClicked(int qIndex)
     {
         Debug.Log("Question " + qIndex + " clicked!");
     }
 
+    void StartLevel()
+    {
+        gState = GameState.Playing;
+        generator.InitializeObject(levels.levels[levelIndex].numberOfPeople);
+        GameObject item = Instantiate(itemPrefab, itemSpawnPoint);
+        foreach (Person person in generator.people)
+        {
+            GameObject p = Instantiate(personPrefab, personSpawnPoint);
+        }
+    }
+
+    //TO DO
+    void CleanLevel()
+    {
+        // play state is false paused
+        // call when time left is less than 0
+        // level failed \ player does not meet threshold
+        // next level
+    }
+
     public GameState GetGameState()
     {
         return gState;
-    }
-
-    void RandomizeQuestions()
-    {
-        List<ObjectProperty> propertyQuestions = new List<ObjectProperty>();
-        do
-        {
-            ObjectProperty property = (ObjectProperty)Random.Range(0, 8);
-            if (!propertyQuestions.Contains(property))
-            {
-                propertyQuestions.Add(property);
-            }
-        } while (propertyQuestions.Count == 6);
-        
     }
 }

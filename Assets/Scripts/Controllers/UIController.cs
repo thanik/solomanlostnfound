@@ -18,7 +18,7 @@ public class UIController : Singleton<UIController>
         EXTREMELYSATISFIED
     }
 
-    const int spriteArraySize = 6;
+    const int spriteArraySize = 7;
     public Image[] satisfactionSprites = new Image[spriteArraySize];
     [SerializeField]
     private Image satisfactionSprite;
@@ -48,7 +48,7 @@ public class UIController : Singleton<UIController>
         GameManager.Instance.OnDateUpdated += UpdateDate;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         GameManager.Instance.OnSatisfactionUpdated -= UpdateSatisfaction;
         GameManager.Instance.OnDateUpdated -= UpdateDate;
@@ -129,6 +129,18 @@ public class UIController : Singleton<UIController>
             default:
                 break;
         }
+    }
+
+    //TODO
+    void ShowSummary()
+    {
+        // event if level lost, change content of summary
+    }
+
+    //TODO
+    void ShowPauseMenu()
+    {
+
     }
 
 }
