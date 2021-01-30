@@ -69,8 +69,7 @@ public class Generator : MonoBehaviour
             "Oh... It's ",
             "I know this! It's ",
             "I can assess it is ",
-            "Well, I recall it's ",
-
+            "Well, I recall it's "
         };
 
     List<string> preSex = new List<string>()
@@ -86,7 +85,7 @@ public class Generator : MonoBehaviour
             "I reckon it's a ",
             "I know this! It's a ",
             "I can assess it is a ",
-            "Well, I recall it's a ",
+            "Well, I recall it's a "
         };
 
     List<string> preSpecies = new List<string>()
@@ -99,7 +98,7 @@ public class Generator : MonoBehaviour
             "Mmm... It's a ",
             "I know this! It should be a ",
             "I can say it should be a ",
-            "Well, I... admit it is a ",
+            "Well, I... admit it is a "
         };
 
     List<string> preEdible = new List<string>()
@@ -108,11 +107,10 @@ public class Generator : MonoBehaviour
             "Well, ",
             "To be fair, ",
             "In my humble opinion, ",
-            " ",
             "Is it edible? I would say... ",
             "I know this! The answer is ",
             "Oh, I guess I can say ",
-            "I'm not totally sure, but I'm going to say ",
+            "I'm not totally sure, but I'm going to say "
         };
 
     List<string> preOrigin = new List<string>()
@@ -125,7 +123,7 @@ public class Generator : MonoBehaviour
             "Where is from? ",
             "I know this! The answer is ",
             "Oh, I recall it is from ",
-            "I'm not totally sure, but I'm going to say ",
+            "I'm not totally sure, but I'm going to say "
         };
 
     public void InitializeObject(int numPeople)
@@ -153,7 +151,6 @@ public class Generator : MonoBehaviour
         AddPeople(lObj, numPeople);
     }
 
-    // TO DO - Shuffle the list of people
     void AddPeople(LostObject lostObject, int num = 2)
     {
         if (num < 2) num = 2;
@@ -356,13 +353,13 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                     }
                     break;
                 case ObjectProperty.SEX:
-                    answer = preSex[Random.Range(0, preSex.Count)] + ans;
+                    answer = preSex[Random.Range(0, preSex.Count)] + ans + ".";
                     break;
                 case ObjectProperty.SPECIES:
-                    answer = preSpecies[Random.Range(0, preSpecies.Count)] + ans;
+                    answer = preSpecies[Random.Range(0, preSpecies.Count)] + ans + ".";
                     break;
                 case ObjectProperty.EDIBLE:
-                    answer = preEdible[Random.Range(0, preEdible.Count)] + ans;
+                    answer = preEdible[Random.Range(0, preEdible.Count)] + ans + ".";
                     break;
                 case ObjectProperty.AGE:
                     if (rand == 0)
