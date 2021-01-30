@@ -252,8 +252,8 @@ public class LevelController : MonoBehaviour
     {
         if (ce == ClearEvent.Giving)
         {
-            // do something
-            // play person animation / happy/sad
+            yield return new WaitForSeconds(1f);
+            // wait for animation then fade out all person
         }
         else
         {
@@ -267,8 +267,10 @@ public class LevelController : MonoBehaviour
         OnScoreUpdated?.Invoke(levelScore);
         foreach (PersonController p in PersonControllers)
         {
-            p.Destroy();
+            p.DestroyFromGame();
         }
+
+        yield return new WaitForSeconds(1f);
         PersonControllers.Clear();
         GenerateItem();
     }
