@@ -8,9 +8,9 @@ public enum GameState { Paused, Playing }
 
 public class GameManager : Singleton<GameManager>
 {
-    //public enum Days { Monday, Tuesday, Wednesday, Thursday, Friday }
-    //Days dayLevel;
-
+    public LevelDatabase levels;
+    private int levelIndex;
+    private float levelTime = 0;
     GameState gState;
 
     // defines function and parameters if required
@@ -19,16 +19,10 @@ public class GameManager : Singleton<GameManager>
     // event to subsbribe to
     public event OnSatisfactionUpdateHandler OnSatisfactionUpdated;
 
-    public int dayTime = 3;
-    
-    private float levelTime = 0;
-    
     // Start is called before the first frame update
     void Start()
     {
         gState = GameState.Playing;
-        //dayLevel = Days.Monday;
-        //levelTime = dayTime;
     }
 
     // Update is called once per frame
