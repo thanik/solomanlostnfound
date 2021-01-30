@@ -5,7 +5,10 @@ using UnitySpriteCutter;
 
 public class ItemController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Vector3 startPos; // spawn position
+    public Vector3 endPos; // solomon position
+
+    public float normalizedTime; // 0 - 1: 1 = start time, 0 = time out
     void Start()
     {
 
@@ -14,7 +17,7 @@ public class ItemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.localPosition = Vector3.Lerp(startPos, endPos, 1 - normalizedTime);
     }
 
     public void Chop()
