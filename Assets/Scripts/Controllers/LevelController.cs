@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -257,7 +258,13 @@ public class LevelController : MonoBehaviour
     {
         if (ce == ClearEvent.Giving)
         {
+            //prevent clicking on the person again when it is clicked
+            foreach (PersonController p in PersonControllers)
+            {
+                p.selectButton.interactable = false;
+            }
             yield return new WaitForSeconds(1f);
+            item.DestroyFromGame();
             // wait for animation then fade out all person
         }
         else
@@ -267,7 +274,7 @@ public class LevelController : MonoBehaviour
             itemTime = GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
             levelScore -= GameManager.Instance.levelsDB.destroyedScoreValue;
             isDestroyingItem = false;
-            item.Destroy();
+            item.DestroyFromGame();
         }
         OnScoreUpdated?.Invoke(levelScore);
         foreach (PersonController p in PersonControllers)

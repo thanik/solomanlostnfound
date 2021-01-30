@@ -9,20 +9,25 @@ public class ItemController : MonoBehaviour
     public Vector3 endPos; // solomon position
 
     public float normalizedTime; // 0 - 1: 1 = start time, 0 = time out
-    void Start()
-    {
-
-    }
+    public bool isOnConveyorBelt = true;
+    public GameObject secondObject;
 
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = Vector3.Lerp(startPos, endPos, 1 - normalizedTime);
+        if (isOnConveyorBelt)
+        {
+            transform.localPosition = Vector3.Lerp(startPos, endPos, 1 - normalizedTime);
+        }
     }
 
-    public void Destroy()
+    public void DestroyFromGame()
     {
-
+        if (secondObject)
+        {
+            Destroy(secondObject);
+        }
+        Destroy(gameObject);
     }
 
     public void Chop()
@@ -39,6 +44,7 @@ public class ItemController : MonoBehaviour
         if (output != null && output.secondSideGameObject != null)
         {
             output.firstSideGameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0);
+            secondObject = output.secondSideGameObject;
             Rigidbody2D newRigidbody = output.secondSideGameObject.AddComponent<Rigidbody2D>();
             newRigidbody.bodyType = RigidbodyType2D.Kinematic;
             newRigidbody.velocity = -output.firstSideGameObject.GetComponent<Rigidbody2D>().velocity;
