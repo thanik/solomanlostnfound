@@ -18,6 +18,7 @@ MonoBehaviour:
     satisfactionValueRequirement: 50
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 2
+    timePerItem: 90
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 5
     satisfactionValueDecreaseAmountOnInterval: 1

@@ -17,6 +17,7 @@ public struct LevelDefinition
     public int satisfactionValueRequirement;
     public int[] scoreStars;
     public int numberOfPeople;
+    public int timePerItem;
     public int satisfactionValueIncreaseAmountOnGivingSuccess;
     public int satisfactionValueDecreaseAmountOnGivingFailure;
     public int satisfactionValueDecreaseAmountOnInterval;
