@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIController : Singleton<UIController>
+public class UIController : MonoBehaviour
 {
     public enum Satisfaction
     {
@@ -44,20 +44,10 @@ public class UIController : Singleton<UIController>
         satisfactionState = Satisfaction.NEUTRAL;
     }
 
-    private void OnEnable()
-    {
-        GameController.Instance.OnSatisfactionUpdated += UpdateSatisfaction;
-        GameController.Instance.OnDateUpdated += UpdateDate;
-    }
-
-    private void OnDestroy()
-    {
-        GameController.Instance.OnSatisfactionUpdated -= UpdateSatisfaction;
-        GameController.Instance.OnDateUpdated -= UpdateDate;
-    }
+   
 
     // Event to Update Satisfaction
-    void UpdateSatisfaction(int point)
+    public void UpdateSatisfaction(int point)
     {
         satisfactionScale += point;
 
@@ -98,7 +88,7 @@ public class UIController : Singleton<UIController>
     }
 
     // Function to update sprite
-    void UpdateSatisfactionSprite()
+    public void UpdateSatisfactionSprite()
     {
         switch (satisfactionState)
         {
@@ -128,7 +118,7 @@ public class UIController : Singleton<UIController>
         }
     }
 
-    void UpdateDate(string date)
+    public void UpdateDate(string date)
     {
         levelDateText.text = date;
     }
@@ -142,13 +132,15 @@ public class UIController : Singleton<UIController>
     }
 
     //TODO
-    void ShowSummary()
+    public void ShowSummary(bool state)
     {
+        if (state)
+            Debug.Log("Show Summary!");
         // event if level lost, change content of summary
     }
 
     //TODO
-    void ShowPauseMenu()
+    public void ShowPauseMenu()
     {
 
     }

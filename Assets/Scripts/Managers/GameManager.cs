@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class GameManager : Singleton<GameManager>
 {
 
@@ -30,4 +32,22 @@ public class GameManager : Singleton<GameManager>
         blackScreen.DOFade(0f, 1f);
         blackScreen.gameObject.SetActive(false);
     }
+    public LevelDatabase levelsDB;
+    private int levelIndex = 0;
+
+    public void LoadNextLevel()
+    {
+        if (levelIndex <= levelsDB.levels.Count)
+        {
+            SceneManager.LoadScene("Main");
+            levelIndex++;
+        }
+    }
+
+    public int GetLevelIndex()
+    {
+        return levelIndex;
+    }
+
+    // keep track of high score
 }

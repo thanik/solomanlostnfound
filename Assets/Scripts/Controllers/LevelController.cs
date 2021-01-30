@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public enum GameState { Paused, Playing }
 
-public class GameController : Singleton<GameController>
+public enum GameState { Paused, Playing, End }
+public class LevelController : MonoBehaviour
 {
     public LevelDatabase levelsDB;
     public ObjectDatabase objDB;
     public SpriteColorDatabase sprColorDB;
     public Generator generator;
+    public UIController uiController;
 
     public List<PersonController> PersonControllers = new List<PersonController>();
 
@@ -25,23 +26,43 @@ public class GameController : Singleton<GameController>
     public GameObject personPrefab;
     public Transform personSpawnPoint;
 
+
+
     // defines function and parameters if required
     public delegate void OnSatisfactionUpdateHandler(int point);
     public delegate void OnDateUpdateHandler(string date);
+    public delegate void OnShowSummaryHandler(bool state);
     // event to subsbribe to
     public event OnSatisfactionUpdateHandler OnSatisfactionUpdated;
     public event OnDateUpdateHandler OnDateUpdated;
-    
+    public event OnShowSummaryHandler OnShowSummary;
+
+    private void OnEnable()
+    {
+        OnSatisfactionUpdated += uiController.UpdateSatisfaction;
+        OnDateUpdated += uiController.UpdateDate;
+        OnShowSummary += uiController.ShowSummary;
+    }
+
+    private void OnDisable()
+    {
+        OnSatisfactionUpdated -= uiController.UpdateSatisfaction;
+        OnDateUpdated -= uiController.UpdateDate;
+        OnShowSummary -= uiController.ShowSummary;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         StartLevel();
     }
 
+
     // Update is called once per frame
     void Update()
     {
         UpdateLevelTime();
+        UpdateItemPosition();
         // do timer stuff.. decrease satisfaction every x seconds trickle effect kind of
         // update satisfaction by a point if item is returned +/-
         // point based on action so can invoke whenever needed  -- can also be called when collider goes over wrong or right person
@@ -62,6 +83,8 @@ public class GameController : Singleton<GameController>
 
     void StartLevel()
     {
+        // Set level index
+        levelIndex = GameManager.Instance.GetLevelIndex();
         // Set game state
         gState = GameState.Playing;
 
@@ -94,6 +117,9 @@ public class GameController : Singleton<GameController>
     //TO DO
     void ClearLevel()
     {
+        gState = GameState.Paused;
+
+
         // play state is false paused
         // call when time left is less than 0
         // level failed \ player does not meet threshold
@@ -113,12 +139,20 @@ public class GameController : Singleton<GameController>
                 Debug.Log("Time has run out!");
                 levelTime = 0;
                 isLevelTimerRunning = false;
-                StartCoroutine(LoadLevel(2f));
+                gState = GameState.End;
+                OnShowSummary?.Invoke(true);
+                //StartCoroutine(LoadLevel(2f));
             }
         }
-        UIController.Instance.UpdateLevelTime(levelTime);
+        uiController.UpdateLevelTime(levelTime);
     }
 
+    void UpdateItemPosition()
+    {
+        // itemtime
+    }
+
+    /*
     private IEnumerator LoadLevel(float loadDelay)
     {
         yield return new WaitForSeconds(loadDelay);
@@ -128,6 +162,7 @@ public class GameController : Singleton<GameController>
             StartLevel();
         }
     }
+    */
 
     public GameState GetGameState()
     {
