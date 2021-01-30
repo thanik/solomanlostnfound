@@ -107,7 +107,6 @@ public class Generator : MonoBehaviour
             "Well, ",
             "To be fair, ",
             "In my humble opinion, ",
-            " ",
             "Is it edible? I would say... ",
             "I know this! The answer is ",
             "Oh, I guess I can say ",
