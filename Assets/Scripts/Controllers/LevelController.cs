@@ -272,7 +272,7 @@ public class LevelController : MonoBehaviour
             // play solomon animation
             yield return new WaitForSeconds(2f);
             itemTime = GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
-            levelScore -= GameManager.Instance.levelsDB.destroyedScoreValue;
+            SetLevelScoreValue(GetLevelScoreValue() - GameManager.Instance.levelsDB.destroyedScoreValue);
             isDestroyingItem = false;
             item.DestroyFromGame();
         }
