@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2275a322e376cbf4d9bc974c026baa7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: {fileID: 0}
+  levels: {fileID: 11400000, guid: d3d781194972577488864960c349a9e5, type: 2}
 --- !u!4 &490826219
 Transform:
   m_ObjectHideFlags: 0
@@ -5118,6 +5118,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   satisfactionSprite: {fileID: 0}
+  levelDate: {fileID: 499410608}
 --- !u!1 &1662630205
 GameObject:
   m_ObjectHideFlags: 0

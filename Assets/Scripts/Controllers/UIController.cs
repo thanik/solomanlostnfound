@@ -22,6 +22,8 @@ public class UIController : Singleton<UIController>
     public Image[] satisfactionSprites = new Image[spriteArraySize];
     [SerializeField]
     private Image satisfactionSprite;
+    [SerializeField]
+    private TextMeshProUGUI levelDate;
     private Satisfaction satisfactionState;
     private int satisfactionScale = 0;
 
@@ -43,11 +45,13 @@ public class UIController : Singleton<UIController>
     private void OnEnable()
     {
         GameManager.Instance.OnSatisfactionUpdated += UpdateSatisfaction;
+        GameManager.Instance.OnDateUpdated += UpdateDate;
     }
 
     private void OnDisable()
     {
         GameManager.Instance.OnSatisfactionUpdated -= UpdateSatisfaction;
+        GameManager.Instance.OnDateUpdated -= UpdateDate;
     }
 
     // Event to Update Satisfaction
@@ -89,6 +93,11 @@ public class UIController : Singleton<UIController>
 
         // Update UI
         UpdateSatisfactionSprite();
+    }
+
+    void UpdateDate(string date)
+    {
+        levelDate.text = date;
     }
 
     // Function to update sprite
