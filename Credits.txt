@@ -9,3 +9,12 @@ https://www.iconfinder.com/icons/6586148/accept_check_good_mark_ok_tick_yes_icon
 
 Cancel icon
 https://www.iconfinder.com/icons/1891023/cancel_cercle_close_delete_dismiss_remove_icon
+
+Chopping sound
+https://freesound.org/people/14FPanskaSilovsky_Petr/sounds/419928/
+
+Correct sound
+https://freesound.org/people/unadamlar/sounds/476178/
+
+Wrong sound
+https://freesound.org/people/Jacco18/sounds/419023/

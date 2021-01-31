@@ -18,6 +18,9 @@ public class PersonController : MonoBehaviour
     public TMP_Text answerText;
     public LevelController levelController;
     public Button selectButton;
+
+    public AudioClip[] answerSound;
+    private AudioSource audioSrc;
     private Animator animator;
 
     //private bool selected = false;
@@ -43,6 +46,7 @@ public class PersonController : MonoBehaviour
         if (levelController.item)
         {
             animator.SetTrigger(personData.isLegitOwner ? "Correct" : "Wrong");
+            audioSrc.PlayOneShot(personData.isLegitOwner ? answerSound[0]: answerSound[1]);
             levelController.item.isOnConveyorBelt = false;
             Vector3 personPos = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().position);
             levelController.item.transform.DOJump(personPos, 2f, 1, 0.5f);
@@ -65,6 +69,7 @@ public class PersonController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     /*public void FadeIn()
