@@ -387,6 +387,8 @@ public class LevelController : MonoBehaviour
 
     public void Resume()
     {
+        // Turn off pause menu
+        uiController.ShowPauseMenu(gState);
         gState = GameState.Playing;
     }
 
