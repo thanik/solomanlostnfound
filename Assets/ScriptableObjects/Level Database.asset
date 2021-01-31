@@ -28,29 +28,29 @@ MonoBehaviour:
     levelName: Tuesday
     satisfactionValueRequirement: 50
     scoreStars: 2c010000f401000020030000
-    numberOfPeople: 2
+    numberOfPeople: 3
     timePerItem: 42
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
-    satisfactionValueDecreaseAmountOnGivingFailure: 5
-    satisfactionValueDecreaseAmountOnItemDestroyed: 5
+    satisfactionValueDecreaseAmountOnGivingFailure: 10
+    satisfactionValueDecreaseAmountOnItemDestroyed: 10
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
   - levelTimeSeconds: 180
     levelName: Wednesday
     satisfactionValueRequirement: 60
     scoreStars: 2c010000f401000020030000
-    numberOfPeople: 2
+    numberOfPeople: 4
     timePerItem: 40
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
-    satisfactionValueDecreaseAmountOnGivingFailure: 5
-    satisfactionValueDecreaseAmountOnItemDestroyed: 5
+    satisfactionValueDecreaseAmountOnGivingFailure: 10
+    satisfactionValueDecreaseAmountOnItemDestroyed: 10
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
   - levelTimeSeconds: 180
     levelName: Thursday
     satisfactionValueRequirement: 70
     scoreStars: 2c010000f401000020030000
-    numberOfPeople: 2
+    numberOfPeople: 4
     timePerItem: 35
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 5
@@ -64,8 +64,8 @@ MonoBehaviour:
     numberOfPeople: 2
     timePerItem: 30
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
-    satisfactionValueDecreaseAmountOnGivingFailure: 5
-    satisfactionValueDecreaseAmountOnItemDestroyed: 5
+    satisfactionValueDecreaseAmountOnGivingFailure: 15
+    satisfactionValueDecreaseAmountOnItemDestroyed: 15
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
   goodPersonScoreValue: 100
