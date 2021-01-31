@@ -16,6 +16,7 @@ public class LevelController : MonoBehaviour
     public Generator generator;
     public UIController uiController;
     public ItemController item;
+    public Animator solomonAnimator;
 
     public List<PersonController> PersonControllers = new List<PersonController>();
 
@@ -361,8 +362,10 @@ public class LevelController : MonoBehaviour
         else
         {
             // play solomon animation
+            solomonAnimator.SetTrigger("Chop");
+            yield return new WaitForSeconds(0.83f);
             item.Chop();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             itemTime = GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
             SetLevelScoreValue(GetLevelScoreValue() - GameManager.Instance.levelsDB.destroyedScoreValue);
             isDestroyingItem = false;
