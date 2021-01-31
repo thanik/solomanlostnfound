@@ -53,7 +53,7 @@ public class LevelController : MonoBehaviour
 
     private void OnEnable()
     {
-        OnSatisfactionUpdated += uiController.UpdateSatisfactionSprite;
+        OnSatisfactionUpdated += uiController.UpdateSatisfaction;
         OnDateUpdated += uiController.UpdateDate;
         OnScoreUpdated += uiController.UpdateScore;
         OnShowItemCreated += uiController.ShowItemData;
@@ -62,7 +62,7 @@ public class LevelController : MonoBehaviour
 
     private void OnDisable()
     {
-        OnSatisfactionUpdated -= uiController.UpdateSatisfactionSprite;
+        OnSatisfactionUpdated -= uiController.UpdateSatisfaction;
         OnDateUpdated -= uiController.UpdateDate;
         OnScoreUpdated -= uiController.UpdateScore;
         OnShowItemCreated -= uiController.ShowItemData;
