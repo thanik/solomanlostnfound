@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Animator = UnityEngine.Animator;
 
 
 public class GameManager : Singleton<GameManager>
@@ -12,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     public LevelDatabase levelsDB;
     private int levelIndex = 0;
     public Image blackScreen;
+    public TMP_Text levelTitleText;
+    public Animator animator;
 
     public void ReturnToTitle()
     {
@@ -43,6 +46,20 @@ public class GameManager : Singleton<GameManager>
     {
         blackScreen.DOFade(0f, 1f);
         blackScreen.gameObject.SetActive(false);
+    }
+
+    public void ShowText(string text)
+    {
+        levelTitleText.gameObject.SetActive(true);
+        levelTitleText.text = text;
+        animator.SetTrigger("ShowAndHideText");
+        StartCoroutine(ShowTextCoroutine());
+    }
+
+    IEnumerator ShowTextCoroutine()
+    {
+        yield return new WaitForSeconds(4f);
+        levelTitleText.gameObject.SetActive(false);
     }
    
     public void LoadNextLevel()
