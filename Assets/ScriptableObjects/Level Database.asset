@@ -31,8 +31,8 @@ MonoBehaviour:
     numberOfPeople: 3
     timePerItem: 42
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
-    satisfactionValueDecreaseAmountOnGivingFailure: 5
-    satisfactionValueDecreaseAmountOnItemDestroyed: 10
+    satisfactionValueDecreaseAmountOnGivingFailure: 10
+    satisfactionValueDecreaseAmountOnItemDestroyed: 5
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
   - levelTimeSeconds: 180
@@ -69,5 +69,5 @@ MonoBehaviour:
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
   goodPersonScoreValue: 100
-  badPersonScoreValue: 50
-  destroyedScoreValue: 75
+  badPersonScoreValue: 75
+  destroyedScoreValue: 50
