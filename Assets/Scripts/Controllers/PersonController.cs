@@ -20,7 +20,7 @@ public class PersonController : MonoBehaviour
     public Button selectButton;
     private Animator animator;
 
-    private bool selected = false;
+    //private bool selected = false;
     private bool answerShowed = false;
     public void ShowAnswer(ObjectProperty property)
     {
@@ -39,7 +39,7 @@ public class PersonController : MonoBehaviour
 
     public void Select()
     {
-        selected = true;
+        //selected = true;
         animator.SetTrigger(personData.isLegitOwner ? "Correct" : "Wrong");
         levelController.item.isOnConveyorBelt = false;
         Vector3 personPos = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().position);

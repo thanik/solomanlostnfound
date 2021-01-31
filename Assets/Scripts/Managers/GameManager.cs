@@ -21,14 +21,16 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
     public void NewGame()
     {
         // intro?
+        FadeToBlack();
+        StartCoroutine(TransitionToNewGame());
+    }
+
+    IEnumerator TransitionToNewGame()
+    {
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 
@@ -46,6 +48,12 @@ public class GameManager : Singleton<GameManager>
     public void FadeOut()
     {
         blackScreen.DOFade(0f, 1f);
+        StartCoroutine(FadeOutCoroutine());
+    }
+
+    IEnumerator FadeOutCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
         blackScreen.gameObject.SetActive(false);
     }
 

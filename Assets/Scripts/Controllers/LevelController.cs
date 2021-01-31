@@ -71,9 +71,17 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartLevel();
+        GameManager.Instance.ShowText(GameManager.Instance.levelsDB.levels[GameManager.Instance.GetLevelIndex()].levelName);
+        StartCoroutine(TransitionToLevel());
     }
 
+    IEnumerator TransitionToLevel()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.Instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
+        StartLevel();
+    }
 
     // Update is called once per frame
     void Update()

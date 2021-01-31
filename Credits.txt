@@ -1,3 +1,12 @@
 Credits file for third party sites
 -- -- 
 https://twemoji.twitter.com/
+
+Parcel icon
+https://www.iconfinder.com/icons/4072096/box_delivery_package_parcel_shipping_icon
+
+Tickmark icon
+https://www.iconfinder.com/icons/6586148/accept_check_good_mark_ok_tick_yes_icon
+
+Cancel icon
+https://www.iconfinder.com/icons/1891023/cancel_cercle_close_delete_dismiss_remove_icon

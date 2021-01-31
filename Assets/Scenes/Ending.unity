@@ -221,10 +221,10 @@ RectTransform:
   m_Father: {fileID: 2001199120}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1800, y: 50}
+  m_SizeDelta: {x: 0, y: 1500}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1171503531
 MonoBehaviour:
@@ -267,10 +267,10 @@ MonoBehaviour:
     <size=50><b>2D
     Artist</b></size>
 
-    Ridam Rahman'
+    Hannah Osso'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e258dd63fead9934eb731778f4f72e3c, type: 2}
-  m_sharedMaterial: {fileID: 8226447318588913632, guid: e258dd63fead9934eb731778f4f72e3c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3cb05bb4573fde748926d0f3add4ccaf, type: 2}
+  m_sharedMaterial: {fileID: -4499169100620134944, guid: 3cb05bb4573fde748926d0f3add4ccaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
