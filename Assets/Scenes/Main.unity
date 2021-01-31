@@ -2272,6 +2272,7 @@ MonoBehaviour:
   uiController: {fileID: 1634836994}
   item: {fileID: 0}
   solomonAnimator: {fileID: 1377255159}
+  solomonSound: {fileID: 1377255160}
   PersonControllers: []
   itemPrefab: {fileID: 3680084719392490689, guid: f5db7dd37562a3446a6ea434aa9cd9e0, type: 3}
   itemTime: 30
@@ -5735,6 +5736,11 @@ PrefabInstance:
 --- !u!95 &1377255159 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4862598329001898742, guid: b59f834d2efb268408ec6dce15e3b009, type: 3}
+  m_PrefabInstance: {fileID: 1377255158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1377255160 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6688519121854253614, guid: b59f834d2efb268408ec6dce15e3b009, type: 3}
   m_PrefabInstance: {fileID: 1377255158}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1460745155

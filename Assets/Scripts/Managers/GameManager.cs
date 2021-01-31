@@ -18,21 +18,25 @@ public class GameManager : Singleton<GameManager>
 
     public void ReturnToTitle()
     {
-        SceneManager.LoadScene("MainMenu");
+        TransitionToOtherScene("MainMenu");
     }
 
     public void NewGame()
     {
-        // intro?
         levelIndex = 0;
-        StartCoroutine(TransitionToIntro());
+        TransitionToOtherScene("Intro");
     }
 
-    IEnumerator TransitionToIntro()
+    public void TransitionToOtherScene(string sceneName)
+    {
+        StartCoroutine(TransitionToOtherSceneCoroutine(sceneName));
+    }
+
+    public IEnumerator TransitionToOtherSceneCoroutine(string sceneName)
     {
         FadeToBlack();
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene(sceneName);
         yield return new WaitForSeconds(1f);
         FadeOut();
     }
@@ -97,15 +101,8 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            FadeToBlack();
-            StartCoroutine(TransitionToEnding());
+            TransitionToOtherScene("Ending");
         }
-    }
-    IEnumerator TransitionToEnding()
-    {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Ending", LoadSceneMode.Single);
-        FadeOut();
     }
 
     public int GetLevelIndex()

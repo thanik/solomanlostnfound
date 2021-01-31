@@ -16,6 +16,6 @@ public class MainMenuController : MonoBehaviour
 
     public void Tutorial()
     {
-
+        GameManager.Instance.TransitionToOtherScene("Tutorial");
     }
 }

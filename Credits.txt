@@ -1,6 +1,5 @@
 Credits file for third party sites
 -- -- 
-https://twemoji.twitter.com/
 
 Parcel icon
 https://www.iconfinder.com/icons/4072096/box_delivery_package_parcel_shipping_icon
