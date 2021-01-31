@@ -270,6 +270,7 @@ public class LevelController : MonoBehaviour
         else
         {
             // play solomon animation
+            item.Chop();
             yield return new WaitForSeconds(2f);
             itemTime = GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
             SetLevelScoreValue(GetLevelScoreValue() - GameManager.Instance.levelsDB.destroyedScoreValue);
