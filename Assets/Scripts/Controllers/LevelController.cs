@@ -99,20 +99,12 @@ public class LevelController : MonoBehaviour
             UpdateItemTimeAndPosition();
         }
         CheckInput();
-        // do timer stuff.. decrease satisfaction every x seconds trickle effect kind of
-        // update satisfaction by a point if item is returned +/-
-        // point based on action so can invoke whenever needed  -- can also be called when collider goes over wrong or right person
-        if (Input.GetKeyDown(KeyCode.W))
-            OnSatisfactionUpdated?.Invoke((Satisfaction)1);
-        if (Input.GetKeyDown(KeyCode.S))
-            OnSatisfactionUpdated?.Invoke((Satisfaction)(-1));
     }
 
     public void QuestionClicked(int qIndex)
     {
         if (!isGivingItem || !isDestroyingItem)
         {
-            Debug.Log("Question " + ((ObjectProperty) qIndex).ToString() + " clicked!");
             foreach (var personController in PersonControllers)
             {
                 personController.ShowAnswer((ObjectProperty) qIndex);
