@@ -55,27 +55,6 @@ public class UIController : MonoBehaviour
     public void UpdateSatisfactionSprite(Satisfaction sState)
     {
         satisfactionImage.sprite = satisfactionSprites[(int) sState];
-        /*switch (satisfactionState)
-        {
-            case Satisfaction.EXTREMELYDISAPPOINTED:
-                Debug.Log("Extremely Disappointed");
-                break;
-            case Satisfaction.VERYDISAPPOINTED:
-                Debug.Log("Very Disappointed");
-                break;
-            case Satisfaction.NEUTRAL:
-                Debug.Log("Neutral");
-                break;
-            case Satisfaction.VERYSATISFIED:
-                Debug.Log("Very Satisfied");
-                break;
-            case Satisfaction.EXTREMELYSATISFIED:
-                Debug.Log("Extremely Satisfied");
-                break;
-            default:
-                break;
-        }*/
-
     }
 
     public void UpdateDate(string date)
