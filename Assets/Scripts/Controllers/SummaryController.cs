@@ -28,5 +28,4 @@ public class SummaryController : MonoBehaviour
     {
         GameManager.Instance.ReturnToTitle();
     }
-
 }

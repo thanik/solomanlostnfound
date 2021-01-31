@@ -398,6 +398,11 @@ public class LevelController : MonoBehaviour
         GameManager.Instance.LoadNextLevel();
     }
 
+    public void Resume()
+    {
+        gState = GameState.Playing;
+    }
+
     public GameState GetGameState()
     {
         return gState;
