@@ -59,7 +59,7 @@ MonoBehaviour:
     satisfactionValueDecreaseInterval: 30
   - levelTimeSeconds: 180
     levelName: Friday
-    satisfactionValueRequirement: 80
+    satisfactionValueRequirement: 65
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 4
     timePerItem: 30
