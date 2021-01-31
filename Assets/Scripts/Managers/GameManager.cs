@@ -18,7 +18,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ReturnToTitle()
     {
-        SceneManager.LoadScene("MainMenu");
+        TransitionToOtherScene("MainMenu");
     }
 
     public void NewGame()
@@ -101,15 +101,8 @@ public class GameManager : Singleton<GameManager>
         }
         else
         {
-            FadeToBlack();
-            StartCoroutine(TransitionToEnding());
+            TransitionToOtherScene("Ending");
         }
-    }
-    IEnumerator TransitionToEnding()
-    {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Ending", LoadSceneMode.Single);
-        FadeOut();
     }
 
     public int GetLevelIndex()
