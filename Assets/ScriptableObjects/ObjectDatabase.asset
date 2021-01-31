@@ -46,7 +46,7 @@ MonoBehaviour:
         - 2
       - type: 1
         values:
-        - New York
+        - the USA
         - Mexico
     redColorReplace: '#ffe073ff'
     greenColorReplace: MAPPING
@@ -161,9 +161,9 @@ MonoBehaviour:
         - 10
       - type: 1
         values:
-        - Tokyo
-    redColorReplace: 
-    greenColorReplace: 
+        - Japan
+    redColorReplace: '#9f25cfff'
+    greenColorReplace: '#6dd400ff'
     blueColorReplace: MAPPING
   - spriteImage: {fileID: 21300000, guid: 65348b3eda83d8b4f9d89522035c4daa, type: 3}
     name: Video game
@@ -204,8 +204,8 @@ MonoBehaviour:
         - USA
         - Japan
     redColorReplace: MAPPING
-    greenColorReplace: 
-    blueColorReplace: 
+    greenColorReplace: '#ffcb3dff'
+    blueColorReplace: '#b2b2b2ff'
   - spriteImage: {fileID: 21300000, guid: a40869395dd673d4ca2a9b4c08aa9da7, type: 3}
     name: Smartphone
     properties:
@@ -245,8 +245,8 @@ MonoBehaviour:
         - the USA
         - Korea
         - China
-    redColorReplace: 
-    greenColorReplace: 
+    redColorReplace: '#b2b2b2ff'
+    greenColorReplace: '#ffffffff'
     blueColorReplace: MAPPING
   - spriteImage: {fileID: 21300000, guid: c09bfd8699778224d884c8d1b6d9ac93, type: 3}
     name: TV
@@ -283,8 +283,8 @@ MonoBehaviour:
         - the USA
         - the UK
         - Japan
-    redColorReplace: 
-    greenColorReplace: 
+    redColorReplace: '#ffffffff'
+    greenColorReplace: '#ff0400ff'
     blueColorReplace: MAPPING
   - spriteImage: {fileID: 21300000, guid: 5a72c6d21a3ba1a4ca05c560338a2837, type: 3}
     name: Snake
@@ -321,9 +321,9 @@ MonoBehaviour:
         values:
         - India
         - the USA
-    redColorReplace: 
+    redColorReplace: '#7abf71ff'
     greenColorReplace: MAPPING
-    blueColorReplace: 
+    blueColorReplace: '#edc600ff'
   - spriteImage: {fileID: 21300000, guid: 637c0e97b56d8694b96017c51c37b0b8, type: 3}
     name: Hat
     properties:
@@ -361,8 +361,8 @@ MonoBehaviour:
         - France
         - Spain
     redColorReplace: MAPPING
-    greenColorReplace: 
-    blueColorReplace: 
+    greenColorReplace: '#ffffffff'
+    blueColorReplace: '#b4b4b4ff'
   - spriteImage: {fileID: 21300000, guid: 37e57169c5e5584428d25098811b6a38, type: 3}
     name: Shirt
     properties:
@@ -479,7 +479,7 @@ MonoBehaviour:
         - Mesopotamia
     redColorReplace: MAPPING
     greenColorReplace: MAPPING
-    blueColorReplace: 
+    blueColorReplace: '#db3241ff'
   - spriteImage: {fileID: 21300000, guid: d35410c8861fc8844b9ed02a533a389e, type: 3}
     name: Pyramid
     properties:
@@ -515,7 +515,7 @@ MonoBehaviour:
         - Egypt
     redColorReplace: MAPPING
     greenColorReplace: MAPPING
-    blueColorReplace: 
+    blueColorReplace: '#ffc34aff'
   - spriteImage: {fileID: 21300000, guid: 83fe7dc9757003742b3a3d585bfbf37e, type: 3}
     name: Ball
     properties:
@@ -553,9 +553,8 @@ MonoBehaviour:
         values:
         - the UK
         - China
-        - Nigeria
     redColorReplace: MAPPING
-    greenColorReplace: 
+    greenColorReplace: '#fff9e0ff'
     blueColorReplace: MAPPING
   - spriteImage: {fileID: 21300000, guid: 7766e9cfa7771a54f9fe4f6960b2051d, type: 3}
     name: Pencil
@@ -596,9 +595,9 @@ MonoBehaviour:
         - Italy
         - China
     redColorReplace: MAPPING
-    greenColorReplace: 
-    blueColorReplace: 
-  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
+    greenColorReplace: '#ffcf82ff'
+    blueColorReplace: '#c4c4c4ff'
+  - spriteImage: {fileID: 21300000, guid: d58fd1d38f7c2a448bc3f702698ad281, type: 3}
     name: Cat
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -637,10 +636,10 @@ MonoBehaviour:
         - Germany
         - France
         - Spain
-    redColorReplace: '#ffe073ff'
-    greenColorReplace: MAPPING
+    redColorReplace: MAPPING
+    greenColorReplace: '#ffffffff'
     blueColorReplace: MAPPING
-  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
+  - spriteImage: {fileID: 21300000, guid: ad088d773c0554e4aaea14f758c4fe1c, type: 3}
     name: Dog
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -680,8 +679,8 @@ MonoBehaviour:
         - Spain
         - the USA
         - Japan
-    redColorReplace: '#ffe073ff'
-    greenColorReplace: MAPPING
+    redColorReplace: '#c4482fff'
+    greenColorReplace: '#fffedbff'
     blueColorReplace: MAPPING
   - spriteImage: {fileID: 21300000, guid: b20251832b3854c41a06e6e077644278, type: 3}
     name: Elephant
@@ -718,7 +717,7 @@ MonoBehaviour:
         - Africa
         - India
         - Thailand
-    redColorReplace: 
+    redColorReplace: '#fffec9ff'
     greenColorReplace: MAPPING
     blueColorReplace: MAPPING
   - spriteImage: {fileID: 21300000, guid: fe5bf3f421b35cf4d9eb748417afbb69, type: 3}
@@ -758,8 +757,8 @@ MonoBehaviour:
         - Japan
         - Korea
     redColorReplace: MAPPING
-    greenColorReplace: 
-    blueColorReplace: 
+    greenColorReplace: '#8cf7ffff'
+    blueColorReplace: '#b5b5b5ff'
   - spriteImage: {fileID: 21300000, guid: 334a55d1f9285254699ddd9841aaca56, type: 3}
     name: Bottle
     properties:
@@ -793,8 +792,8 @@ MonoBehaviour:
       - type: 1
         values:
         - the Caraibes
-        - Hawaii
-    redColorReplace: 
+        - the USA
+    redColorReplace: '#ff7e47ff'
     greenColorReplace: MAPPING
     blueColorReplace: MAPPING
   - spriteImage: {fileID: 21300000, guid: 7cd81b1ac06e40543940a056b98ef1e4, type: 3}
@@ -832,8 +831,8 @@ MonoBehaviour:
         values:
         - N/A
     redColorReplace: MAPPING
-    greenColorReplace: 
-    blueColorReplace: 
+    greenColorReplace: '#fcffcfff'
+    blueColorReplace: '#f9ffabff'
   - spriteImage: {fileID: 21300000, guid: 006a34c78f06aaa4bb57f2f01d376211, type: 3}
     name: Mushroom
     properties:
@@ -870,9 +869,9 @@ MonoBehaviour:
         values:
         - N/A
     redColorReplace: MAPPING
-    greenColorReplace: 
+    greenColorReplace: '#f9ffabff'
     blueColorReplace: MAPPING
-  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
+  - spriteImage: {fileID: 21300000, guid: baa3603ebf81b5d4cb6baf12469b576a, type: 3}
     name: Suitcase
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -913,11 +912,11 @@ MonoBehaviour:
         - France
         - Greece
         - Italy
-    redColorReplace: '#ffe073ff'
-    greenColorReplace: MAPPING
-    blueColorReplace: MAPPING
+    redColorReplace: MAPPING
+    greenColorReplace: '#00494aff'
+    blueColorReplace: '#474747ff'
   - spriteImage: {fileID: 21300000, guid: e822e0092d20f324c8e66c2020745c03, type: 3}
-    name: Dumb rock
+    name: Dumb Rock
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
       values:
@@ -988,7 +987,7 @@ MonoBehaviour:
         - India
     redColorReplace: '#ff0000ff'
     greenColorReplace: MAPPING
-    blueColorReplace: 
+    blueColorReplace: '#bababaff'
   - spriteImage: {fileID: 21300000, guid: c4e1f3d110a25cb418604d7961041dae, type: 3}
     name: Wallet
     properties:
@@ -1025,9 +1024,9 @@ MonoBehaviour:
         - the UK
         - China
     redColorReplace: MAPPING
-    greenColorReplace: 
-    blueColorReplace: 
-  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
+    greenColorReplace: '#006907ff'
+    blueColorReplace: '#696969ff'
+  - spriteImage: {fileID: 21300000, guid: 84e7ad1def168b54ca139b4c739d2b46, type: 3}
     name: Panda
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1061,10 +1060,10 @@ MonoBehaviour:
       - type: 1
         values:
         - China
-    redColorReplace: '#ffe073ff'
-    greenColorReplace: MAPPING
+    redColorReplace: MAPPING
+    greenColorReplace: '#ffffffff'
     blueColorReplace: MAPPING
-  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
+  - spriteImage: {fileID: 21300000, guid: 9fcf6a3613b295b438c570591132c5e5, type: 3}
     name: Crocodile
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1096,11 +1095,11 @@ MonoBehaviour:
         - 20
       - type: 1
         values:
-        - Florida
-    redColorReplace: '#ffe073ff'
+        - the USA
+    redColorReplace: '#630700ff'
     greenColorReplace: MAPPING
-    blueColorReplace: MAPPING
-  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
+    blueColorReplace: '#ff9e96ff'
+  - spriteImage: {fileID: 21300000, guid: 3bdf7f28ef113264da8c5845432c5eba, type: 3}
     name: Stegosaurus
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1135,10 +1134,10 @@ MonoBehaviour:
       - type: 1
         values:
         - Earth
-    redColorReplace: '#ffe073ff'
+    redColorReplace: '#084f1bff'
     greenColorReplace: MAPPING
-    blueColorReplace: MAPPING
-  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
+    blueColorReplace: '#102114ff'
+  - spriteImage: {fileID: 21300000, guid: 703612afa4c4cf34c8ebaadacdb10acd, type: 3}
     name: Moon
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1171,7 +1170,7 @@ MonoBehaviour:
       - type: 1
         values:
         - the Solar System
-    redColorReplace: '#ffe073ff'
+    redColorReplace: MAPPING
     greenColorReplace: MAPPING
     blueColorReplace: MAPPING
   propertiesValues:
@@ -1221,17 +1220,15 @@ MonoBehaviour:
       values: []
     - type: 1
       values:
-      - New York
+      - the USA
       - Mexico
       - Switzerland
       - Germany
       - Africa
       - the Good Place
-      - Tokyo
+      - Japan
       - the UK
       - USA
-      - Japan
-      - the USA
       - Korea
       - China
       - India
@@ -1240,12 +1237,9 @@ MonoBehaviour:
       - Spain
       - Mesopotamia
       - Egypt
-      - Nigeria
       - Greece
       - Thailand
       - the Caraibes
-      - Hawaii
       - Kazakhstan
-      - Florida
       - Earth
       - the Solar System
