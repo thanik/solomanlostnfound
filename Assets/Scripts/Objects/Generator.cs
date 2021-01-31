@@ -15,7 +15,7 @@ public class Generator : MonoBehaviour
         {
             "It's definitely... something I fail to recollect.",
             "I think it's... something I don't remember.",
-            "I'm quite sure it's an information that could help! If I knew it.",
+            "I'm quite sure it's a detail that could help...",
             "I'm keen to say I don't know it.",
             "I don't remember that detail.",
             "Mmm... It's hard to remember that.",
