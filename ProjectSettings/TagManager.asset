@@ -41,18 +41,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BaseFace
-    uniqueID: 1674329957
-    locked: 0
-  - name: Eyes
-    uniqueID: 4182753521
-    locked: 0
-  - name: Nose
-    uniqueID: 1788546935
-    locked: 0
-  - name: Mouth
-    uniqueID: 2681422353
-    locked: 0
-  - name: Outfit
-    uniqueID: 506081439
-    locked: 0
