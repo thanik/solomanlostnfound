@@ -11,7 +11,7 @@ public class IntroController : MonoBehaviour
     public Image[] slides;
     public GameObject[] texts;
     private int currentSlide = 0;
-
+    private AudioSource bgm;
     public void NextSlide()
     {
         slides[currentSlide].DOFade(0f, 1f);
@@ -25,15 +25,16 @@ public class IntroController : MonoBehaviour
         }
         else
         {
+            bgm.DOFade(0f, 0.25f);
             GameManager.Instance.StartTransitionToLevel();
         }
     }
-    // void Start()
-    // {
-    //     
-    // }
-    //
-    // Update is called once per frame
+    void Start()
+    {
+        bgm = GetComponent<AudioSource>();
+        bgm.DOFade(1f, 1f);
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.anyKeyDown)
