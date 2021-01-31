@@ -39,8 +39,8 @@ MonoBehaviour:
     levelName: Wednesday
     satisfactionValueRequirement: 60
     scoreStars: 2c010000f401000020030000
-    numberOfPeople: 4
-    timePerItem: 45
+    numberOfPeople: 3
+    timePerItem: 40
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 10
     satisfactionValueDecreaseAmountOnItemDestroyed: 10
@@ -51,7 +51,7 @@ MonoBehaviour:
     satisfactionValueRequirement: 70
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 4
-    timePerItem: 40
+    timePerItem: 50
     satisfactionValueIncreaseAmountOnGivingSuccess: 20
     satisfactionValueDecreaseAmountOnGivingFailure: 20
     satisfactionValueDecreaseAmountOnItemDestroyed: 20
@@ -62,7 +62,7 @@ MonoBehaviour:
     satisfactionValueRequirement: 80
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 4
-    timePerItem: 35
+    timePerItem: 45
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 20
     satisfactionValueDecreaseAmountOnItemDestroyed: 20
