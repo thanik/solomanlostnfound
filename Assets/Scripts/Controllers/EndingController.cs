@@ -33,7 +33,7 @@ public class EndingController : MonoBehaviour
                 Sequence newSequence = DOTween.Sequence();
                 newSequence.Append(EmployeeOfTheWeekImage.DOFade(0f, 1f));
                 newSequence.Append(creditText.DOAnchorPosY(750f, 15f).SetEase(Ease.Linear));
-                newSequence.Append(bgm.DOFade(0f, 0.25f));
+                newSequence.Append(bgm.DOFade(0f, 1f));
                 newSequence.AppendCallback(GameManager.Instance.ReturnToTitle);
             }
             step++;
