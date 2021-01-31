@@ -15,8 +15,8 @@ public class Generator : MonoBehaviour
         {
             "It's definitely... something I fail to recollect.",
             "I think it's... something I don't remember.",
-            "I'm quite sure it's an information that could help! If I knew it.",
-            "I'm keen to say I don't know it.",
+            "I'm quite sure it's a detail that could help! I cannot remember.",
+            "I'm afraid I don't know it.",
             "I don't remember that detail.",
             "Mmm... It's hard to remember that.",
             "Argh! I know this! It's... Ehm... It's on the tip of my tongue...",
@@ -24,12 +24,12 @@ public class Generator : MonoBehaviour
             "Good question. I’ll find out.",
             "I don’t have the data at hand, but I’ll get it to you later today.",
             "I’m not sure I’m the best person to answer that.",
-            "That’s exactly what I'm seeking to answer.",
             "I don’t have the foggiest idea.",
             "I haven’t a clue.",
             "Who knows?",
             "Don’t ask me.",
-            "Your guess is as good as mine."
+            "Your guess is as good as mine.",
+            "I'm not sure."
         };
 
     List<string> notAvailable = new List<string>()
@@ -39,15 +39,15 @@ public class Generator : MonoBehaviour
             "I believe it's impossible to answer that.",
             "What a pointless question.",
             "This question is futile.",
-            "Do you think this is hilarious?",
+            "Do you think this is funny?",
             "Funny question, but I forgot to laugh.",
             "What kind of question is that? And why are you wielding an axe?",
             "You should be a stand up comedian, asking stuff like that...",
             "Are you for real?",
             "Are you kidding me?",
-            "Are you joking me?",
+            "Are you joking?",
             "This must be a joke.",
-            "I see you like being funny. Do you have a license for that?",
+            "Trying to be funny I see. Do you have a license for that?",
             "Amusing question. Anything else?",
             "kek",
             "lol",
@@ -62,13 +62,13 @@ public class Generator : MonoBehaviour
             "It's definitely ",
             "I think it's ",
             "I'm quite sure it's ",
-            "I'm keen to say it was ",
+            "I'm certain it was ",
             "I remember it looked ",
             "Mmm... It's ",
             "Well... It's ",
             "Oh... It's ",
             "I know this! It's ",
-            "I can assess it is ",
+            "I can ascertain that it is ",
             "Well, I recall it's "
         };
 
@@ -77,14 +77,14 @@ public class Generator : MonoBehaviour
             "It's definitely a ",
             "I think it's a ",
             "I'm quite sure it's a ",
-            "I'm keen to say it is a ",
+            "I'm certain it is a ",
             "I remember it looked like a ",
             "Mmm... It's a ",
             "Well... It's a ",
             "Oh... It's a ",
             "I reckon it's a ",
             "I know this! It's a ",
-            "I can assess it is a ",
+            "I can confirm it is a ",
             "Well, I recall it's a "
         };
 
@@ -120,10 +120,10 @@ public class Generator : MonoBehaviour
             "I believe it was made in ",
             "I think it's from ",
             "I believe it originates in ",
-            "Where is from? ",
+            "Definitely from ",
             "I know this! The answer is ",
             "Oh, I recall it is from ",
-            "I'm not totally sure, but I'm going to say "
+            "I'm not totally sure, but most probably it's from "
         };
 
     public void InitializeObject(int numPeople)

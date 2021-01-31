@@ -110,7 +110,5 @@ public class GameManager : Singleton<GameManager>
         return levelIndex;
     }
 
-    
-
     // keep track of high score
 }
