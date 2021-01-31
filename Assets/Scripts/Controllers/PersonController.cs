@@ -17,9 +17,10 @@ public class PersonController : MonoBehaviour
     public GameObject bubble;
     public TMP_Text answerText;
     public LevelController levelController;
+    public Button selectButton;
+    private Animator animator;
 
-    private bool clicked = false;
-
+    private bool selected = false;
     private bool answerShowed = false;
     public void ShowAnswer(ObjectProperty property)
     {
@@ -39,16 +40,32 @@ public class PersonController : MonoBehaviour
 
     public void Select()
     {
-        clicked = true;
+        selected = true;
+        animator.SetTrigger(personData.isLegitOwner ? "Correct" : "Wrong");
+        levelController.item.isOnConveyorBelt = false;
+        Vector3 personPos = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().position);
+        levelController.item.transform.DOJump(personPos, 2f, 1, 0.5f);
         levelController.SelectPerson(personData.isLegitOwner);
     }
 
-    public void Destroy()
+    public void DestroyFromGame()
     {
-        
+        animator.SetTrigger("FadeOut");
+        StartCoroutine(DelayDestroy(1f));
     }
 
-    public void FadeIn()
+    IEnumerator DelayDestroy(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        Destroy(this.gameObject);
+    }
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    /*public void FadeIn()
     {
         headBaseRenderer.DOFade(1f, 1f);
         eyesRenderer.DOFade(1f, 1f);
@@ -64,5 +81,5 @@ public class PersonController : MonoBehaviour
         noseRenderer.DOFade(0f, 1f);
         mouthRenderer.DOFade(0f, 1f);
         outfitRenderer.DOFade(0f, 1f);
-    }
+    }*/
 }
