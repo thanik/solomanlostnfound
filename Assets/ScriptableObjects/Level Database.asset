@@ -51,7 +51,7 @@ MonoBehaviour:
     satisfactionValueRequirement: 70
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 4
-    timePerItem: 50
+    timePerItem: 40
     satisfactionValueIncreaseAmountOnGivingSuccess: 20
     satisfactionValueDecreaseAmountOnGivingFailure: 20
     satisfactionValueDecreaseAmountOnItemDestroyed: 20
@@ -62,7 +62,7 @@ MonoBehaviour:
     satisfactionValueRequirement: 80
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 4
-    timePerItem: 45
+    timePerItem: 30
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 20
     satisfactionValueDecreaseAmountOnItemDestroyed: 20
