@@ -17,15 +17,18 @@ public class SummaryController : MonoBehaviour
     public void LoadNextLevel()
     {
         GameManager.Instance.LoadNextLevel();
+        gameObject.SetActive(false);
     }
 
     public void Retry()
     {
         GameManager.Instance.Retry();
+        gameObject.SetActive(false);
     }
 
     public void ReturnToTitleScreen()
     {
         GameManager.Instance.ReturnToTitle();
+        gameObject.SetActive(false);
     }
 }
