@@ -235,7 +235,6 @@ public class LevelController : MonoBehaviour
         return levelScore;
     }
 
-
     public void SetSatisfactionValue(int value)
     {
         satisfactionValue = value;

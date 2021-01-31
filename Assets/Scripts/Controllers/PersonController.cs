@@ -35,7 +35,6 @@ public class PersonController : MonoBehaviour
         }
         mySequence.Append(bubble.transform.DOPunchScale(Vector3.one * 0.25f, 0.25f, 2));
         answerText.text = personData.answers[property];
-
     }
 
     public void Select()
