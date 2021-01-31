@@ -18,7 +18,7 @@ public class ItemController : MonoBehaviour
     {
         if (isOnConveyorBelt)
         {
-            transform.localPosition = Vector3.Lerp(startPos, endPos, 1 - normalizedTime);
+            transform.position = Vector3.Lerp(startPos, endPos, 1 - normalizedTime);
         }
     }
 
@@ -37,8 +37,8 @@ public class ItemController : MonoBehaviour
         // cut the item
         SpriteCutterOutput output = SpriteCutter.Cut(new SpriteCutterInput()
         {
-            lineStart = new Vector2(6f, 3.08f),
-            lineEnd = new Vector2(8f, 3.08f),
+            lineStart = new Vector2(transform.position.x + 1, transform.position.y + 1),
+            lineEnd = new Vector2(transform.position.x - 1, transform.position.y - 1),
             gameObject = gameObject,
             gameObjectCreationMode = SpriteCutterInput.GameObjectCreationMode.CUT_OFF_ONE,
         });

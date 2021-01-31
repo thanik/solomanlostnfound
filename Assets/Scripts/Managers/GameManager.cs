@@ -28,7 +28,8 @@ public class GameManager : Singleton<GameManager>
 
     public void NewGame()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        // intro?
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 
     public void Retry()
