@@ -31,12 +31,16 @@ public class UIController : MonoBehaviour
     public SummaryController summaryController;
     public ComputerScreenController computerScreenController;
     public Canvas pauseCanvas;
+    public GameObject questionPanel;
+    [SerializeField]
+    private Lean.Gui.LeanButton[] questionButtons;
     public Image[] starSprites;
     public Sprite[] solomonSprites;
     public string[] titleStatements = new string[titleArraySize];
     public string[] EODStatements = new string[satisfactionArraySize];
 
     private string eodStatement;
+    private bool isButtonRaycast = true;
 
     private void OnValidate()
     {
@@ -58,10 +62,9 @@ public class UIController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        //satisfactionState = Satisfaction.NEUTRAL;
-        //satisfactionSprite = satisfactionSprites[(satisfactionSprites.Length - 1) / 2];
+        questionButtons = questionPanel.GetComponentsInChildren<Lean.Gui.LeanButton>();
     }
 
     // Event to Update Satisfaction
@@ -96,6 +99,14 @@ public class UIController : MonoBehaviour
         computerScreenController.UpdateText(lostObject);
     }
 
+    public void EnableQuestions()
+    {
+        isButtonRaycast = !isButtonRaycast;
+        foreach(Lean.Gui.LeanButton b in questionButtons)
+        {
+            b.interactable = isButtonRaycast;
+        }
+    }
 
     public void ShowSummary(int[] scoreStars, int levelScore, int returnedItems, int lostItems, bool winState)
     {
@@ -126,20 +137,15 @@ public class UIController : MonoBehaviour
         summaryController.gameObject.SetActive(true);
     }
 
-    //TODO
     public void ShowPauseMenu(GameState state)
     {
         switch (state)
         {
             case GameState.Playing:
-                Debug.Log("Game Paused");
                 pauseCanvas.gameObject.SetActive(true);
-                // toggle UI Pause
                 break;
             case GameState.Paused:
-                Debug.Log("Playing!");
                 pauseCanvas.gameObject.SetActive(false);
-                // toggle false
                 break;
             default:
                 break;

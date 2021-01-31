@@ -43,12 +43,14 @@ public class LevelController : MonoBehaviour
     public delegate void OnPauseCallHandler(GameState state);
     public delegate void OnScoreUpdatedHandler(int score);
     public delegate void OnShowItemCreateHandler(LostObject lostObject);
+    public delegate void OnQuestionStateChangeHandler();
     // event to subsbribe to
     public event OnSatisfactionUpdateHandler OnSatisfactionUpdated;
     public event OnDateUpdateHandler OnDateUpdated;
     public event OnPauseCallHandler OnPauseCalled;
     public event OnScoreUpdatedHandler OnScoreUpdated;
     public event OnShowItemCreateHandler OnShowItemCreated;
+    public event OnQuestionStateChangeHandler OnQuestionStateChanged;
 
 
     private void OnEnable()
@@ -58,6 +60,7 @@ public class LevelController : MonoBehaviour
         OnScoreUpdated += uiController.UpdateScore;
         OnShowItemCreated += uiController.ShowItemData;
         OnPauseCalled += uiController.ShowPauseMenu;
+        OnQuestionStateChanged += uiController.EnableQuestions;
     }
 
     private void OnDisable()
@@ -67,6 +70,7 @@ public class LevelController : MonoBehaviour
         OnScoreUpdated -= uiController.UpdateScore;
         OnShowItemCreated -= uiController.ShowItemData;
         OnPauseCalled -= uiController.ShowPauseMenu;
+        OnQuestionStateChanged -= uiController.EnableQuestions;
     }
 
     // Start is called before the first frame update
@@ -348,6 +352,8 @@ public class LevelController : MonoBehaviour
 
     private IEnumerator ClearItem(ClearEvent ce)
     {
+        // TO DO Disable Question Buttons
+        OnQuestionStateChanged?.Invoke();
         if (ce == ClearEvent.Giving)
         {
             //prevent clicking on the person again when it is clicked
@@ -376,12 +382,13 @@ public class LevelController : MonoBehaviour
         {
             p.DestroyFromGame();
         }
-        // TO DO Disable Question Buttons
+
         yield return new WaitForSeconds(1f);
-        // TO DO Enable Question Buttons
+        
         PersonControllers.Clear();
         isGivingItem = false;
         GenerateItem();
+        OnQuestionStateChanged?.Invoke();
     }
 
     public void LoadNextLevel()

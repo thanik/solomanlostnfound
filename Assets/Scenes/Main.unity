@@ -6460,6 +6460,16 @@ MonoBehaviour:
   summaryController: {fileID: 380515148}
   computerScreenController: {fileID: 1962520355}
   pauseCanvas: {fileID: 63264278}
+  questionPanel: {fileID: 1210509575}
+  questionButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   starSprites:
   - {fileID: 380515147}
   - {fileID: 380515146}
