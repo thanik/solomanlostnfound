@@ -16,10 +16,10 @@ public enum Satisfaction
 
 public class UIController : MonoBehaviour
 {
-    const int spriteArraySize = 7;
-    public Image[] satisfactionSprites = new Image[spriteArraySize];
+    const int spriteArraySize = 5;
+    public Sprite[] satisfactionSprites = new Sprite[spriteArraySize];
     [SerializeField]
-    private Image satisfactionSprite;
+    private Sprite satisfactionSprite;
     [SerializeField]
     private TextMeshProUGUI levelDateText;
     [SerializeField]
@@ -28,6 +28,10 @@ public class UIController : MonoBehaviour
     private TextMeshProUGUI levelScore;
     private Satisfaction satisfactionState;
     public ComputerScreenController computerScreenController;
+    public Canvas pauseCanvas;
+    public Canvas summaryCanvas;
+    public Image[] starSprites;
+    public GameObject[] summaryTableValues;
 
     private void OnValidate()
     {
@@ -42,6 +46,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         satisfactionState = Satisfaction.NEUTRAL;
+        satisfactionSprite = satisfactionSprites[(satisfactionSprites.Length - 1) / 2];
     }
 
     // Event to Update Satisfaction
@@ -102,10 +107,30 @@ public class UIController : MonoBehaviour
     }
 
     //TODO
-    public void ShowSummary()
+    public void ShowSummary(int[] scoreStars, int levelScore, int returnedItems, int lostItems)
     {
-        Debug.Log("Show Summary!");
+        // Calculate Stars
+        if (levelScore > 0)
+        {
+            starSprites[0].gameObject.SetActive(true);
+        }
+        if (levelScore >= scoreStars[1])
+        {
+            starSprites[1].gameObject.SetActive(true);
+        }
+        if (levelScore >= scoreStars[2])
+        {
+            starSprites[2].gameObject.SetActive(true);
+        }
+
+        summaryTableValues[0].GetComponent<TextMeshProUGUI>().text = levelScore.ToString();
+        summaryTableValues[1].GetComponent<Image>().sprite = satisfactionSprite;
+        summaryTableValues[2].GetComponent<TextMeshProUGUI>().text = returnedItems.ToString();
+        summaryTableValues[3].GetComponent<TextMeshProUGUI>().text = lostItems.ToString();
+        //Debug.Log("Show Summary!");
+        //satisfactionsprite
         // event if level lost, change content of summary
+        summaryCanvas.gameObject.SetActive(true);
     }
 
     //TODO
@@ -115,9 +140,11 @@ public class UIController : MonoBehaviour
         {
             case GameState.Playing:
                 Debug.Log("Game Paused");
+                // toggle UI Pause
                 break;
             case GameState.Paused:
                 Debug.Log("Playing!");
+                // toggle false
                 break;
             default:
                 break;
