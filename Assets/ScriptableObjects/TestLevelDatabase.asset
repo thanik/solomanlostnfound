@@ -16,7 +16,7 @@ MonoBehaviour:
   - levelTimeSeconds: 30
     levelName: Monday
     satisfactionValueRequirement: 0
-    scoreStars: 
+    scoreStars: 2c010000f401000020030000
     numberOfPeople: 2
     timePerItem: 10
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
