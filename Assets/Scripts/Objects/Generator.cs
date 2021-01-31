@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 public class Generator : MonoBehaviour
