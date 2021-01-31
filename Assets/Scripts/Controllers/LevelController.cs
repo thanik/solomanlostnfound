@@ -213,16 +213,10 @@ public class LevelController : MonoBehaviour
         OnShowItemCreated?.Invoke(generator.lostObjects[0]);
     }
 
-    //TO DO
+    //TO DO Clean this
     void ClearLevel()
     {
         gState = GameState.Paused;
-
-
-        // play state is false paused
-        // call when time left is less than 0
-        // level failed \ player does not meet threshold
-        // next level
     }
 
     void UpdateLevelTime()
@@ -233,7 +227,6 @@ public class LevelController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Time has run out!");
             levelTime = 0;
             gState = GameState.End;
             bgmController.FadeOut();
