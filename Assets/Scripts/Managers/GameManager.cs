@@ -25,6 +25,20 @@ public class GameManager : Singleton<GameManager>
     {
         // intro?
         levelIndex = 0;
+        StartCoroutine(TransitionToIntro());
+    }
+
+    IEnumerator TransitionToIntro()
+    {
+        FadeToBlack();
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Intro");
+        yield return new WaitForSeconds(1f);
+        FadeOut();
+    }
+
+    public void StartTransitionToLevel()
+    {
         FadeToBlack();
         StartCoroutine(TransitionToLevel());
     }
