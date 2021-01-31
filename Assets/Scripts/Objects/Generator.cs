@@ -310,7 +310,7 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
 
     string GenerateThiefAnswer(ObjectProperty op, string s, bool isLyingForSure=false)
     {
-        string answer = "";
+        string answer = "Ehm...";
         string ans = "";
         int rand = Random.Range(0, 3);
         if (rand == 0 || isLyingForSure)
@@ -323,7 +323,7 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                     ans = db.propertiesValues[op].values[Random.Range(0, db.propertiesValues[op].values.Count)];
                 }
             }
-
+            rand = Random.Range(0, 2);
             switch (op) 
             {
                 case ObjectProperty.COLOR:
@@ -331,7 +331,6 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                     break;
                 case ObjectProperty.WEIGHT:
                     {
-                        rand = Random.Range(0, 2);
                         if (rand == 0)
                         {
                             answer = "It weighs more than " + Mathf.Clamp((float.Parse(s) + Random.Range(1, 10)), 0.01f, float.MaxValue) + " kg.";
