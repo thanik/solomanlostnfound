@@ -72,6 +72,7 @@ public class LevelController : MonoBehaviour
     void Start()
     {
         GameManager.Instance.ShowText(GameManager.Instance.levelsDB.levels[GameManager.Instance.GetLevelIndex()].levelName);
+        PrepareLevel();
         StartCoroutine(TransitionToLevel());
     }
 
@@ -110,27 +111,31 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    void StartLevel()
+    void PrepareLevel()
     {
         // Set level index
         levelIndex = GameManager.Instance.GetLevelIndex();
-        // Set game state
-        gState = GameState.Playing;
-
-        GenerateItem();
 
         // Level Name
         OnDateUpdated?.Invoke(GameManager.Instance.levelsDB.levels[levelIndex].levelName);
 
         // Level Time
         levelTime = GameManager.Instance.levelsDB.levels[levelIndex].levelTimeSeconds;
-        
+
 
         // Level Score
         OnScoreUpdated?.Invoke(levelScore);
 
         // Set Satisfaction
         OnSatisfactionUpdated?.Invoke(CalculateSatisfaction());
+    }
+    
+    void StartLevel()
+    {
+        // Set game state
+        gState = GameState.Playing;
+
+        GenerateItem();
     }
 
     void CheckInput()
