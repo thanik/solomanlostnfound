@@ -324,7 +324,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -763,7 +763,9 @@ MonoBehaviour:
     <size=50><b>2D
     Artist</b></size>
 
-    Hannah Osso'
+    Hannah Osso
+
+    Luca Pisani'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3cb05bb4573fde748926d0f3add4ccaf, type: 2}
   m_sharedMaterial: {fileID: -4499169100620134944, guid: 3cb05bb4573fde748926d0f3add4ccaf, type: 2}
