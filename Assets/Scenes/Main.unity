@@ -1536,6 +1536,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25
       objectReference: {fileID: 0}
+    - target: {fileID: 4568416169732426720, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568416169732426720, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568416169732426720, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568416169732426720, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568416169732426720, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -87.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8537199628594327197, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1606,7 +1626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537199628802329676, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -133.33333
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 8537199628826737076, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1682,7 +1702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537199629494747227, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -341.66666
+      value: -362.5
       objectReference: {fileID: 0}
     - target: {fileID: 8537199629872202636, guid: 23e6783224f87f84db008229714a3f1b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6428,11 +6448,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satisfactionSprites:
-  - {fileID: 21300000, guid: 6c80739dce5a50941abcfe5f4532a07b, type: 3}
-  - {fileID: 21300000, guid: 9678c1f3f107c1749b59b4949da1ad03, type: 3}
-  - {fileID: 21300000, guid: e2e40cf722fb06d49b77a267d8cdf3ef, type: 3}
-  - {fileID: 21300000, guid: c48577ea00f231a4782a93486bac099c, type: 3}
-  - {fileID: 21300000, guid: 08408ce1daeac0644ad1babc944d924e, type: 3}
+  - {fileID: 21300000, guid: 2f6366819e4bea648b0203728190b3d8, type: 3}
+  - {fileID: 21300000, guid: 41065e7ea6f3f644b884345907019908, type: 3}
+  - {fileID: 21300000, guid: e0de7d63f0cd32140b373f578cbe1c50, type: 3}
+  - {fileID: 21300000, guid: 865cee8016fb27f4db5ef414592584b5, type: 3}
+  - {fileID: 21300000, guid: 3abe08087a63e8540ba091adf5ca3f87, type: 3}
   satisfactionImage: {fileID: 271819576}
   levelDateText: {fileID: 499410608}
   levelTimeText: {fileID: 1375649835}
@@ -6447,6 +6467,15 @@ MonoBehaviour:
   solomonSprites:
   - {fileID: 21300000, guid: 9e2845b164fb9904c908a5e8f8f8584a, type: 3}
   - {fileID: 21300000, guid: 019c78e30b7d8c641ba4c61cca822a05, type: 3}
+  titleStatements:
+  - YOU PASSED!
+  - TRY AGAIN!
+  EODStatements:
+  - They stole my stuff!
+  - Worst customer service ever!
+  - You can do better.
+  - Great job!
+  - Stellar service 10/10
 --- !u!1 &1662630205
 GameObject:
   m_ObjectHideFlags: 0

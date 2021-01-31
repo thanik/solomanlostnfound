@@ -16,8 +16,9 @@ public enum Satisfaction
 
 public class UIController : MonoBehaviour
 {
-    const int spriteArraySize = 5;
-    public Sprite[] satisfactionSprites = new Sprite[spriteArraySize];
+    const int titleArraySize = 2;
+    const int satisfactionArraySize = 5;
+    public Sprite[] satisfactionSprites = new Sprite[satisfactionArraySize];
     [SerializeField]
     private Image satisfactionImage;
     [SerializeField]
@@ -32,13 +33,27 @@ public class UIController : MonoBehaviour
     public Canvas pauseCanvas;
     public Image[] starSprites;
     public Sprite[] solomonSprites;
+    public string[] titleStatements = new string[titleArraySize];
+    public string[] EODStatements = new string[satisfactionArraySize];
+
+    private string eodStatement;
 
     private void OnValidate()
     {
-        if (satisfactionSprites.Length != spriteArraySize)
+        if (satisfactionSprites.Length != satisfactionArraySize)
         {
             Debug.LogWarning("Don't change the 'satisfactionSprites' field's array size!");
-            Array.Resize(ref satisfactionSprites, spriteArraySize);
+            Array.Resize(ref satisfactionSprites, satisfactionArraySize);
+        }
+        if (EODStatements.Length != satisfactionArraySize)
+        {
+            Debug.LogWarning("Don't change the 'EODStatements' field's array size!");
+            Array.Resize(ref EODStatements, satisfactionArraySize);
+        }
+        if (titleStatements.Length != titleArraySize)
+        {
+            Debug.LogWarning("Don't change the 'titleStatements' field's array size!");
+            Array.Resize(ref EODStatements, satisfactionArraySize);
         }
     }
 
@@ -52,9 +67,10 @@ public class UIController : MonoBehaviour
     // Event to Update Satisfaction
 
     // Function to update sprite
-    public void UpdateSatisfactionSprite(Satisfaction sState)
+    public void UpdateSatisfaction(Satisfaction sState)
     {
         satisfactionImage.sprite = satisfactionSprites[(int) sState];
+        eodStatement = EODStatements[(int) sState];
     }
 
     public void UpdateDate(string date)
@@ -97,14 +113,16 @@ public class UIController : MonoBehaviour
             starSprites[2].gameObject.SetActive(true);
         }
 
+        summaryController.titleText.text = winState ? titleStatements[0] : titleStatements[1];
+        summaryController.subtitleText.text = eodStatement;
         summaryController.scoreText.text = levelScore.ToString();
         summaryController.satisfactionLevel.sprite = satisfactionImage.sprite;
         summaryController.correctItemsText.text = returnedItems.ToString();
         summaryController.incorrectItemsText.text = lostItems.ToString();
         summaryController.solomonImage.sprite = winState ? solomonSprites[0] : solomonSprites[1];
-        //Debug.Log("Show Summary!");
-        //satisfactionsprite
-        // event if level lost, change content of summary
+
+        summaryController.nextLevelButton.gameObject.SetActive(winState);
+
         summaryController.gameObject.SetActive(true);
     }
 
