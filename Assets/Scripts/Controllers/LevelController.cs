@@ -104,10 +104,13 @@ public class LevelController : MonoBehaviour
 
     public void QuestionClicked(int qIndex)
     {
-        Debug.Log("Question " + ((ObjectProperty)qIndex).ToString() + " clicked!");
-        foreach (var personController in PersonControllers)
+        if (!isGivingItem || !isDestroyingItem)
         {
-            personController.ShowAnswer((ObjectProperty) qIndex);
+            Debug.Log("Question " + ((ObjectProperty) qIndex).ToString() + " clicked!");
+            foreach (var personController in PersonControllers)
+            {
+                personController.ShowAnswer((ObjectProperty) qIndex);
+            }
         }
     }
 
@@ -157,6 +160,42 @@ public class LevelController : MonoBehaviour
         // Initialise Lost Object
         generator.InitializeObject(GameManager.Instance.levelsDB.levels[levelIndex].numberOfPeople);
         item = Instantiate(itemPrefab, itemSpawnPoint).GetComponent<ItemController>();
+        SpriteRenderer sprRenderer = item.GetComponent<SpriteRenderer>();
+        sprRenderer.sprite = generator.lostObjects[0].objectDefinition.spriteImage;
+
+        if (generator.lostObjects[0].objectDefinition.redColorReplace.StartsWith("#"))
+        {
+            Color color = Color.red;
+            ColorUtility.TryParseHtmlString(generator.lostObjects[0].objectDefinition.redColorReplace, out color);
+            sprRenderer.material.SetColor("_RedColorReplace", color);
+        }
+        else if (generator.lostObjects[0].objectDefinition.redColorReplace == "MAPPING")
+        {
+            sprRenderer.material.SetColor("_RedColorReplace", sprColorDB.colorMappings[generator.lostObjects[0].properties[ObjectProperty.COLOR]]);
+        }
+
+        if (generator.lostObjects[0].objectDefinition.greenColorReplace.StartsWith("#"))
+        {
+            Color color = Color.green;
+            ColorUtility.TryParseHtmlString(generator.lostObjects[0].objectDefinition.greenColorReplace, out color);
+            sprRenderer.material.SetColor("_GreenColorReplace", color);
+        }
+        else if (generator.lostObjects[0].objectDefinition.greenColorReplace == "MAPPING")
+        {
+            sprRenderer.material.SetColor("_GreenColorReplace", sprColorDB.colorMappings[generator.lostObjects[0].properties[ObjectProperty.COLOR]]);
+        }
+
+        if (generator.lostObjects[0].objectDefinition.blueColorReplace.StartsWith("#"))
+        {
+            Color color = Color.blue;
+            ColorUtility.TryParseHtmlString(generator.lostObjects[0].objectDefinition.blueColorReplace, out color);
+            sprRenderer.material.SetColor("_BlueColorReplace", color);
+        }
+        else if (generator.lostObjects[0].objectDefinition.blueColorReplace == "MAPPING")
+        {
+            sprRenderer.material.SetColor("_BlueColorReplace", sprColorDB.colorMappings[generator.lostObjects[0].properties[ObjectProperty.COLOR]]);
+        }
+
         itemTime = GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
         // Generate Persons
         foreach (Person person in generator.people)

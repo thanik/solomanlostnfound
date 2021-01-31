@@ -24,11 +24,12 @@ public class GameManager : Singleton<GameManager>
     public void NewGame()
     {
         // intro?
+        levelIndex = 0;
         FadeToBlack();
-        StartCoroutine(TransitionToNewGame());
+        StartCoroutine(TransitionToLevel());
     }
 
-    IEnumerator TransitionToNewGame()
+    IEnumerator TransitionToLevel()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
@@ -36,7 +37,8 @@ public class GameManager : Singleton<GameManager>
 
     public void Retry()
     {
-        SceneManager.LoadScene("Main");
+        FadeToBlack();
+        StartCoroutine(TransitionToLevel());
     }
 
     public void FadeToBlack()
@@ -75,13 +77,21 @@ public class GameManager : Singleton<GameManager>
     {
         if (levelIndex < levelsDB.levels.Count - 1)
         {
-            SceneManager.LoadScene("Main");
             levelIndex++;
+            FadeToBlack();
+            StartCoroutine(TransitionToLevel());
         }
         else
         {
-            SceneManager.LoadScene("Ending");
+            FadeToBlack();
+            StartCoroutine(TransitionToEnding());
         }
+    }
+    IEnumerator TransitionToEnding()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Ending", LoadSceneMode.Single);
+        FadeOut();
     }
 
     public int GetLevelIndex()

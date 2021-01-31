@@ -41,6 +41,9 @@ public class ObjectDefinition
     public Sprite spriteImage;
     public string name;
     public PropertiesDict properties;
+    public string redColorReplace;
+    public string greenColorReplace;
+    public string blueColorReplace;
 }
 
 [CreateAssetMenu]

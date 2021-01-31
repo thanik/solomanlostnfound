@@ -8,6 +8,7 @@ public class LostObject
 {
     public string name;
     public LostObjectPropertiesDict properties;
+    public ObjectDefinition objectDefinition;
 }
 
 [Serializable]

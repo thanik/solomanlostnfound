@@ -134,6 +134,7 @@ public class Generator : MonoBehaviour
         LostObject lObj = new LostObject();
         lObj.name = randomDef.name;
         lObj.properties = new LostObjectPropertiesDict();
+        lObj.objectDefinition = randomDef;
         foreach (KeyValuePair<ObjectProperty, PropertyDetail> entry in randomDef.properties)
         {
             if (entry.Value.type == PropertyType.RANDOM_STRING)

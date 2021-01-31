@@ -40,11 +40,14 @@ public class PersonController : MonoBehaviour
     public void Select()
     {
         //selected = true;
-        animator.SetTrigger(personData.isLegitOwner ? "Correct" : "Wrong");
-        levelController.item.isOnConveyorBelt = false;
-        Vector3 personPos = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().position);
-        levelController.item.transform.DOJump(personPos, 2f, 1, 0.5f);
-        levelController.SelectPerson(personData.isLegitOwner);
+        if (levelController.item)
+        {
+            animator.SetTrigger(personData.isLegitOwner ? "Correct" : "Wrong");
+            levelController.item.isOnConveyorBelt = false;
+            Vector3 personPos = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().position);
+            levelController.item.transform.DOJump(personPos, 2f, 1, 0.5f);
+            levelController.SelectPerson(personData.isLegitOwner);
+        }
     }
 
     public void DestroyFromGame()

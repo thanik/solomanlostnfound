@@ -33,7 +33,7 @@ public class ObjectDatabaseImporter
                     if (header)
                     {
                         string[] splittedLine = line.Split('\t');
-                        if (splittedLine.Length >= 9)
+                        if (splittedLine.Length >= 10)
                         {
                             ObjectDefinition newObjDef = new ObjectDefinition
                             {
@@ -115,6 +115,13 @@ public class ObjectDatabaseImporter
                                     asset.propertiesValues[ObjectProperty.ORIGIN].values.Add(elements[i]);
                             }
                             newObjDef.properties[ObjectProperty.ORIGIN] = new PropertyDetail(PropertyType.RANDOM_STRING, elements.ToList());
+
+                            newObjDef.spriteImage =
+                                (Sprite) AssetDatabase.LoadAssetAtPath(splittedLine[9], typeof(Sprite));
+
+                            newObjDef.redColorReplace = splittedLine[10].Trim();
+                            newObjDef.greenColorReplace = splittedLine[11].Trim();
+                            newObjDef.blueColorReplace = splittedLine[12].Trim();
 
                             asset.objects.Add(newObjDef);
                         }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ObjectDatabase
   m_EditorClassIdentifier: 
   objects:
-  - spriteImage: {fileID: 0}
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Baby
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -48,7 +48,10 @@ MonoBehaviour:
         values:
         - New York
         - Mexico
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 9e024f42e6a51184392ee63c9a9f6c08, type: 3}
     name: Watch
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -85,7 +88,10 @@ MonoBehaviour:
         values:
         - Switzerland
         - Germany
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: MAPPING
+    blueColorReplace: '#ffffffff'
+  - spriteImage: {fileID: 21300000, guid: 823567d85cfcad440ad62710248503f6, type: 3}
     name: Giraffe
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -119,7 +125,10 @@ MonoBehaviour:
         values:
         - Africa
         - the Good Place
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#000000ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 473e5bb09de3027439d99a83923f6e95, type: 3}
     name: Radio
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -153,7 +162,10 @@ MonoBehaviour:
       - type: 1
         values:
         - Tokyo
-  - spriteImage: {fileID: 0}
+    redColorReplace: 
+    greenColorReplace: 
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 65348b3eda83d8b4f9d89522035c4daa, type: 3}
     name: Video game
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -191,7 +203,10 @@ MonoBehaviour:
         - the UK
         - USA
         - Japan
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: 
+    blueColorReplace: 
+  - spriteImage: {fileID: 21300000, guid: a40869395dd673d4ca2a9b4c08aa9da7, type: 3}
     name: Smartphone
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -230,7 +245,10 @@ MonoBehaviour:
         - the USA
         - Korea
         - China
-  - spriteImage: {fileID: 0}
+    redColorReplace: 
+    greenColorReplace: 
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: c09bfd8699778224d884c8d1b6d9ac93, type: 3}
     name: TV
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -265,7 +283,10 @@ MonoBehaviour:
         - the USA
         - the UK
         - Japan
-  - spriteImage: {fileID: 0}
+    redColorReplace: 
+    greenColorReplace: 
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 5a72c6d21a3ba1a4ca05c560338a2837, type: 3}
     name: Snake
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -300,7 +321,10 @@ MonoBehaviour:
         values:
         - India
         - the USA
-  - spriteImage: {fileID: 0}
+    redColorReplace: 
+    greenColorReplace: MAPPING
+    blueColorReplace: 
+  - spriteImage: {fileID: 21300000, guid: 637c0e97b56d8694b96017c51c37b0b8, type: 3}
     name: Hat
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -336,7 +360,10 @@ MonoBehaviour:
         - Italy
         - France
         - Spain
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: 
+    blueColorReplace: 
+  - spriteImage: {fileID: 21300000, guid: 37e57169c5e5584428d25098811b6a38, type: 3}
     name: Shirt
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -375,7 +402,10 @@ MonoBehaviour:
         - the USA
         - Japan
         - China
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: '#ffffffff'
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: f7410b7757cd3e84fbf3e2e0df4c5f7a, type: 3}
     name: Teapot
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -410,7 +440,10 @@ MonoBehaviour:
         - the UK
         - China
         - Japan
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ff0000ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: '#00ff00ff'
+  - spriteImage: {fileID: 21300000, guid: 377caeb02297b5144af014c8ad0c8ad2, type: 3}
     name: Cube
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -444,7 +477,10 @@ MonoBehaviour:
       - type: 1
         values:
         - Mesopotamia
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: MAPPING
+    blueColorReplace: 
+  - spriteImage: {fileID: 21300000, guid: d35410c8861fc8844b9ed02a533a389e, type: 3}
     name: Pyramid
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -477,7 +513,10 @@ MonoBehaviour:
       - type: 1
         values:
         - Egypt
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: MAPPING
+    blueColorReplace: 
+  - spriteImage: {fileID: 21300000, guid: 83fe7dc9757003742b3a3d585bfbf37e, type: 3}
     name: Ball
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -515,7 +554,10 @@ MonoBehaviour:
         - the UK
         - China
         - Nigeria
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: 
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 7766e9cfa7771a54f9fe4f6960b2051d, type: 3}
     name: Pencil
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -553,7 +595,10 @@ MonoBehaviour:
         - Greece
         - Italy
         - China
-  - spriteImage: {fileID: 0}
+    redColorReplace: MAPPING
+    greenColorReplace: 
+    blueColorReplace: 
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Cat
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -592,7 +637,10 @@ MonoBehaviour:
         - Germany
         - France
         - Spain
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Dog
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -632,7 +680,10 @@ MonoBehaviour:
         - Spain
         - the USA
         - Japan
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Elephant
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -667,7 +718,10 @@ MonoBehaviour:
         - Africa
         - India
         - Thailand
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Laptop
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -703,7 +757,10 @@ MonoBehaviour:
         - China
         - Japan
         - Korea
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Bottle
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -737,7 +794,10 @@ MonoBehaviour:
         values:
         - the Caraibes
         - Hawaii
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Book
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -771,7 +831,10 @@ MonoBehaviour:
       - type: 1
         values:
         - N/A
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Mushroom
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -806,7 +869,10 @@ MonoBehaviour:
       - type: 1
         values:
         - N/A
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Suitcase
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -847,7 +913,10 @@ MonoBehaviour:
         - France
         - Greece
         - Italy
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Dumb rock
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -879,7 +948,10 @@ MonoBehaviour:
       - type: 1
         values:
         - Kazakhstan
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Underwear
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -914,7 +986,10 @@ MonoBehaviour:
         values:
         - China
         - India
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Wallet
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -949,7 +1024,10 @@ MonoBehaviour:
         - the USA
         - the UK
         - China
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Panda
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -983,7 +1061,10 @@ MonoBehaviour:
       - type: 1
         values:
         - China
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Crocodile
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1016,7 +1097,10 @@ MonoBehaviour:
       - type: 1
         values:
         - Florida
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Stegosaurus
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1051,7 +1135,10 @@ MonoBehaviour:
       - type: 1
         values:
         - Earth
-  - spriteImage: {fileID: 0}
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
+  - spriteImage: {fileID: 21300000, guid: 871f8237cdfd8854dbbddd12edcf546a, type: 3}
     name: Moon
     properties:
       keys: 0000000001000000020000000300000004000000050000000600000007000000
@@ -1084,6 +1171,9 @@ MonoBehaviour:
       - type: 1
         values:
         - the Solar System
+    redColorReplace: '#ffe073ff'
+    greenColorReplace: MAPPING
+    blueColorReplace: MAPPING
   propertiesValues:
     keys: 0000000001000000020000000300000004000000050000000600000007000000
     values:
