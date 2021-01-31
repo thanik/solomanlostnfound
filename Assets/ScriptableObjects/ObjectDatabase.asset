@@ -201,7 +201,7 @@ MonoBehaviour:
       - type: 1
         values:
         - the UK
-        - USA
+        - the USA
         - Japan
     redColorReplace: MAPPING
     greenColorReplace: '#ffcb3dff'
@@ -1228,7 +1228,6 @@ MonoBehaviour:
       - the Good Place
       - Japan
       - the UK
-      - USA
       - Korea
       - China
       - India
