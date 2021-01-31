@@ -144,7 +144,7 @@ public class Generator : MonoBehaviour
             {
                 CultureInfo ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
                 ci.NumberFormat.CurrencyDecimalSeparator = ".";
-                lObj.properties.Add(entry.Key, Random.Range(float.Parse(entry.Value.values[0], NumberStyles.Any, ci), float.Parse(entry.Value.values[1], NumberStyles.Any, ci)).ToString("0"));
+                lObj.properties.Add(entry.Key, Random.Range(float.Parse(entry.Value.values[0], NumberStyles.Any, ci), float.Parse(entry.Value.values[1], NumberStyles.Any, ci)).ToString("0.00"));
             }
         }
         lostObjects.Add(lObj);
