@@ -11,15 +11,20 @@ public class SummaryController : MonoBehaviour
     public TMP_Text correctItemsText;
     public TMP_Text incorrectItemsText;
     public Image solomonImage;
-    void Start()
+    
+    public void LoadNextLevel()
     {
-        
+        GameManager.Instance.LoadNextLevel();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Retry()
     {
-        
+        GameManager.Instance.Retry();
+    }
+
+    public void ReturnToTitleScreen()
+    {
+        GameManager.Instance.ReturnToTitle();
     }
 
 }

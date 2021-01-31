@@ -23,6 +23,7 @@ public struct LevelDefinition
     public int timePerItem;
     public int satisfactionValueIncreaseAmountOnGivingSuccess;
     public int satisfactionValueDecreaseAmountOnGivingFailure;
+    public int satisfactionValueDecreaseAmountOnItemDestroyed;
     public int satisfactionValueDecreaseAmountOnInterval;
     public int satisfactionValueDecreaseInterval;
 }

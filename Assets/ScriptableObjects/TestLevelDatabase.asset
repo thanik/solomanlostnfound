@@ -15,12 +15,35 @@ MonoBehaviour:
   levels:
   - levelTimeSeconds: 30
     levelName: Monday
-    satisfactionValueRequirement: 0
+    satisfactionValueRequirement: 40
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 2
     timePerItem: 10
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
-    satisfactionValueDecreaseAmountOnGivingFailure: 5
+    satisfactionValueDecreaseAmountOnGivingFailure: 10
+    satisfactionValueDecreaseAmountOnItemDestroyed: 10
+    satisfactionValueDecreaseAmountOnInterval: 0
+    satisfactionValueDecreaseInterval: 1
+  - levelTimeSeconds: 30
+    levelName: Tuesday
+    satisfactionValueRequirement: 60
+    scoreStars: 2c010000f401000020030000
+    numberOfPeople: 3
+    timePerItem: 10
+    satisfactionValueIncreaseAmountOnGivingSuccess: 10
+    satisfactionValueDecreaseAmountOnGivingFailure: 15
+    satisfactionValueDecreaseAmountOnItemDestroyed: 10
+    satisfactionValueDecreaseAmountOnInterval: 0
+    satisfactionValueDecreaseInterval: 1
+  - levelTimeSeconds: 30
+    levelName: Wednesday
+    satisfactionValueRequirement: 60
+    scoreStars: 2c010000f401000020030000
+    numberOfPeople: 4
+    timePerItem: 10
+    satisfactionValueIncreaseAmountOnGivingSuccess: 10
+    satisfactionValueDecreaseAmountOnGivingFailure: 20
+    satisfactionValueDecreaseAmountOnItemDestroyed: 10
     satisfactionValueDecreaseAmountOnInterval: 0
     satisfactionValueDecreaseInterval: 1
   goodPersonScoreValue: 100

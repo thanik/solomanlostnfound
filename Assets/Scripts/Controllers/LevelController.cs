@@ -120,6 +120,9 @@ public class LevelController : MonoBehaviour
 
         // Level Score
         OnScoreUpdated?.Invoke(levelScore);
+
+        // Set Satisfaction
+        OnSatisfactionUpdated?.Invoke(CalculateSatisfaction());
     }
 
     void CheckInput()
@@ -230,6 +233,7 @@ public class LevelController : MonoBehaviour
             {
                 StartCoroutine(ClearItem(ClearEvent.TimeExpire));
                 isDestroyingItem = true;
+                SetSatisfactionValue(GetSatisfactionValue() - GameManager.Instance.levelsDB.levels[levelIndex].satisfactionValueDecreaseAmountOnItemDestroyed);
                 lostItems++;
             }
         }
@@ -317,8 +321,9 @@ public class LevelController : MonoBehaviour
         {
             p.DestroyFromGame();
         }
-
+        // TO DO Disable Question Buttons
         yield return new WaitForSeconds(1f);
+        // TO DO Enable Question Buttons
         PersonControllers.Clear();
         isGivingItem = false;
         GenerateItem();

@@ -105,7 +105,7 @@ public class UIController : MonoBehaviour
     public void ShowSummary(int[] scoreStars, int levelScore, int returnedItems, int lostItems, bool winState)
     {
         // Calculate Stars
-        if (levelScore > 0)
+        if (levelScore > scoreStars[0])
         {
             starSprites[0].gameObject.SetActive(true);
         }
