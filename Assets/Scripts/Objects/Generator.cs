@@ -144,7 +144,7 @@ public class Generator : MonoBehaviour
             {
                 CultureInfo ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
                 ci.NumberFormat.CurrencyDecimalSeparator = ".";
-                lObj.properties.Add(entry.Key, Random.Range(float.Parse(entry.Value.values[0], NumberStyles.Any, ci), float.Parse(entry.Value.values[1], NumberStyles.Any, ci)).ToString("0.00"));
+                lObj.properties.Add(entry.Key, Random.Range(float.Parse(entry.Value.values[0], NumberStyles.Any, ci), float.Parse(entry.Value.values[1], NumberStyles.Any, ci)).ToString("0"));
             }
         }
         lostObjects.Add(lObj);
@@ -241,11 +241,11 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                 rand = Random.Range(0, 3);
                 if (rand == 0)
                 {
-                    answer = "It weighs less than " + Mathf.Clamp((float.Parse(s) + Random.Range(1, 10)), 1, 9000) + " kg.";
+                    answer = "It weighs less than " + Mathf.Clamp((float.Parse(s) + Random.Range(1, 10)), 0.01f, float.MaxValue) + " kg.";
                 }
                 if (rand == 1)
                 {
-                    answer = "It weighs more than " + Mathf.Clamp((float.Parse(s) - Random.Range(1, 10)), 1, 9000) + " kg.";
+                    answer = "It weighs more than " + Mathf.Clamp((float.Parse(s) - Random.Range(1, 10)), 0.01f, float.MaxValue) + " kg.";
                 }
                 if (rand == 2)
                 {
@@ -257,11 +257,11 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                 rand = Random.Range(0, 3);
                 if (rand == 0)
                 {
-                    answer = "It is shorter than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " cm.";
+                    answer = "It is shorter than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 0.01f, float.MaxValue) + " cm.";
                 }
                 if (rand == 1)
                 {
-                    answer = "It is taller than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " cm.";
+                    answer = "It is taller than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 0.01f, float.MaxValue) + " cm.";
                 }
                 if (rand == 2)
                 {
@@ -285,11 +285,11 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                 rand = Random.Range(0, 3);
                 if (rand == 0)
                 {
-                    answer = "It is younger than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years.";
+                    answer = "It is younger than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, float.MaxValue) + " years.";
                 }
                 if (rand == 1)
                 {
-                    answer = "It's been around for more than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years.";
+                    answer = "It's been around for more than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, float.MaxValue) + " years.";
                 }
                 if (rand == 2)
                 {
@@ -334,22 +334,22 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                         rand = Random.Range(0, 2);
                         if (rand == 0)
                         {
-                            answer = "It weighs more than " + Mathf.Clamp((float.Parse(s) + Random.Range(1, 10)), 1, 9000) + " kg.";
+                            answer = "It weighs more than " + Mathf.Clamp((float.Parse(s) + Random.Range(1, 10)), 0.01f, float.MaxValue) + " kg.";
                         }
                         if (rand == 1)
                         {
-                            answer = "It weighs less than " + Mathf.Clamp((float.Parse(s) - Random.Range(1, 10)), 1, 9000) + " kg.";
+                            answer = "It weighs less than " + Mathf.Clamp((float.Parse(s) - Random.Range(1, 10)), 0.01f, float.MaxValue) + " kg.";
                         }
                     }
                     break;
                 case ObjectProperty.HEIGHT:
                     if (rand == 0)
                     {
-                        answer = "It is taller than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " cm.";
+                        answer = "It is taller than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 0.01f, float.MaxValue) + " cm.";
                     }
                     if (rand == 1)
                     {
-                        answer = "It is shorter than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " cm.";
+                        answer = "It is shorter than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 0.01f, float.MaxValue) + " cm.";
                     }
                     break;
                 case ObjectProperty.SEX:
@@ -364,11 +364,11 @@ string GenerateOwnerAnswer(ObjectProperty op, string s, bool rightAnswer=false)
                 case ObjectProperty.AGE:
                     if (rand == 0)
                     {
-                        answer = "It's been around for more than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, 9000) + " years.";
+                        answer = "It's been around for more than " + (int)Mathf.Clamp((float.Parse(s) + Random.Range(5, 10)), 1, float.MaxValue) + " years.";
                     }
                     if (rand == 1)
                     {
-                        answer = "It is younger than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, 9000) + " years.";
+                        answer = "It is younger than " + (int)Mathf.Clamp((float.Parse(s) - Random.Range(5, 10)), 1, float.MaxValue) + " years.";
                     }
                     break;
                 case ObjectProperty.ORIGIN:
