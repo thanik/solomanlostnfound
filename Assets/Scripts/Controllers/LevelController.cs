@@ -11,7 +11,6 @@ public enum ClearEvent { Giving, TimeExpire }
 
 public class LevelController : MonoBehaviour
 {
-
     public ObjectDatabase objDB;
     public SpriteColorDatabase sprColorDB;
     public Generator generator;
@@ -25,6 +24,8 @@ public class LevelController : MonoBehaviour
     private bool isDestroyingItem = false;
     private int levelScore = 0;
     private int satisfactionValue = 50;
+    private int returnedItems = 0;
+    private int lostItems = 0;
 
     GameState gState;
 
@@ -40,14 +41,12 @@ public class LevelController : MonoBehaviour
     public delegate void OnPauseCallHandler(GameState state);
     public delegate void OnScoreUpdatedHandler(int score);
     public delegate void OnShowItemCreateHandler(LostObject lostObject);
-    public delegate void OnShowSummaryHandler();
     // event to subsbribe to
     public event OnSatisfactionUpdateHandler OnSatisfactionUpdated;
     public event OnDateUpdateHandler OnDateUpdated;
     public event OnPauseCallHandler OnPauseCalled;
     public event OnScoreUpdatedHandler OnScoreUpdated;
     public event OnShowItemCreateHandler OnShowItemCreated;
-    public event OnShowSummaryHandler OnShowSummary;
 
 
     private void OnEnable()
@@ -55,7 +54,6 @@ public class LevelController : MonoBehaviour
         OnSatisfactionUpdated += uiController.UpdateSatisfaction;
         OnDateUpdated += uiController.UpdateDate;
         OnScoreUpdated += uiController.UpdateScore;
-        OnShowSummary += uiController.ShowSummary;
         OnShowItemCreated += uiController.ShowItemData;
         OnPauseCalled += uiController.ShowPauseMenu;
     }
@@ -65,7 +63,6 @@ public class LevelController : MonoBehaviour
         OnSatisfactionUpdated -= uiController.UpdateSatisfaction;
         OnDateUpdated -= uiController.UpdateDate;
         OnScoreUpdated -= uiController.UpdateScore;
-        OnShowSummary -= uiController.ShowSummary;
         OnShowItemCreated -= uiController.ShowItemData;
         OnPauseCalled -= uiController.ShowPauseMenu;
     }
@@ -184,14 +181,14 @@ public class LevelController : MonoBehaviour
             Debug.Log("Time has run out!");
             levelTime = 0;
             gState = GameState.End;
-            uiController.ShowSummary();
+            uiController.ShowSummary(GameManager.Instance.levelsDB.levels[levelIndex].scoreStars, levelScore, returnedItems, lostItems);
         }
         uiController.UpdateLevelTime(levelTime);
     }
 
     void UpdateItemTimeAndPosition()
     {
-        if (itemTime > 0 && levelTime > 0)
+        if (itemTime > 0)
         {
             itemTime -= Time.deltaTime;
             item.normalizedTime = itemTime / GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
@@ -200,6 +197,7 @@ public class LevelController : MonoBehaviour
         {
             StartCoroutine(ClearItem(ClearEvent.TimeExpire));
             isDestroyingItem = true;
+            lostItems++;
         }
     }
 
@@ -211,11 +209,13 @@ public class LevelController : MonoBehaviour
         {
             SetLevelScoreValue(score + GameManager.Instance.levelsDB.goodPersonScoreValue);
             SetSatisfactionValue(satisfaction + GameManager.Instance.levelsDB.levels[levelIndex].satisfactionValueIncreaseAmountOnGivingSuccess);
+            returnedItems++;
         }
         else
         {
             SetLevelScoreValue(score - GameManager.Instance.levelsDB.badPersonScoreValue);
             SetSatisfactionValue(satisfaction - GameManager.Instance.levelsDB.levels[levelIndex].satisfactionValueDecreaseAmountOnGivingFailure);
+            lostItems++;
         }
         OnScoreUpdated?.Invoke(levelScore);
         StartCoroutine(ClearItem(ClearEvent.Giving));
