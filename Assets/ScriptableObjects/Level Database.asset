@@ -18,7 +18,7 @@ MonoBehaviour:
     satisfactionValueRequirement: 25
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 2
-    timePerItem: 50
+    timePerItem: 45
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 5
     satisfactionValueDecreaseAmountOnItemDestroyed: 5
@@ -29,7 +29,7 @@ MonoBehaviour:
     satisfactionValueRequirement: 50
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 2
-    timePerItem: 45
+    timePerItem: 42
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 5
     satisfactionValueDecreaseAmountOnItemDestroyed: 5
@@ -48,7 +48,7 @@ MonoBehaviour:
     satisfactionValueDecreaseInterval: 30
   - levelTimeSeconds: 180
     levelName: Thursday
-    satisfactionValueRequirement: 75
+    satisfactionValueRequirement: 70
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 2
     timePerItem: 35
@@ -59,15 +59,15 @@ MonoBehaviour:
     satisfactionValueDecreaseInterval: 30
   - levelTimeSeconds: 180
     levelName: Friday
-    satisfactionValueRequirement: 30
+    satisfactionValueRequirement: 80
     scoreStars: 2c010000f401000020030000
     numberOfPeople: 2
-    timePerItem: 40
+    timePerItem: 30
     satisfactionValueIncreaseAmountOnGivingSuccess: 10
     satisfactionValueDecreaseAmountOnGivingFailure: 5
     satisfactionValueDecreaseAmountOnItemDestroyed: 5
     satisfactionValueDecreaseAmountOnInterval: 1
     satisfactionValueDecreaseInterval: 30
   goodPersonScoreValue: 100
-  badPersonScoreValue: 0
-  destroyedScoreValue: 0
+  badPersonScoreValue: 50
+  destroyedScoreValue: 75

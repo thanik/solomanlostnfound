@@ -20,7 +20,7 @@ public class Generator : MonoBehaviour
             "I don't remember that detail.",
             "Mmm... It's hard to remember that.",
             "Argh! I know this! It's... Ehm... It's on the tip of my tongue...",
-            "I don�t have enough information to answer your question.",
+            "I don't have enough information to answer your question.",
             "Good question. I'll find out.",
             "I don't have the data at hand, but I�ll get it to you later today.",
             "I'm not sure I�m the best person to answer that.",
