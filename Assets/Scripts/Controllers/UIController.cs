@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public enum Satisfaction
 {
-    EXTREMELYDISAPPOINTED = -2,
+    EXTREMELYDISAPPOINTED,
     VERYDISAPPOINTED,
     NEUTRAL,
     VERYSATISFIED,
@@ -19,19 +19,19 @@ public class UIController : MonoBehaviour
     const int spriteArraySize = 5;
     public Sprite[] satisfactionSprites = new Sprite[spriteArraySize];
     [SerializeField]
-    private Sprite satisfactionSprite;
+    private Image satisfactionImage;
     [SerializeField]
     private TextMeshProUGUI levelDateText;
     [SerializeField]
     private TextMeshProUGUI levelTimeText;
     [SerializeField]
     private TextMeshProUGUI levelScore;
-    private Satisfaction satisfactionState;
+    //private Satisfaction satisfactionState;
+    public SummaryController summaryController;
     public ComputerScreenController computerScreenController;
     public Canvas pauseCanvas;
-    public Canvas summaryCanvas;
     public Image[] starSprites;
-    public GameObject[] summaryTableValues;
+    public Sprite[] solomonSprites;
 
     private void OnValidate()
     {
@@ -45,23 +45,17 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        satisfactionState = Satisfaction.NEUTRAL;
-        satisfactionSprite = satisfactionSprites[(satisfactionSprites.Length - 1) / 2];
+        //satisfactionState = Satisfaction.NEUTRAL;
+        //satisfactionSprite = satisfactionSprites[(satisfactionSprites.Length - 1) / 2];
     }
 
     // Event to Update Satisfaction
-    public void UpdateSatisfaction(Satisfaction sState)
-    {
-        satisfactionState = sState;
-
-        // Update UI
-        UpdateSatisfactionSprite();
-    }
 
     // Function to update sprite
-    public void UpdateSatisfactionSprite()
+    public void UpdateSatisfactionSprite(Satisfaction sState)
     {
-        switch (satisfactionState)
+        satisfactionImage.sprite = satisfactionSprites[(int) sState];
+        /*switch (satisfactionState)
         {
             case Satisfaction.EXTREMELYDISAPPOINTED:
                 Debug.Log("Extremely Disappointed");
@@ -80,7 +74,8 @@ public class UIController : MonoBehaviour
                 break;
             default:
                 break;
-        }
+        }*/
+
     }
 
     public void UpdateDate(string date)
@@ -106,8 +101,8 @@ public class UIController : MonoBehaviour
         computerScreenController.UpdateText(lostObject);
     }
 
-    //TODO
-    public void ShowSummary(int[] scoreStars, int levelScore, int returnedItems, int lostItems)
+
+    public void ShowSummary(int[] scoreStars, int levelScore, int returnedItems, int lostItems, bool winState)
     {
         // Calculate Stars
         if (levelScore > 0)
@@ -123,14 +118,15 @@ public class UIController : MonoBehaviour
             starSprites[2].gameObject.SetActive(true);
         }
 
-        summaryTableValues[0].GetComponent<TextMeshProUGUI>().text = levelScore.ToString();
-        summaryTableValues[1].GetComponent<Image>().sprite = satisfactionSprite;
-        summaryTableValues[2].GetComponent<TextMeshProUGUI>().text = returnedItems.ToString();
-        summaryTableValues[3].GetComponent<TextMeshProUGUI>().text = lostItems.ToString();
+        summaryController.scoreText.text = levelScore.ToString();
+        summaryController.satisfactionLevel.sprite = satisfactionImage.sprite;
+        summaryController.correctItemsText.text = returnedItems.ToString();
+        summaryController.incorrectItemsText.text = lostItems.ToString();
+        summaryController.solomonImage.sprite = winState ? solomonSprites[0] : solomonSprites[1];
         //Debug.Log("Show Summary!");
         //satisfactionsprite
         // event if level lost, change content of summary
-        summaryCanvas.gameObject.SetActive(true);
+        summaryController.gameObject.SetActive(true);
     }
 
     //TODO
@@ -140,10 +136,12 @@ public class UIController : MonoBehaviour
         {
             case GameState.Playing:
                 Debug.Log("Game Paused");
+                pauseCanvas.gameObject.SetActive(true);
                 // toggle UI Pause
                 break;
             case GameState.Paused:
                 Debug.Log("Playing!");
+                pauseCanvas.gameObject.SetActive(false);
                 // toggle false
                 break;
             default:

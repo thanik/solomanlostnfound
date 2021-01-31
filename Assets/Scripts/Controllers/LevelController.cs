@@ -22,6 +22,7 @@ public class LevelController : MonoBehaviour
     private int levelIndex = 0;
     private float levelTime = 0;
     private bool isDestroyingItem = false;
+    private bool isGivingItem = false;
     private int levelScore = 0;
     private int satisfactionValue = 50;
     private int returnedItems = 0;
@@ -51,7 +52,7 @@ public class LevelController : MonoBehaviour
 
     private void OnEnable()
     {
-        OnSatisfactionUpdated += uiController.UpdateSatisfaction;
+        OnSatisfactionUpdated += uiController.UpdateSatisfactionSprite;
         OnDateUpdated += uiController.UpdateDate;
         OnScoreUpdated += uiController.UpdateScore;
         OnShowItemCreated += uiController.ShowItemData;
@@ -60,7 +61,7 @@ public class LevelController : MonoBehaviour
 
     private void OnDisable()
     {
-        OnSatisfactionUpdated -= uiController.UpdateSatisfaction;
+        OnSatisfactionUpdated -= uiController.UpdateSatisfactionSprite;
         OnDateUpdated -= uiController.UpdateDate;
         OnScoreUpdated -= uiController.UpdateScore;
         OnShowItemCreated -= uiController.ShowItemData;
@@ -181,23 +182,56 @@ public class LevelController : MonoBehaviour
             Debug.Log("Time has run out!");
             levelTime = 0;
             gState = GameState.End;
-            uiController.ShowSummary(GameManager.Instance.levelsDB.levels[levelIndex].scoreStars, levelScore, returnedItems, lostItems);
+            uiController.ShowSummary(GameManager.Instance.levelsDB.levels[levelIndex].scoreStars, levelScore, returnedItems, lostItems, CheckWinCondition());
         }
         uiController.UpdateLevelTime(levelTime);
     }
 
+    bool CheckWinCondition()
+    {
+        return satisfactionValue > GameManager.Instance.levelsDB.levels[levelIndex].satisfactionValueRequirement;
+    }
+
+    Satisfaction CalculateSatisfaction()
+    {
+        int satisfaction = GetSatisfactionValue();
+        if (satisfaction >= 0 && satisfaction < 20)
+        {
+            return Satisfaction.EXTREMELYDISAPPOINTED;
+        }
+        else if (satisfaction >= 20 && satisfaction < 40)
+        {
+            return Satisfaction.VERYDISAPPOINTED;
+        }
+        else if (satisfaction >= 40 && satisfaction < 60)
+        {
+            return Satisfaction.NEUTRAL;
+        }
+        else if (satisfaction >= 60 && satisfaction < 80)
+        {
+            return Satisfaction.VERYSATISFIED;
+        }
+        else
+        {
+            return Satisfaction.EXTREMELYSATISFIED;
+        }
+    }
+
     void UpdateItemTimeAndPosition()
     {
-        if (itemTime > 0)
+        if (!isGivingItem)
         {
-            itemTime -= Time.deltaTime;
-            item.normalizedTime = itemTime / GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
-        }
-        else if (!isDestroyingItem)
-        {
-            StartCoroutine(ClearItem(ClearEvent.TimeExpire));
-            isDestroyingItem = true;
-            lostItems++;
+            if (itemTime > 0)
+            {
+                itemTime -= Time.deltaTime;
+                item.normalizedTime = itemTime / GameManager.Instance.levelsDB.levels[levelIndex].timePerItem;
+            }
+            else if (!isDestroyingItem)
+            {
+                StartCoroutine(ClearItem(ClearEvent.TimeExpire));
+                isDestroyingItem = true;
+                lostItems++;
+            }
         }
     }
 
@@ -218,6 +252,7 @@ public class LevelController : MonoBehaviour
             lostItems++;
         }
         OnScoreUpdated?.Invoke(levelScore);
+        isGivingItem = true;
         StartCoroutine(ClearItem(ClearEvent.Giving));
     }
 
@@ -246,6 +281,7 @@ public class LevelController : MonoBehaviour
         {
             satisfactionValue = 0;
         }
+        OnSatisfactionUpdated?.Invoke(CalculateSatisfaction());
     }
 
     public int GetSatisfactionValue()
@@ -284,6 +320,7 @@ public class LevelController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         PersonControllers.Clear();
+        isGivingItem = false;
         GenerateItem();
     }
 

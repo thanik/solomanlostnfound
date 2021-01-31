@@ -22,8 +22,4 @@ public class SummaryController : MonoBehaviour
         
     }
 
-    public void ShowSummary(bool isWin, int score, int satisfactionLevel, int numOfStars, int numOfCorrectItems, int numOfIncorrectItems)
-    {
-
-    }
 }
