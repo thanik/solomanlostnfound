@@ -3837,7 +3837,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c2c043fcb6a94c84486ce43d2b2baf75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4443,15 +4443,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: QUESTIONS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3cb05bb4573fde748926d0f3add4ccaf, type: 2}
-  m_sharedMaterial: {fileID: -4499169100620134944, guid: 3cb05bb4573fde748926d0f3add4ccaf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e258dd63fead9934eb731778f4f72e3c, type: 2}
+  m_sharedMaterial: {fileID: 8226447318588913632, guid: e258dd63fead9934eb731778f4f72e3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281019179
+  m_fontColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4475,8 +4475,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 42
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4892,7 +4892,7 @@ GameObject:
   - component: {fileID: 1188110619}
   - component: {fileID: 1188110618}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
