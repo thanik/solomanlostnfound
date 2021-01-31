@@ -18,6 +18,7 @@ public class LevelController : MonoBehaviour
     public ItemController item;
     public Animator solomonAnimator;
     public AudioSource solomonSound;
+    public BackgroundMusicController bgmController;
 
     public List<PersonController> PersonControllers = new List<PersonController>();
 
@@ -235,6 +236,7 @@ public class LevelController : MonoBehaviour
             Debug.Log("Time has run out!");
             levelTime = 0;
             gState = GameState.End;
+            bgmController.FadeOut();
             uiController.ShowSummary(GameManager.Instance.levelsDB.levels[levelIndex].scoreStars, levelScore, returnedItems, lostItems, CheckWinCondition());
         }
         uiController.UpdateLevelTime(levelTime);
